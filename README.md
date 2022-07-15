@@ -1,6 +1,6 @@
 # coding
 
-###메인 페이지
+### 메인 페이지
 https://kimdaewonn.github.io/coding/index.html   
 
 ### 자기소개 페이지
