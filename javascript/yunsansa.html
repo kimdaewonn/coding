@@ -119,22 +119,28 @@
                     </tr>
                     <tr>
                         <td>문자와 문자, 문자와 변수 등을 연결할 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">-</td>
                         <td>빼기 연산을 할 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">*</td>
                         <td>곱하기 연산을 할 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">/</td>
                         <td>몫을 구할 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">%</td>
                         <td>나머지를 구할 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">++</td>
                         <td>1씩 증가시킬 때 사용합니다.</td>
-                    </tr>                    <tr>
+                    </tr>                    
+                    <tr>
                         <td class="center">--</td>
                         <td>1씩 감소시킬 때 사용합니다.</td>
                     </tr>
@@ -148,23 +154,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>=</td>
+                        <td class="center">=</td>
                         <td>num = 1은 우변의 1값을 좌변의 num 변수에 대입(저장)합니다.</td>
                     </tr>
                     <tr>
-                        <td>+=</td>
+                        <td class="center">+=</td>
                         <td>num += 2는 num = num + 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>-=</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">-=</td>
                         <td>num -= 2는 num = num - 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>*=</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">*=</td>
                         <td>num *= 2는 num = num * 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>/=</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">/=</td>
                         <td>num /= 2는 num = num / 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td></td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">%=</td>
                         <td>num %= 2는 num = num % 2와 같습니다.</td>
                     </tr>
                 </tbody>
@@ -177,24 +187,62 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>&gt;</td>
-                        <td>num = 1은 우변의 1값을 좌변의 num 변수에 대입(저장)합니다.</td>
+                        <td class="center">&gt;</td>
+                        <td>a &gt; 가 참이면true,거짓이면 fasle가 됩니다.</td>
                     </tr>
                     <tr>
-                        <td>&lt;</td>
-                        <td>num += 2는 num = num + 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>&gt;</td>
-                        <td>num -= 2는 num = num - 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>&lt;</td>
-                        <td>num *= 2는 num = num * 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td>/=</td>
-                        <td>num /= 2는 num = num / 2와 같습니다.</td>
-                    </tr>                    <tr>
-                        <td></td>
-                        <td>num %= 2는 num = num % 2와 같습니다.</td>
+                        <td class="center">&lt;</td>
+                        <td>a &lt; 가 참이면true,거짓이면 fasle가 됩니다.</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">&gt;=</td>
+                        <td>a &gt;= 가 참이면true,거짓이면 fasle가 됩니다.</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">&lt;=</td>
+                        <td>a == b, a와 b가 같으면 true, 같지 않으면 false가 됩니다.<br>
+                        == 연산자의 경우 데이터 타입은 비교하지 않습니다.<br>
+                        -> ex) 5 =='5'는 true가 나옵니다.</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">!=</td>
+                        <td>a!=b, a와 b가 같지 않으면 true, 같으면 fasle가 됩니다.</td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">===</td>
+                        <td>a===b, a와 b가 같고 데이터 타입도 같으면 true, 같지 않으면 false가 됩니다.<br>
+                        -> ex) 5==='5'는 false가 나옵니다.</td>
+                    </tr>
+                    <tr>
+                    <td class="center">!==</td>
+                    <td>a!==b, a와 b가 같지 않거나 데이터 타입이 같지 않으면 true, 같으면 false가<br>됩니다.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>논리 연산자</h1>
+            <table class="table">
+                <thead>
+                    <th>논리 연산자 종류</th>
+                    <th>설명</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">&& ( AND연산자 )</td>
+                        <td>a&&b, a와b 모두(참)일 때 true(참)이 됩니다.<br>
+                            -> true&&true= true           true&&false = false<br>
+                            fasle&&true= false           fasle&&false = false</td>
+                    </tr>
+                    <tr>
+                        <td class="center" >|| ( OR연산자 )</td>
+                        <td>a||b, a와 b중 하나만 true(참)이면 true(참)이 됩니다.<br>
+                            -> true||true= true           true||false= true<br>
+                              false||true= true          false||false= false
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td class="center">! ( NOT연산자 )</td>
+                        <td>!a, a가 true이면 false, false이면 true로 바꾸어 줍니다.</td>
                     </tr>
                 </tbody>
             </table>
