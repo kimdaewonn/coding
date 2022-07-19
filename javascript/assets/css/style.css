@@ -31,8 +31,8 @@ body {
     border-bottom: 1px dashed #dcdcdc;
 }
 #footer {
-    border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
+    text-align: center;
 }
 #footer a:hover {
     text-decoration: underline;
