@@ -177,6 +177,11 @@ body{
     .main_refe .table table{
         min-width: 900px;
     }
+    .main_refe .table table table tr th,
+    .main_refe .table table table tr td{
+        font-size: 14px;
+    }
+
 }
 @media (max-width: 400px){
     .main_header h2 {
