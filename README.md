@@ -12,6 +12,6 @@ https://kimdaewonn.github.io/coding/javascript/javascript01.html
 https://kimdaewonn.github.io/coding/javascript/javascript02.html         
 
 ### HTML 메인 페이지
-https://kimdaewonn.github.io/coding/html/index.html 
-https://kimdaewonn.github.io/coding//html/alphabet.html
+https://kimdaewonn.github.io/coding/html/index.html   
+https://kimdaewonn.github.io/coding//html/alphabet.html   
 
