@@ -24,32 +24,29 @@
             background-color: #81D4FA;
         }
         #main{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            height: 780px;
+            display:grid;
+            grid-template-areas: 
+            "aside article1 article1 "
+            "aside article2 article2 "
+            "aside article3 article3";
+            grid-template-columns: 300px 900px;
+            grid-template-rows:260px 260px 260px;
         }
         #aside{
-            width: 30%;
-            height: 780px;
             background-color: #4FC3F7;
+            grid-area: aside;
         }
         #article1{
-            width:  70%;
-            height: 260px;
             background-color: #29B6F6;
-
+            grid-area: article1;
         }
         #article2{
-            width:  70%;
-            height: 260px;
             background-color: #03A9F4;
-
+            grid-area: article2;
         }
         #article3{
-            width:  70%;
-            height: 260px;
             background-color: #039BE5;
+            grid-area: article3;
         }
         #footer{
             height: 100px;
@@ -60,6 +57,7 @@
 
         }
         @media(max-width: 768px){
+
         }
         @media(max-width: 480px){
 
@@ -78,7 +76,7 @@
         </div>
         <div id="footer"></div>
       </div> 
-<!-- 03 -->
+<!-- 05 -->
     <!-- 레이아웃03_01 : float 방식 레이아웃 -->
     <!-- 레이아웃03_02 : float 방식 반응형 레이아웃 -->
     <!-- 레이아웃03_03 : flex 방식 레이아웃 -->
