@@ -76,9 +76,9 @@
         </div>
         <div class="main_sample">
             <div id="sample01" class="sample">
-            <h3> 01. 선언적 함수</h3>
-            <p>함수명이 있는 함수로 일반적으로 사용하는 방법이다.</p>
-            <div class="script">
+                <h3> 01. 선언적 함수</h3>
+                    <p>함수명이 있는 함수로 일반적으로 사용하는 방법이다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     function func(){
         document.write("함수가 실행되었습니다.1");
@@ -86,7 +86,7 @@
     func();
 }
 </code></pre>
-            </div>
+                    </div>
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
@@ -101,11 +101,11 @@
                     </details>
                 </div>
             </div>
-    <!-- //sample02 -->
-    <div id="sample02" class="sample">
-        <h3> 02. 익명 함수</h3>
-        <p>이름이 없는 함수로, 즉시 실행이 필요할 경우 사용합니다.</p>
-        <div class="script">
+<!-- //sample01 -->
+            <div id="sample02" class="sample">
+                <h3> 02. 익명 함수</h3>
+                    <p>이름이 없는 함수로, 즉시 실행이 필요할 경우 사용합니다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     const func =function(){
         document.write("함수가 실행되었습니다.2");
@@ -113,7 +113,7 @@
     func();
 }
 </code></pre>
-        </div>
+                    </div>
             <div class="result">
                 <details>
                     <summary>결과보기</summary>
@@ -126,11 +126,11 @@
             </div>
         </div>
 <!-- //sample02 -->
-<div id="sample03" class="sample">
-    <h3> 03. 매개변수 함수</h3>
-    <p> 함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수를 의미합니다.<br>
-        인수(argument)란 함수가 호출될 때 함수로 값을 전달해주는 값을 말합니다.</p>
-    <div class="script">
+            <div id="sample03" class="sample">
+                <h3> 03. 매개변수 함수</h3>
+                    <p> 함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수를 의미합니다.<br>
+                    인수(argument)란 함수가 호출될 때 함수로 값을 전달해주는 값을 말합니다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     // 변수 : 지역변수 + 전역변수 + 매개변수
     function func(str){
@@ -139,7 +139,7 @@
         func("함수가 실행되었습니다.3"); 
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -155,11 +155,11 @@
         </div>
     </div>
 <!-- //sample03 -->
-<div id="sample04" class="sample">
-    <h3> 04. 리턴값 함수</h3>
-    <p>리턴값이란 함수가 어떠한 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는 값을 말합니다.
-        함수가 어떠한 기능을 수행하고 돌려줄 값이 있으면 return 명령을 사용합니다. </p>
-    <div class="script">
+            <div id="sample04" class="sample">
+                <h3> 04. 리턴값 함수</h3>
+                    <p>리턴값이란 함수가 어떠한 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는 값을 말합니다.
+                    함수가 어떠한 기능을 수행하고 돌려줄 값이 있으면 return 명령을 사용합니다. </p>
+                    <div class="script">
 <pre><code class="language-js">{
     function func(){
         const str = "함수가 실행되었습니다.4";
@@ -168,7 +168,7 @@
     document.write(func()); //리턴값있어서 실행됨. 리턴값 생략되어있음
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -185,10 +185,10 @@
         </div>
     </div>
 <!-- //sample04 -->
-<div id="sample05" class="sample">
-    <h3> 05. 화살표 함수(선언적 함수)</h3>
-    <p>선언적함수의 화살표함수 형태이다.</p>
-    <div class="script">
+            <div id="sample05" class="sample">
+                <h3> 05. 화살표 함수(선언적 함수)</h3>
+                    <p>선언적함수의 화살표함수 형태이다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
    // function func(){
    //     document.write("함수가 실행되었습니다.5");
@@ -205,7 +205,7 @@
     // func();
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -227,10 +227,10 @@
         </div>
     </div>
 <!-- //sample05 -->
-<div id="sample06" class="sample">
-    <h3> 06. 화살표 함수(익명 함수)</h3>
-    <p>익명 함수의 화살표함수 형태이다.</p>
-    <div class="script">
+            <div id="sample06" class="sample">
+                <h3> 06. 화살표 함수(익명 함수)</h3>
+                    <p>익명 함수의 화살표함수 형태이다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     //const func=()=>{
     // document.write("함수가 실행되었습니다.6");
@@ -246,7 +246,7 @@
     //  func();
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -259,10 +259,10 @@
         </div>
     </div>
 <!-- //sample06 -->
-<div id="sample07" class="sample">
-    <h3> 07. 화살표 함수(매개변수 함수)</h3>
-    <p>매개변수 함수의 화살표함수 형태이다.</p>
-    <div class="script">
+            <div id="sample07" class="sample">
+                <h3> 07. 화살표 함수(매개변수 함수)</h3>
+                    <p>매개변수 함수의 화살표함수 형태이다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     // let 생략
     function func(str){
@@ -284,7 +284,7 @@
         // func("함수가 실행되었습니다.7<br>"); 
 }
 </code></pre>
-    </div>
+                 </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -300,10 +300,10 @@
         </div>
     </div>
 <!-- //sample07 -->
-<div id="sample08" class="sample">
-    <h3> 08. 화살표 함수(리턴값 함수)</h3>
-    <p>리턴값 함수의 화살표함수 형태이다.</p>
-    <div class="script">
+            <div id="sample08" class="sample">
+                <h3> 08. 화살표 함수(리턴값 함수)</h3>
+                    <p>리턴값 함수의 화살표함수 형태이다.</p>
+                    <div class="script">
 <pre><code class="language-js">{
     function func(){
         const str = ("함수가 실행되었습니다.8");
@@ -319,7 +319,7 @@
         }
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -336,15 +336,15 @@
         </div>
     </div>
 <!-- //sample08 -->
-<div id="sample09" class="sample">
-    <h3> 09. ㅇㅇ</h3>
-    <p>ㅇㅇㅇ</p>
-    <div class="script">
+            <div id="sample09" class="sample">
+                <h3> 09. ㅇㅇ</h3>
+                    <p>ㅇㅇㅇ</p>
+                    <div class="script">
 <pre><code class="language-js">{
 
 }
 </code></pre>
-    </div>
+                    </div>
         <div class="result">
             <details>
                 <summary>결과보기</summary>
@@ -451,7 +451,7 @@
                 //  func();
             // }
             //07. 화살표 함수(매개변수 함수)
-            {
+            // {
                 // let 생략
                 // function func(str){
                 //     document.write(str);
@@ -470,21 +470,21 @@
                 // const있어도 ㄱㅊ
                 // func= str =>document.write(str);  
                 // func("함수가 실행되었습니다.7<br>");  
-            }
+            // }
             //08. 화살표 함수(리턴값 함수)
-            {
-                function func(){
-                    const str = ("함수가 실행되었습니다.8<br>")
-                    return str;
-                }
-                document.write(func());
+            // {
+            //     function func(){
+            //         const str = ("함수가 실행되었습니다.8<br>")
+            //         return str;
+            //     }
+            //     document.write(func());
 
                 // func=() => {
                 //     const str = ("함수가 실행되었습니다.8<br>");
                 //     return str;
                 // }
                 // document.write(func());
-            }
+            // }
 
             //01. 선언적 함수
             //02. 익명 함수
