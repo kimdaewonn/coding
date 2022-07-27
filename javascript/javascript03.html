@@ -265,23 +265,23 @@
                     <div class="script">
 <pre><code class="language-js">{
     // let 생략
-    function func(str){
-        document.write(str);
+    // function func(str){
+    //  document.write(str);
     }
-    func("함수가 실행되었습니다.7");
+    // func("함수가 실행되었습니다.7");
     
-    // func() = (str) =>{document.write(str);  
+    func() = (str) =>{document.write(str);  
                 
-        // func("함수가 실행되었습니다.7<br>");
-        // } 
+    func("함수가 실행되었습니다.7");
+    } 
         
         
         // func() = (str) =>document.write(str);  
-        // func("함수가 실행되었습니다.7<br>");
+        // func("함수가 실행되었습니다.7");
         
         // const있어도 ㄱㅊ
         // func= str =>document.write(str);  
-        // func("함수가 실행되었습니다.7<br>"); 
+        // func("함수가 실행되었습니다.7"); 
 }
 </code></pre>
                  </div>
@@ -305,18 +305,18 @@
                     <p>리턴값 함수의 화살표함수 형태이다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-    function func(){
-        const str = ("함수가 실행되었습니다.8");
-        return str;
+   // function func(){
+   // const str = ("함수가 실행되었습니다.8");
+   // return str;
+   // }
+   // document.write(func());
+
+    func=() => {
+    const str = ("함수가 실행되었습니다.8");
+    return str;
     }
     document.write(func());
-
-    // func=() => {
-    //     const str = ("함수가 실행되었습니다.8");
-    //     return str;
-    // }
-    // document.write(func());
-        }
+    }
 }
 </code></pre>
                     </div>
