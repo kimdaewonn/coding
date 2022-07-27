@@ -6,45 +6,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0 auto;
         }
-        #wrap{
-            width: 1200px;
+        #wrap {
+            width: 100%
         }
-        #header{
+        #header {
+            height: 100px;
+            background-color: #F48080;
+        }
+        #nav {
+            height: 400px;
+            background-color: #EC5C5C;
+        }
+        #section {
+            height: 500px;
+            background-color: #FEA5A533;
+        }
+        #article {
+            height: 500px;
+            background-color: #FFBFBF;
+        }
+        #footer {
+            height: 100px;
+            background-color: #FF9C9C; 
+        }
+        .container {
+            height: inherit;
+            background-color: rgba(0, 0, 0, 0.3);
+            width : 1200px;
+            overflow: hidden;
+        }
+        #header .header_container1 {
+            height: 100px;
+            width: 300px;
+            background-color: #F86464;
+            float:left;
+        }
+        #header .header_container2 {
+            height: 100px;
+            width: 900px;
+            background-color: #FEA5A5;
+            float:left;
+        }
+        #nav .nav_container {
+            background-color: #FF8A8A;
+            height: 400px;
+            height: 1200px;
+            float: left;
+        }
+        #section .section_top {
+            width: 1200px;
+            height: 250px;
+            background-color: #111;
+            float: left;
+            overflow: hidden;
+        }
+        #section .section_bottom {
+            width: 1200px;
+            height: 250px;
+            background-color: #EA7F7F;
+            float: left;
+        }
+        .stopbox1 {
+            width: 200px;
+            height: 250px;
+            background-color: #111;
+            float: left;
+        }
+        .stopbox2 {
+            width: 200px;
+            height: 250px;
+            background-color: #222;
+            float: left;
+        }
+        .stopbox3 {
+            width: 200px;
+            height: 250px;
+            background-color: #333;
+            float: left;
+        }
+        .stopbox4 {
+            width: 200px;
+            height: 250px;
+            background-color: #444;
+            float: left;
+        }
+        .stopbox5 {
+            width: 200px;
+            height: 250px;
+            background-color: #555;
+            float: left;
+        }
+        .stopbox6 {
+            width: 200px;
+            height: 250px;
+            background-color: #666;
+            float: left;
+        }
+        .article_container1 {
+            width: 740px;
+            height: 500px;
+            background-color: #EB6666;
+            float: left;
+        }
+        .article_container2 {
+            width: 460px;
+            height: 500px;
+            background-color: #EB6666;
+            float: left;
+            overflow: hidden;
+        }
+        .article_containerT {
+            width: 460px;
+            height: 265px;
+            background-color: #CE5F5F;
+            float: left;
+        }
+        .article_containerB {
+            width: 460px;
+            height: 265px;
+            background-color: #FE7F7F;
+            float: left;
+        }
+        .footer_container {
             width: 1200px;
             height: 100px;
-        }
-        #nav{
-            width: 1200px;
-            height: 300px;
-            
-        }
-        #section{
-            width: 1200px;
-            height: 300px;
-
-        }
-        #article{
-            width: 1200px;
-            height: 300px;
-
-        }
-        #footer{
-            width: 1200px;
-            height: 100px;
-
+            background-color: #FF8888;
+            float: left;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div class="header"></div>
-        <div class="nav"></div>
-        <div class="section"></div>
-        <div class="article"></div>
-        <div class="footer"></div>
+        <div id="header">
+            <div class="container">
+                <div class="header_container1"></div>
+                <div class="header_container2"></div>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="container">
+                <div class="nav_container"></div>
+            </div>
+        </div>
+        <div id="section">
+            <div class="container">
+                <div class="section_top">
+                    <div class="stopbox1"></div>
+                    <div class="stopbox2"></div>
+                    <div class="stopbox3"></div>
+                    <div class="stopbox4"></div>
+                    <div class="stopbox5"></div>
+                    <div class="stopbox6"></div>
+                </div>
+                <div class="section_bottom"></div>
+            </div>
+
+        </div>
+        <div id="article">
+            <div class="container">
+                <div class="article_container1"></div>
+                <div class="article_container2">
+                    <div class="article_containerT"></div>
+                    <div class="article_containerB"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer_container"></div>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>
