@@ -80,7 +80,6 @@ body {
     display: inline;
 
 }
-
 #header nav li a {
     color: #fff;
     padding: 0 10px;
@@ -116,6 +115,7 @@ body {
 }
 
 /* quiz__wrap */
+
 .quiz__wrap {
     display: flex;
     align-items: center;
