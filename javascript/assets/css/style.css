@@ -73,6 +73,14 @@ body {
     background-color: #000;
     color: #fff;
 }
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+    margin-top: 10px;
+}
+
 /* 메인 샘플 */
 .main_sample {
     margin-top: 40px;
