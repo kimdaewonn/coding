@@ -221,19 +221,30 @@
                 answerResult : "조화"
             },
         ]
-            //forEach 문제 출력
-            quizInfo.forEach((e,i)=>{
-                answerType[i].innerText=quizInfo[i].answerType
-                
-            })
 
-            //for문으로 답지우기
-            for(i=0;i<quizInfo.length;i++){}
-            quizResult.display="none";
-            //forEach답지우기
-            quizInfo.forEach((i, e)=>{
-                quizResult.display="none"
+        for(let i =0; i<quizInfo.length;i++){
+            quizType[i].innerText=quizInfo[i].answerType;
+            quizNumber[i].innerText=quizInfo[i].answerNum;
+            quizAsk[i].innerText=quizInfo[i].answerAsk;
+            quizResult[i].innerText=quizInfo[i].answerResult;
+        }
+        for(let i =0; i<quizInfo.length;i++){
+            quizResult[i].style.display="none"
+        };
+        quizConfirm.forEach((btn,num)=> {
+            btn.addEventListener("click", () =>{
+               const userWord=quizInput[num].value;
+                if(userWord=quizInfo[num].answerResult){
+                    alert("정답")
+                    quizView[num].classList.add("like")
+                } else{
+                    alert("오답")
+                    quizView[num].classList.add("dislike")
+
+                }
             })
+        })
+
     </script>
 </body>
 

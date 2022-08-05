@@ -45,6 +45,8 @@
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/type.html">함수</a></li>
                 <li><a href="study/area.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+
             </ul>
         </nav>
     </header>
@@ -581,7 +583,15 @@
                     <p>for in 함수를 이용하여 객체를 불러오는 방법입니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
+    }
 
+    for(let key in obj){
+        document.write(obj[key]);
+    }
 }
 </code></pre>
 </div>
@@ -589,43 +599,108 @@
                 <details>
                     <summary>결과보기</summary>
                         <div class="sample16_result">
+                            <script>{
+                            const obj = {
+                                a : 100,
+                                b : 200,
+                                c : "javascript"
+                            }
 
+                            for(let key in obj){
+                                document.write(obj[key]);
+                            }
+                            }
+                            </script>
                         </div>
                 </details>
             </div>
             </div>
 <!-- //sample16 -->
-            <div id="sample10" class="sample">
-                <h3>11. 펼침연산자(Spread Operator)</h3>
-                    <p>ㅇㅇ</p>
+            <div id="sample17" class="sample">
+                <h3>17. 객체 : 데이터 불러오기 : map</h3>
+                    <p>map 함수를 이용하여 객체 데이터를 불러오는 방법입니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
+    const obj = [
+    {a: 100, b: 200, c: "javascript"}
+];
 
+obj.map((el) => {
+    document.write(el.a);
+    document.write(el.b);
+    document.write(el.c);
+});
+}
 </code></pre>
                 </div>
             <div class="result">
                 <details>
                     <summary>결과보기</summary>
-                        <div class="sample10_result">
+                        <div class="sample17_result">
+                            <script>
+                                {
+                                const obj = [
+                                    {a: 100, b: 200, c: "javascript"}
+                                ];
 
+                                obj.map((el) => {
+                                    document.write(el.a);
+                                    document.write(el.b);
+                                    document.write(el.c);
+                                });
+                                }
+                            </script>
                         </div>
                 </details>
             </div>
             </div>
 <!-- //sample17 -->
-            <div id="sample10" class="sample">
-                <h3>11. 펼침연산자(Spread Operator)</h3>
-                    <p>ㅇㅇ</p>
+            <div id="sample18" class="sample">
+                <h3>18. 객체 : 데이터 불러오기 : hasOwonProperty()</h3>
+                    <p>hasOwonProperty() 함수는 값이 있는지 없는지 확인하는 함수로,
+                        true / false값을 출력합니다.
+                    </p>
                     <div class="script">
 <pre><code class="language-js">{
-
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    // 있는지 없는지 확인 true /false
+    document.write(obj.hasOwnProperty("a"));
+    document.write(obj.hasOwnProperty("b"));
+    document.write(obj.hasOwnProperty("c"));
+    document.write(obj.hasOwnProperty("d"));
+    document.write("a" in obj);
+    document.write("b" in obj);
+    document.write("c" in obj);
+    document.write("d" in obj);
+}
 </code></pre>
 </div>
             <div class="result">
                 <details>
                     <summary>결과보기</summary>
-                        <div class="sample10_result">
-
+                        <div class="sample18_result">
+                            <script>
+                            {
+                                const obj = {
+                                    a: 100,
+                                    b: 200,
+                                    c: "javascript"
+                                }
+                            // 있는지 없는지 확인 true /false
+                                document.write(obj.hasOwnProperty("a"));
+                                document.write(obj.hasOwnProperty("b"));
+                                document.write(obj.hasOwnProperty("c"));
+                                document.write(obj.hasOwnProperty("d"));
+                                document.write("a" in obj);
+                                document.write("b" in obj);
+                                document.write("c" in obj);
+                                document.write("d" in obj);
+                            }
+                            </script>
                         </div>
                 </details>
             </div>
@@ -819,52 +894,52 @@
     // }
     // document.write("<br>");
     // 16. 객체 : 데이터 불러오기 : for in
-    {
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }
+    // {
+    //     const obj = {
+    //         a : 100,
+    //         b : 200,
+    //         c : "javascript"
+    //     }
 
-        for(let key in obj){
-            document.write(obj[key]);
-        }
-    }
+    //     for(let key in obj){
+    //         document.write(obj[key]);
+    //     }
+    // }
 
-    document.write("<br>");
+    // document.write("<br>");
 
     // 17. 객체 : 데이터 불러오기 : map
-    {
-        const obj = [
-            {a: 100, b: 200, c: "javascript"}
-        ];
+    // {
+    //     const obj = [
+    //         {a: 100, b: 200, c: "javascript"}
+    //     ];
 
-        obj.map((el) => {
-            document.write(el.a);
-            document.write(el.b);
-            document.write(el.c);
-        });
+    //     obj.map((el) => {
+    //         document.write(el.a);
+    //         document.write(el.b);
+    //         document.write(el.c);
+    //     });
 
-    }
-    document.write("<br>");
-    // 18. 객체 : 데이터 불러오기 : hasOwonProperty()
-    {
-        const obj = {
-            a: 100,
-            b: 200,
-            c: "javascript"
-        }
-        // 있는지 없는지 확인 true /false
-        document.write(obj.hasOwnProperty("a"));
-        document.write(obj.hasOwnProperty("b"));
-        document.write(obj.hasOwnProperty("c"));
-        document.write(obj.hasOwnProperty("d"));
-        document.write("a" in obj);
-        document.write("b" in obj);
-        document.write("c" in obj);
-        document.write("d" in obj);
-    }
-    document.write("<br>");
+    // }
+    // document.write("<br>");
+    // // 18. 객체 : 데이터 불러오기 : hasOwonProperty()
+    // {
+    //     const obj = {
+    //         a: 100,
+    //         b: 200,
+    //         c: "javascript"
+    //     }
+    //     // 있는지 없는지 확인 true /false
+    //     document.write(obj.hasOwnProperty("a"));
+    //     document.write(obj.hasOwnProperty("b"));
+    //     document.write(obj.hasOwnProperty("c"));
+    //     document.write(obj.hasOwnProperty("d"));
+    //     document.write("a" in obj);
+    //     document.write("b" in obj);
+    //     document.write("c" in obj);
+    //     document.write("d" in obj);
+    // }
+    // document.write("<br>");
     // 19.
     </script>
 </body>
