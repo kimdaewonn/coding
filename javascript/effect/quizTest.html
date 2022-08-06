@@ -222,26 +222,35 @@
             },
         ]
 
-        for(let i =0; i<quizInfo.length;i++){
+        quizInfo.forEach((el,i) => {
             quizType[i].innerText=quizInfo[i].answerType;
             quizNumber[i].innerText=quizInfo[i].answerNum;
             quizAsk[i].innerText=quizInfo[i].answerAsk;
             quizResult[i].innerText=quizInfo[i].answerResult;
-        }
-        for(let i =0; i<quizInfo.length;i++){
-            quizResult[i].style.display="none"
-        };
-        quizConfirm.forEach((btn,num)=> {
-            btn.addEventListener("click", () =>{
-               const userWord=quizInput[num].value;
-                if(userWord=quizInfo[num].answerResult){
-                    alert("정답")
-                    quizView[num].classList.add("like")
-                } else{
-                    alert("오답")
-                    quizView[num].classList.add("dislike")
+        });
+
+        quizInfo.forEach((el,i)=>{
+            quizResult[i].style.display="none";
+        });
+
+        quizConfirm.forEach((btn,num) => {
+            btn.addEventListener("click",()=>{
+                
+
+               const userWord=quizInput[num].value.toLowerCase().trim();
+                
+                if(userWord==quizInfo[num].answerResult){
+
+                    quizView[num].classList.add("like");
+                    quizConfirm[num].style.display="none";
+                } else {
+                    quizView[num].classList.add("dislike");
+                    quizResult[num].style.display="block";
+                    quizInput[num].sytle.display = "none";
+                    quizConfirm[num].style.display = "none";
 
                 }
+                
             })
         })
 
