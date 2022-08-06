@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 기본규칙</title>
+    <title>퀴즈</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracular.css">
@@ -50,7 +50,7 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">퀴즈</h2>
-            <div class="t_box">
+            <div class="t_desc2">
                 <p>웹디자인기능사 대비 퀴즈 프로그램을 만들어 풀어보려 합니다.<br>
                     querySelector를 통해 저장된 값들을 불러오며, addEventListener 함수로 클릭 했을때 정답을 출력하도록 합니다.<br>
                     여기에 if함수를 더해 정답과 오답에 대한 결과를 나눕니다.
@@ -58,7 +58,7 @@
             </div>
             <hr>
             <h3 class="t_tit2"> 문제01</h3>
-            <p class="t_desc2"> 정답 확인하기를 누르면 답이 나옵니다.
+            <p class="t_box"> 정답 확인하기를 누르면 답이 나옵니다.
             </p>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
@@ -67,14 +67,14 @@
             </div>
 
             <div class="t_link">
-                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect01.html>원본 소스 보기</a>
             </div>
 
-            <h3 class="t_tit2">자바스크립트</h3>
-            <p class="t_desc2">스크립트 소스입니다.</p>
+            <h3 class="t_tit2">Javascript 코드</h3>
+            <p class="t_box">선택자, 문제정보, 문제출력, 정답 숨기기, 정답확인 단계로 구성되어 있습니다.</p>
 
             <div class="t_code">
-<pre><code class="language-js">{
+                <pre><code class="language-js">{
     //선택자
     const quizType = document.querySelector(".quiz__type");                     //퀴즈 종류
     const quizNumber = document.querySelector(".quiz__question .number");       //퀴즈 번호
@@ -113,9 +113,19 @@
 
             <hr>
 
+            <h2 class="t_tit">주관식 퀴즈</h2>
+            <div class="t_desc2">
+                <p>웹디자인기능사 대비 퀴즈 프로그램을 만들어 풀어보려 합니다.<br>
+                    querySelector를 통해 저장된 값들을 불러오며, addEventListener 함수로 클릭 했을때 정답을 출력하도록 합니다.<br>
+                    여기에 if함수를 더해 정답과 오답에 대한 결과를 나눕니다.
+                </p>
+            </div>
+
+            <hr>
+
             <h3 class="t_tit2"> 문제02</h3>
-            <p class="t_desc2">정답을 맞출 경우 강아지가 웃으며 정답입니다 문구가 나옵니다.
-                <br> 오답의 경우 강아지가 울며 틀렸습니다 문구가 나옵니다.
+            <p class="t_box">정답을 맞출 경우 강아지가 웃으며 정답입니다 문구가 나옵니다.<br>
+                             오답의 경우 강아지가 울며 틀렸습니다 문구가 나옵니다.
             </p>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
@@ -124,14 +134,14 @@
             </div>
 
             <div class="t_link">
-                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect02.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect02.html>원본 소스 보기</a>
             </div>
 
-            <h3 class="t_tit2">자바스크립트</h3>
-            <p class="t_desc2">스크립트 소스입니다.</p>
+            <h3 class="t_tit2">Javascript 코드</h3>
+            <p class="t_box">선택자, 문제정보, 문제출력, 정답 숨기기, 정답확인, 사용자 정답, 사용자 정답과 문제 정답 맞춰보기 단계로 구성되어 있습니다.</p>
 
             <div class="t_code">
-                <pre><code class="language-js">{
+<pre><code class="language-js">{
         //선택자
         const quizType = document.querySelector(".quiz__type");                     //퀴즈 종류
         const quizNumber = document.querySelector(".quiz__question .number");       //퀴즈 번호
@@ -184,7 +194,163 @@
 
             }
         });
-                    </code></pre>
+}
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h2 class="t_tit">다수의 퀴즈</h2>
+            <div class="t_desc2">
+                <p>웹디자인기능사 대비 퀴즈 프로그램을 만들어 풀어보려 합니다. 이전 문제와 차이점으로 다수의 문제를 선택해 불러와야 하기 때문에<br>
+                    querySelector<i>All</i>을 통해 저장된 값들을 불러오며, 값을 개별적으로 출력하지 않고 <i>for문이나 forEach문을 이용하여 편리하게</i> 출력합니다.<br>
+                    + addEventListener 함수로 클릭 했을때 값을 출력하도록 합니다.<br>
+                    + if함수로 값에 대한 결과를 나눕니다.
+                </p>
+            </div>
+            <hr>
+            <h3 class="t_tit2"> 문제03</h3>
+            <p class="t_box"> 정답 확인하기를 누르면 답이 나옵니다.
+                <br>정답을 맞출 경우 강아지가 웃으며 정답입니다 문구가 나옵니다.
+                <br>오답의 경우 강아지가 울며 틀렸습니다 문구가 나옵니다.
+                <br>맞출 경우 정답이 나오지 않으며, 틀릴경우 정답을 보여줍니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/quizEffect03.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect03.html>원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Javascript 코드</h3>
+            <p class="t_box">선택자, 문제정보, 문제출력, 정답 숨기기, 정답 확인, 사용자 정답, 사용자 정답과 문제 정답 맞춰보기 단계로 구성되어 있습니다.</p>
+
+            <div class="t_code">
+<pre><code class="language-js">{
+    //선택자
+    const quizType = document.querySelectorAll(".quiz__type");                     //퀴즈 종류
+    const quizNumber = document.querySelectorAll(".quiz__question .number");       //퀴즈 번호
+    const quizAsk = document.querySelectorAll(".quiz__question .ask");             //퀴즈 질문
+    const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");       //정답 확인 버튼
+    const quizResult = document.querySelectorAll(".quiz__answer .result");         //정답 결과
+    const quizInput = document.querySelectorAll(".quiz__answer .input");           //사용자 정답
+    const quizView = document.querySelectorAll(".quiz__view");                     //강아지
+
+    //문제정보
+    const quizInfo = [
+        {
+            answerType: "웹디자인기능사 2015년 1회",
+            answerNum : "1",
+            answerAsk : "디자인 형태의 분류 중 이념적 형태에 속하는 것은?",
+            answerResult : "추상형태"
+        },
+        {
+            answerType: "웹디자인기능사 2015년 1회",
+            answerNum : "2",
+            answerAsk : "두 개의 컴퓨터 사이에 정보교환을 위해 사용되는 규칙을 의미하는 것은?",
+            answerResult : "프로토콜"
+        },
+        {
+            answerType: "웹디자인기능사 2015년 1회",
+            answerNum : "3",
+            answerAsk : "색광에서 Red, Green, Blue가 혼합될 때 그 결과 색은?",
+            answerResult : "White"
+        },
+        {
+            answerType: "웹디자인기능사 2015년 1회",
+            answerNum : "4",
+            answerAsk : "유사, 대비, 균일, 강약 등의 디자인 요소가 포함되어 있는 디자인 원리는?",
+            answerResult : "조화"
+        },
+    ]
+    // 노가다 방식..
+
+    //문제 출력
+    // quizType[0].textContent = quizInfo[0].answerType;
+    // quizType[1].textContent = quizInfo[1].answerType;
+    // quizType[2].textContent = quizInfo[2].answerType;
+    // quizType[3].textContent = quizInfo[3].answerType;
+
+    // quizNumber[0].textContent = quizInfo[0].answerNum +". ";
+    // quizNumber[1].textContent = quizInfo[1].answerNum +". ";
+    // quizNumber[2].textContent = quizInfo[2].answerNum +". ";
+    // quizNumber[3].textContent = quizInfo[3].answerNum +". ";
+
+    // quizAsk[0].textContent = quizInfo[0].answerAsk;
+    // quizAsk[1].textContent = quizInfo[1].answerAsk;
+    // quizAsk[2].textContent = quizInfo[2].answerAsk;
+    // quizAsk[3].textContent = quizInfo[3].answerAsk;
+
+    // quizResult[0].textContent = quizInfo[0].answerResult;
+    // quizResult[1].textContent = quizInfo[1].answerResult;
+    // quizResult[2].textContent = quizInfo[2].answerResult;
+    // quizResult[3].textContent = quizInfo[3].answerResult;
+
+    // 반복문을 이용한 편리한 방식!
+
+    // for(let i=0; i&lt;4; i++){
+    // quizType[i].textContent = quizInfo[i].answerType;
+    // quizNumber[i].textContent = quizInfo[i].answerNum +". ";
+    // quizAsk[i].textContent = quizInfo[i].answerAsk;
+    // quizResult[i].textContent = quizInfo[i].answerResult;
+    // }
+
+    quizInfo.forEach((e, i) =>{
+        quizType[i].textContent = quizInfo[i].answerType;
+        quizNumber[i].textContent = quizInfo[i].answerNum +". ";
+        quizAsk[i].textContent = quizInfo[i].answerAsk;
+        quizResult[i].textContent = quizInfo[i].answerResult;
+    });
+
+    //정답 숨기기(4개)
+    // quizResult[0].style.display = "none";
+    // quizResult[1].style.display = "none";
+    // quizResult[2].style.display = "none";
+    // quizResult[3].style.display = "none";
+
+    // for(let i = 0; i&lt;quizInfo.length; i++){
+    //     quizResult[i].style.display = "none";
+    // }
+
+    // 반복문을 통한 index값 출력!
+
+    quizInfo.forEach((e, i) => {
+        quizResult[i].style.display = "none";
+    })
+
+    // 정답 확인 => 한개용이라안됨.
+    // quizConfirm.addEventListener("click", () => {
+    //     alert("d")
+    // }); 
+    
+    // 정답 확인 => forEach 사용해야함.
+    quizConfirm.forEach((btn, num) =>{
+        btn.addEventListener("click", () => {
+          
+            //사용자 정답
+            const userWord = quizInput[num].value.toLowerCase().trim()  // 소문자로, 여백제거
+            
+            //사용자 정답 == 문제 정답
+            if(userWord == quizInfo[num].answerResult){
+                //정답
+                alert("정답")
+                quizView[num]. classList.add("like");
+                quizConfirm[num].style.display = "none"; //정답확인 박스제거
+            } else {
+                //오답
+                alert("오답")
+                quizView[num]. classList.add("dislike");
+                quizConfirm[num].style.display = "none";
+                quizResult[num].style.display = "block"; //정답확인 박스유지
+                quizInput[num].sytle.display = "none";
+            }
+        })
+    });
+}
+</code></pre>
             </div>
 
         </div>
