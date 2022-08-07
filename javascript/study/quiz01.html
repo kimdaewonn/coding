@@ -305,7 +305,7 @@
         quizResult[i].textContent = quizInfo[i].answerResult;
     });
 
-    //정답 숨기기(4개)
+    // 정답 숨기기(4개)
     // quizResult[0].style.display = "none";
     // quizResult[1].style.display = "none";
     // quizResult[2].style.display = "none";
@@ -330,22 +330,26 @@
     quizConfirm.forEach((btn, num) =>{
         btn.addEventListener("click", () => {
           
-            //사용자 정답
+            // 사용자 정답
             const userWord = quizInput[num].value.toLowerCase().trim()  // 소문자로, 여백제거
             
-            //사용자 정답 == 문제 정답
+            // 사용자 정답 == 문제 정답
             if(userWord == quizInfo[num].answerResult){
-                //정답
-                alert("정답")
-                quizView[num]. classList.add("like");
-                quizConfirm[num].style.display = "none"; //정답확인 박스제거
+                // 정답
+                // alert("정답")
+                quizView[num].classList.add("like");     // 강아지 웃음
+                quizConfirm[num].style.display = "none"; // 정답 확인하기 박스제거
+                quizResult[num].style.display = "none";  // 정답 가리기
+                quizInput[num].style.display = "block";  // 사용자 입력창 유지
+
             } else {
-                //오답
-                alert("오답")
-                quizView[num]. classList.add("dislike");
-                quizConfirm[num].style.display = "none";
-                quizResult[num].style.display = "block"; //정답확인 박스유지
-                quizInput[num].sytle.display = "none";  //입력값 안보이게해서 다시풀기 가능? 
+                // 오답
+                // alert("오답")
+                quizView[num]. classList.add("dislike"); // 강아지 슬픔
+                quizConfirm[num].style.display = "none"; // 정답 확인하기 박스제거
+                quizResult[num].style.display = "block"; // 정답 보여주기
+                quizInput[num].style.display = "none";   // 사용자 입력불가
+
             }
         })
     });

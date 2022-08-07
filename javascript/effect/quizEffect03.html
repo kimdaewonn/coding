@@ -286,16 +286,21 @@
                 //사용자 정답 == 문제 정답
                 if(userWord == quizInfo[num].answerResult){
                     //정답
-                    alert("정답")
+                    // alert("정답")
                     quizView[num].classList.add("like");
                     quizConfirm[num].style.display = "none";
+                    quizResult[num].style.display = "none";
+                    quizInput[num].style.display = "block";
+
+
                 } else {
                     //오답
-                    alert("오답")
+                    // alert("오답")
                     quizView[num].classList.add("dislike");
                     quizConfirm[num].style.display = "none";
                     quizResult[num].style.display = "block";
-                    quizInput[num].sytle.display = "none";
+                    quizInput[num].style.display = "none";
+
                 }
             })
         });
