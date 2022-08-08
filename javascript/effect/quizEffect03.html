@@ -281,7 +281,7 @@
             btn.addEventListener("click", () => {
               
                 //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim()  // 소문자로, 여백제거
+                const userWord = quizInput[num].value;// 소문자로, 여백제거
                 
                 //사용자 정답 == 문제 정답
                 if(userWord == quizInfo[num].answerResult){
