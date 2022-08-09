@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .card__body__container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__body .btn{
+            background-color: #2E7EF5;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType"class="card__wrap gmarket section">
+        <h2>운동을 해봅시다</h2>
+        <p>여러가지 운동을 해봅시다 유산소 운동 근력 운동<br>
+            골고루 해봅시다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04.jpg" alt="걷기">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">걷기</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">걷기는 사람의 가장 기초적인 이동 방식으로, 왼발과 오른발을 번갈아 내딛는다....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg05.jpg" alt="자전거">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">자전거</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">자전거의 효율은 매우 높기 때문에 다른 인력 스포츠들과 차원이 크게 다르다.... </p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg06.jpg" alt="팔굽혀펴기">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">팔굽혀펴기</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">사람이 아무런 도구 없이도 할 수 있는 순수 맨몸 운동 중 하나이며, 효과가 좋다....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg07.jpg" alt="런닝">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">런닝</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">인간을 비롯한 많은 동물이 이동 속도를 올리기 위해 체득한 기술이다. 전문적으로 하는 스포츠는 육상....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg08.jpg" alt="윗몸일으키기">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">윗몸일으키기</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">누운 상태에서 양 손을 머리뒤에 깍지를 낀 상태로 다리는 고정시키고 상체를 앞으로 굽혔다가 내려간다....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg09.jpg" alt="데드리프트">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">데드리프트</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">웨이트 트레이닝을 대표하는 3대 운동(스쿼트, 벤치 프레스, 데드리프트) 중 하나이다....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg10.jpg" alt="턱걸이">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">턱걸이</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">철봉을 손으로 잡고 당겨 턱을 철봉 위까지 끌어 올리는 운동. 으로 기초근력없이는 힘든 고난도 운동....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg11.jpg" alt="아령">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__container">
+                        <h3 class="tit">아령</h3>
+                        <span aria-hidden="true" >
+                            <a class="btn" href="/">
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z" fill="white"/>
+                                    </svg>
+                            </a>                           
+                        </span>
+                    </div>
+                    <p class="desc">아령은 근육을 단련하기 위해 사용하는 스포츠 용품의 일종이다. 수준에 따라 중량조절이 가능....</p>
+                    <a class="btn" href="/">
+                    </a>
+                </div>
+            </article>
+        </div>
+        
+    </section>
+</body>
+</html>
