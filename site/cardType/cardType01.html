@@ -68,6 +68,10 @@
         .card__body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+            /* 1줄효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         .card__body .desc {
             font-size: 18px;
@@ -75,18 +79,24 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
+            /* 4줄효과 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
         }
         .card__body .btn{}
     </style>
 </head>
 <body>
-    <section id="cardType"class="card__wrap nexon section">
+    <section id="cardType01"class="card__wrap nexon section">
         <h2>닭의 쓰임새</h2>
         <p>닭은 많은것을 나눠주는 유익한 생물 입니다.</p>
         <div class="card__inner container">
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg01.jpg" alt="치킨">
+                    <img src="img/card_bg01_01.jpg" alt="치킨">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">치킨</h3>
@@ -103,7 +113,7 @@
             </article>
             <article class="card">
                 <figure>
-                    <img src="img/card_bg02.jpg" alt="달걀">
+                    <img src="img/card_bg01_02.jpg" alt="달걀">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">달걀</h3>
@@ -121,7 +131,7 @@
             </article>
             <article class="card">
                 <figure>
-                    <img src="img/card_bg03.jpg" alt="삼계탕">
+                    <img src="img/card_bg01_03.jpg" alt="삼계탕">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">삼계탕</h3>
