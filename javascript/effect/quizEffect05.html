@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈이펙트</title>
-
+    <title>퀴즈 이펙트</title>
     <link rel="stylesheet" href="../assets/css/quiz.css">
-
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
-    
 </head>
-
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a><em> 객관식(여러문제) 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
@@ -28,79 +23,207 @@
             </ul>
         </nav>
     </header>
-
     <!-- //header -->
-
     <main id="main">
-    <div class="quiz__wrap">
-        <div class="quiz">
-            <span class="quiz__type"></span>
-            <h2 class="quiz__question">
-                <span class="number"></span>
-                <div class="ask">
-                </div>
-            </h2>
-            <div class="quiz__view">
-                <div class="true">정답입니다!</div>
-                <div class="false">틀렸습니다!</div>
-                <div class="dog">
-                    <div class="head">
-                        <div class="ears"></div>
-                        <div class="face"></div>
-                        <div class="eyes">
-                            <div class="teardrop"></div>
-                        </div>
-                        <div class="nose"></div>
-                        <div class="mouth">
-                            <div class="tongue"></div>
-                        </div>
-                        <div class="chin"></div>
-                    </div>
-                    <div class="body">
-                        <div class="tail"></div>
-                        <div class="legs"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="quiz__answer">
-                <div class="quiz__selects">
-                    <label for="select1">
-                        <input type="radio" id="select1" class="select" name="select" value="1">
-                        <span class="choice"></span>
-                    </label >
-                    <label for="select2">
-                        <input type="radio" id="select2" class="select" name="select" value="2">
-                        <span class="choice"></span>
-                    </label>
-                    <label for="select3">
-                        <input type="radio" id="select3" class="select" name="select" value="3">
-                        <span class="choice"></span>
-                    </label>
-                    <label for="select4">
-                        <input type="radio" id="select4" class="select" name="select" value="4">
-                        <span class="choice"></span>
-                    </label>
-
-                </div>
-
-                <button class="confirm">정답확인하기</button>
-                <div class="result"></div>
-            </div>
-        </div>
-      
+        <div class="quiz__wrap">
         </div>
     </main>
-
     <!-- //main -->
-
     <footer id="footer">
         <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
     </footer>
-
     <!-- //footer -->
     <script>
+        //문제정보
+        // const num = [100, 200, 300, 400, 500];
+        //     num.forEach((e)=>{
+        //         console.log(e);
+        //         document.querySelector(".quiz__wrap").textContent += e;
+        //     });
+        //문제 정보
+const quizInfo = [
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "1.",
+        answerAsk : "서로 반대되는 색상을 배색하였을 때 나타나는 느낌으로 옳은 것은?",
+        answerChoice : {
+            1: "강한 느낌",
+            2: "정적인 느낌",
+            3: "간결한 느낌",
+            4: "차분한 느낌",
+        },
+        answerResult : "1",
+        answerEx : "강한 느낌에 대한 설명이다."
+    },
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "2.",
+        answerAsk : "커뮤니케이션 디자인에 대한 설명으로 틀린 것은?",
+        answerChoice : {
+            1: "라틴어 Communicare를 어원으로 한다.",
+            2: "두 개 이상의 개체가 기호를 매개로 무언가를 공유하는 것이다.",
+            3: "재료, 기능성, 입체, 질감 등의 요소를 이용하여 상품을 개발하는 것이다.",
+            4: "사람과 사람사이에 기호에 의해서 의미를 전달하는 과정이다",
+        },
+        answerResult : "3",
+        answerEx : "재료, 기능성, 입체, 질감 등의 요소를 이용하여 상품을 개발하는 것은 커뮤니케이션 디자인이 아니다."
+    },
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "3.",
+        answerAsk : "흰색의 바탕 위에서 빨간색을 20초 정도 보고난 후, 빨간색을 치우면 앞에서 본 빨간색과 동일한 크기의 청록색이 나타나 보이는 현상은?",
+        answerChoice : {
+            1: "보색잔상",
+            2: "망막의 피로",
+            3: "계시대비",
+            4: "동시대비",
+        },
+        answerResult : "1",
+        answerEx : "보색잔상은 특정 빛의 지속적 노출에 의해 반사적으로 보색 관계의 빛이 일시적 보이는 것"
+    },
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "4.",
+        answerAsk : "일반적으로 장식에 사용되는 단순화된 무늬나 규칙적으로 반복되는 단위도형을 말하며, 반복되는 모양의 기본이 되는 구성요소를 가리키고 있지만, 일반적으로는 그림이나 무늬와 같은 비주얼 디자인의 기초가 되는 조형만이 아니라, 일체의 반복되는 것에 대해 그 원형이 되는 조립단위를 가리키는 것은?",
+        answerChoice : {
+            1: "패턴",
+            2: "텍스쳐",
+            3: "질감",
+            4: "콜라쥬",
+        },
+        answerResult : "1",
+        answerEx : "패턴은 규칙적인 특징을 반복하거나 교차시키는 데서 비롯되는 움직임의 느낌에서 나타남"
+    },
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "5.",
+        answerAsk : "포스터 디자인의 조건으로 가장 적합한 것은?",
+        answerChoice : {
+            1: "일러스트레이션은 가급적 화려하게 표현한다.",
+            2: "눈에 잘 띄고, 독창적이어야 한다.",
+            3: "색상수를 많이 사용한다.",
+            4: "헤드라인은 반드시 고딕체를 사용한다.",
+        },
+        answerResult : "2",
+        answerEx : "포스터 디자인은 눈에 잘 띄고, 독창적이어야 한다."
+    },
+    {
+        answerType : "웹디자인기능사 2014년 02회",
+        answerNum : "6.",
+        answerAsk : " 다음 그림과 같이 일부분이 끊어진 상태이지만 문자로 인식되는 것은 어떤 원리 때문인가?",
+        answerChoice : {
+            1: "규칙성",
+            2: "유사성",
+            3: "폐쇄성",
+            4: "연속성",
+        },
+        answerResult : "3",
+        answerEx : "*게슈탈트의 법칙* 폐쇄의 원리: 닫혀있지 않은 도형이 심리적으로 닫혀져 보이거나 무리지어 보이는 원리"
+    },
+];
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        function updateQuiz() {
+            const exam = [];
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz__type">${question.answerType}</span>
+                        <h2 class="quiz__question">
+                            <span class="number">${question.answerNum}</span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <!--라벨은 인라인 구조 / for을 사용해 input이랑 연결-->
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                    <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                    <!--선택해주기 위해 choice라는 클래스 생성-->
+                                </label>
+                                <label for="select2${number}">
+                                    <!--가로로 정렬 안되게 인라인 구조니까-->
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                    <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                    <!--선택해주기 위해 choice라는 클래스 생성-->
+                                </label>
+                                <label for="select3${number}">
+                                    <!--가로로 정렬 안되게 인라인 구조니까-->
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                    <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                    <!--선택해주기 위해 choice라는 클래스 생성-->
+                                </label>
+                                <label for="select4${number}">
+                                    <!--가로로 정렬 안되게 인라인 구조니까-->
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                    <!--타입 라디오, 아이디 셀렉트1, 이름은 select 값은 1번으로 설정-->
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                    <!--선택해주기 위해 choice라는 클래스 생성-->
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `); //exam에 push
+            });
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>    
+                </div>
+            `);
 
+            quizWrap.innerHTML = exam.join('');
+        }
+        updateQuiz();
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+            const quizView = document.querySelectorAll(".quiz__view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz__view");
+                console.log(quizSelects)
+                if(userAnswer == question.answerResult){
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
+        }
+        document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
     </script>
 </body>
-
 </html>

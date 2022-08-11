@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카드유형03</title>
+    <title>카드 유형03</title>
     <style>
         /* fonts */
         @import url('https://webfontworld.github.io/score/SCoreDream.css');
 
         .score {
             font-family: 'SCoreDream';
-            font-weight: 500;
+            font-weight: 400;
         }
 
         /* reset */
@@ -65,159 +65,163 @@
             text-align: center;
             margin-bottom: 70px;
         }
-
-        .gray {
+        /* blind : 접근성을 이유 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        /* cardType03 */
+        body {
+            background-color: #2254c3;
+        }
+        .card__inner {
+            display: flex;
+        }
+        .card__inner .card {
+            padding: 26px;
+            width: 33.3333%;
             background-color: #fff;
+        }
+        .card__inner .card:nth-child(1) {
+            border: 1px solid #eee;
+        }
+        .card__inner .card:nth-child(2) {
+            border: 1px solid #eee;
 
         }
-
-        /* ir 효과(이미지 대체 효과 alt) */
-        .ir {
-            display: block;
-            overflow: hidden;
-            font-size: 0;
-            line-height: 0;
-            text-indent: -9999px;
+        .card {}
+        .card__header {
+            position: relative;
         }
-
-        .card__inner .card .tit {
-            font-size: 28px;
-            margin-bottom: 10px;
-            /* 1줄효과 */
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-
-            padding-right: 18px;
+        .card__header img {
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
         }
-
-        .card__inner .card .desc {
-            font-size: 18px;
-            font-weight: 300;
-            color: #666;
+        .card__header dd{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #7b7b7b;
+        }
+        .card__contents h3 {
+            font-size: 20px;
             line-height: 1.4;
-            /* 3줄효과 */
+            margin-bottom: 10px;
+            width:100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card__contents p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 3; 
             -webkit-box-orient: vertical;
+            margin-bottom: 30px;
         }
-
-        /* card 03 */
-        .card__inner {
+        .card__footer {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            background-color: #fff;
-            background-color: #1B5BFF;
-            height: 450px;
-
+            justify-content: flex-end;
         }
-
-        .card__inner .card {
-            width: 28.8%;
-            position: relative;
-            border-right: solid 1px #dedede;
-            box-sizing: border-box;
-            background-color: #f5f5f5;
+        .card__footer h4 {
+            text-align: right;
+            color : #dd2a2a
         }
-
-        .card__inner .card:nth-child(2) {
-            border-right: 1px solid #dedede;
-            border-left: 1px solid #dedede;
-        }
-        .more_mom {}
-
-        .card__inner .card .more {
-            background-image: url(img/more.svg);
-            width: 50px;
-            height: 50px;
+        .card__footer em {
             display: block;
-            position: absolute;
-            right: 0;
-            left: 270px;
-            top: 365px;
+            color: #666;
+            font-style: normal;
         }
-
-        .animal {
-            width: 150px;
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 50%;
+            overflow: hidden;
             display: block;
-            position: absolute;
-            right: 0;
-            left: 110px;
-            top: 370px;
+            margin-left: 10px;
+            margin-top: -3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
         }
-
-        .img1 {
-            width: 334px;
-            height: 200px;
-        }
-
-        .tit {
-            width: 334px;
-            height: 68px;
-            padding-top: 20px;
-        }
-
-        .desc {
-            width: 334px;
-            height: 75px;
+        .card__footer span img {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
 
 <body>
-    <section id="cardType02" class="card__wrap score section gray">
+    <section id="cardType03" class="card__wrap score section" >
+        <h2 class="blind">건축의 세계</h2>
         <div class="card__inner container">
             <article class="card">
-                <div class="img1">
-                    <img src="img/card_bg03_01.jpg" alt="토끼">
+                <figure class="card__header">
+                    <img src="img/card_bg03_01.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>대체적으로 긴 귀와 솜뭉치 모양으로 위쪽으로 짧아 보이게 말려 있는 꼬리 길이는 생각보다 길다앞다리보다 훨씬 긴 뒷다리를 이용하여 깡충깡충 뛰어다닌다.</p>
+
                 </div>
-                <h3 class="tit">동물의 종류는 다양합니다.
-                    동물은 육식동물, 초식동물 등등.</h3>
-                <p class="desc">
-                    대체적으로 긴 귀와 솜뭉치 모양으로 위쪽으로
-                    짧아 보이게 말려 있는 꼬리 길이는 생각보다 길다....
-                </p>
-                <div class="more_mom">
-                    <a href="#" class="more"><span class="ir">더보기</span></a>
-                    <span class="animal">
-                        <img src="img/animal.jpg" alt="동물박사">
-                </div>
-            </article>
-            <article class="card">
-                <div class="img1">
-                    <img src="img/card_bg03_02.jpg" alt="사자">
-                </div>
-                <h3 class="tit">동물의 종류는 다양합니다.
-                    동물은 육식동물, 초식동물 등등.</h3>
-                <p class="desc">
-                    용맹한 이미지와 달리 수컷 사자는 하루의 20시간을 그늘에서 쉬며 보낸다.
-                    이 때문에 게으른 이미지가 강하다...
-                </p>
-                <div class="more_mom">
-                    <a href="#" class="more"><span class="ir">더보기</span></a>
-                    <span class="animal">
-                        <img src="img/animal.jpg" alt="동물박사">
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
                 </div>
             </article>
             <article class="card">
-                <div class="img1">
-                    <img src="img/card_bg03_03.jpg" alt="북극곰">
+                <figure class="card__header">
+                    <img src="img/card_bg03_02.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>용맹한 이미지와 달리 수컷 사자는 하루의 20시간을 그늘에서 쉬며 보낸다. 이 때문에 게으른 이미지가 강하지만, 이는 재생산 효율의 문제이며 본래 사냥 실력은 고양잇과답게 매우 뛰어나다. </p>
+
                 </div>
-                <h3 class="tit">동물의 종류는 다양합니다.
-                    동물은 육식동물, 초식동물 등등.</h3>
-                <p class="desc">
-                    북극 지방에 서식하는 곰. 현존하는 곰 중에서 가장 큰 곰이다.
-                    겉모습은 귀엽지만 무서운 맹수다...
-                </p>
-                <div class="more_mom">
-                    <a href="#" class="more"><span class="ir">더보기</span></a>
-                    <span class="animal">
-                        <img src="img/animal.jpg" alt="동물박사">
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
                 </div>
             </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03_03.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>북극 지방에 서식하는 곰. 현존하는 곰 중에서 가장 큰 곰이다.  겉모습은 귀엽지만 무서운 맹수이며, 발가락 사이에 물갈퀴가 있어서 헤엄도 기가 막히게 잘 친다</p>
+
+                </div>
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
+                </div>
+            </article>
+
+ 
+
+
+        </div>
+    </section>
 </body>
 
 </html>
