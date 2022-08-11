@@ -55,57 +55,57 @@
                         Float 방식 레이아웃은 구버전 익스플로어 등과의 호환을 위해 사용합니다.
                     </p>
                 <div class="t_code">
-                    <pre><code class="language-js">
-                        *{
-                            margin: 0;
-                            padding: 0;
-                        }
-                        #header{
-                            height: 100px;
-                            background-color: #B2DFDB;                      
-                        }
-                        #nav{
-                            background-color: #4DB6AC;
-                            height: 300px;
-                        }
-                        #section{
-                            background-color: #009688;
-                            height: 580px;
-                        }
-                        #footer{
-                            background-color: #00796B;
-                            height: 100px;
-                        }
-                        /*
-                            아이디/클래스
-                            #/.
-                            한번/두개 이상(중복)
-                            전체적인 틀, 스크립트-->id
-                            세부적인 영역, 반복 --> class
-                         */
-                         .container{
-                            width: 1200px;
-                            height: inherit;
-                            margin: 0 auto;
-                            background-color: rgba(0,0,0,0.3);
-                         }
-                         @media (max-width: 1220px){
-                            .container{
-                                width: 96%;
-                            }
-                         }
-                         @media (max-width: 768px){
-                            .container{
-                                width: 100%;
-                                
-                            }
-                         }
-                         @media (max-width: 480px){
-                            .container{
-                                width: 100%;
-                            }
-                         }
-                    </code></pre>
+<pre><code class="language-js">{
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #header{
+                height: 100px;
+                background-color: #B2DFDB;                      
+            }
+            #nav{
+                background-color: #4DB6AC;
+                height: 300px;
+            }
+            #section{
+                background-color: #009688;
+                height: 580px;
+            }
+            #footer{
+                background-color: #00796B;
+                height: 100px;
+            }
+            /*
+                아이디/클래스
+                #/.
+                한번/두개 이상(중복)
+                전체적인 틀, 스크립트-->id
+                세부적인 영역, 반복 --> class
+            */
+            .container{
+                width: 1200px;
+                height: inherit;
+                margin: 0 auto;
+                background-color: rgba(0,0,0,0.3);
+            }
+            @media (max-width: 1220px){
+                .container{
+                    width: 96%;
+                }
+            }
+            @media (max-width: 768px){
+                .container{
+                    width: 100%;
+                    
+                }
+            }
+            @media (max-width: 480px){
+                .container{
+                    width: 100%;
+            }
+}
+</code></pre>
                 </div>
                 <iframe height="300" style="width: 100%;" scrolling="no" title="layout04-float" src="https://codepen.io/kimdaewonn/embed/XWEawMO?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                     See the Pen <a href="https://codepen.io/kimdaewonn/pen/XWEawMO">
@@ -118,63 +118,63 @@
                          그래서 레이아웃을 만들 때 딱히 사용할게 없어서 쓰던 float나 inline-block 등을 이용한 기존 방식보다 훨씬 강력하고 편리한 기능들이 많은 편이다.
                     </p>
                 <div class="t_code">
-                    <pre><code class="language-js">
-                        *{
-                            margin: 0;
-                            padding: 0;
-                        }
-                        #header{
-                            height: 100px;
-                            background-color: #B2DFDB;
-                
-                
-                        }
-                        #nav{
-                            background-color: #4DB6AC;
-                            height: 300px;
-                
-                
-                        }
-                        #section{
-                            background-color: #009688;
-                            height: 580px;
-                
-                        }
-                        #footer{
-                            background-color: #00796B;
-                            height: 100px;
-                        }
-                        /*
-                            아이디/클래스
-                            #/.
-                            한번/두개 이상(중복)
-                            전체적인 틀, 스크립트-->id
-                            세부적인 영역, 반복 --> class
-                         */
-                         .container{
-                            width: 1200px;
-                            height: inherit;
-                            margin: 0 auto;
-                            background-color: rgba(0,0,0,0.3);
-                            display: flex;
-                            flex-wrap: wrap;
-                         }
-                         @media (max-width: 1220px){
-                            .container{
-                                width: 96%;
-                            }
-                         }
-                         @media (max-width: 768px){
-                            .container{
-                                width: 100%;
-                            }
-                         }
-                         @media (max-width: 480px){
-                            .container{
-                                width: 100%;
-                            }
-                         }
-                    </code></pre>
+<pre><code class="language-js">{
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #header{
+                height: 100px;
+                background-color: #B2DFDB;
+    
+    
+            }
+            #nav{
+                background-color: #4DB6AC;
+                height: 300px;
+    
+    
+            }
+            #section{
+                background-color: #009688;
+                height: 580px;
+    
+            }
+            #footer{
+                background-color: #00796B;
+                height: 100px;
+            }
+            /*
+                아이디/클래스
+                #/.
+                한번/두개 이상(중복)
+                전체적인 틀, 스크립트-->id
+                세부적인 영역, 반복 --> class
+            */
+            .container{
+                width: 1200px;
+                height: inherit;
+                margin: 0 auto;
+                background-color: rgba(0,0,0,0.3);
+                display: flex;
+                flex-wrap: wrap;
+            }
+            @media (max-width: 1220px){
+                .container{
+                    width: 96%;
+                }
+            }
+            @media (max-width: 768px){
+                .container{
+                    width: 100%;
+                }
+            }
+            @media (max-width: 480px){
+                .container{
+                    width: 100%;
+            }
+}
+</code></pre>
                 </div>
                 <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/poLpyzN?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                     See the Pen <a href="https://codepen.io/kimdaewonn/pen/poLpyzN">
@@ -187,71 +187,71 @@
                 <br>그리드 방식의 값들은 부모 요소에서 설정하면 자식요소에 적용된다.
             </p>
         <div class="t_code">
-            <pre><code class="language-js">
-                *{
-                    margin: 0;
-                    padding: 0;
+<pre><code class="language-js">{
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #header{
+                height: 100px;
+                background-color: #B2DFDB;
+                grid-area: header;
+            }
+            #nav{
+                background-color: #4DB6AC;
+                height: 300px;
+                grid-area: nav;
+                
+            }
+            #section{
+                background-color: #009688;
+                height: 580px;
+                grid-area: section;
+        
+            }
+            #footer{
+                background-color: #00796B;
+                height: 100px;
+                grid-area: footer;
+                
+            }
+            /*
+                아이디/클래스
+                #/.
+                한번/두개 이상(중복)
+                전체적인 틀, 스크립트-->id
+            세부적인 영역, 반복 --> class
+            */
+            .container{
+                width: 1200px;
+                height: inherit;
+                margin: 0 auto;
+                background-color: rgba(0,0,0,0.3);
+                grid-template-areas: 
+                "header header"
+                "nav nav"
+                "section section"
+                "footer footer"
+                ;
+                grid-template-columns: ;
+                grid-template-rows:100px 300px 580px 100px ;
+            }
+            @media (max-width: 1220px){
+                .container{
+                    width: 96%;
                 }
-                #header{
-                    height: 100px;
-                    background-color: #B2DFDB;
-                    grid-area: header;
+            }
+            @media (max-width: 768px){
+                .container{
+                    width: 100%;
                 }
-                #nav{
-                    background-color: #4DB6AC;
-                    height: 300px;
-                    grid-area: nav;
-                    
+            }
+            @media (max-width: 480px){
+                .container{
+                    width: 100%;
                 }
-                #section{
-                    background-color: #009688;
-                    height: 580px;
-                    grid-area: section;
-            
-                }
-                #footer{
-                    background-color: #00796B;
-                    height: 100px;
-                    grid-area: footer;
-                    
-                }
-                /*
-                    아이디/클래스
-                    #/.
-                    한번/두개 이상(중복)
-                    전체적인 틀, 스크립트-->id
-                    세부적인 영역, 반복 --> class
-                 */
-                 .container{
-                    width: 1200px;
-                    height: inherit;
-                    margin: 0 auto;
-                    background-color: rgba(0,0,0,0.3);
-                    grid-template-areas: 
-                    "header header"
-                    "nav nav"
-                    "section section"
-                    "footer footer"
-                    ;
-                    grid-template-columns: ;
-                    grid-template-rows:100px 300px 580px 100px ;
-                 }
-                 @media (max-width: 1220px){
-                    .container{
-                        width: 96%;
-                    }
-                 }
-                 @media (max-width: 768px){
-                    .container{
-                        width: 100%;
-                    }
-                 }
-                 @media (max-width: 480px){
-                    .container{
-                        width: 100%;
-                    }
-                 }
-            </code></pre>
+}
+</code></pre>
         </div>
         <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/RwMxaNO?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
             See the Pen <a href="https://codepen.io/kimdaewonn/pen/RwMxaNO">
