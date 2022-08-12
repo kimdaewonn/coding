@@ -1,49 +1,47 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;body&gt;
-        &lt;section id="cardType"class="card__wrap nexon section"&gt;
-            &lt;h2&gt;닭의 쓰임새&lt;/h2&gt;
-            &lt;p&gt;닭은 많은것을 나눠주는 유익한 생물 입니다.&lt;/p&gt;
-            &lt;div class="card__inner container"&gt;
-                &lt;article class="card"&gt;
-                    &lt;figure class="card__header"&gt;
-                        &lt;img src="img/card_bg01.jpg" alt="치킨"&gt;
-                    &lt;/figure&gt;
-                    &lt;div class="card__body"&gt;
-                        &lt;h3 class="tit"&gt;치킨&lt;/h3&gt;
-                        &lt;p class="desc"&gt;일반적인 닭튀김을 말하며 닭을 잘라 구운 것도 치킨이라고는 한다. 치킨 반죽을 어떻게 만들고 닭을 어떻게 튀기느냐에 따라서 맛의 차이가 상당하다. &lt;/p&gt;
-                        &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/article&gt;
-                &lt;article class="card"&gt;
-                    &lt;figure&gt;
-                        &lt;img src="img/card_bg02.jpg" alt="달걀"&gt;
-                    &lt;/figure&gt;
-                    &lt;div class="card__body"&gt;
-                        &lt;h3 class="tit"&gt;달걀&lt;/h3&gt;
-                        &lt;p class="desc"&gt;조리법에 따라 그 형태와 식감 등이 달라지기 때문에 특유의 약한 맛과 다양하게 뽑아낼 수 있는 비주얼이 여러 요리에 잘 어우러져 다양한 요리에 들어간다.&lt;/p&gt;
-                        &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/article&gt;
-                &lt;article class="card"&gt;
-                    &lt;figure&gt;
-                        &lt;img src="img/card_bg03.jpg" alt="삼계탕"&gt;
-                    &lt;/figure&gt;
-                    &lt;div class="card__body"&gt;
-                        &lt;h3 class="tit"&gt;삼계탕&lt;/h3&gt;
-                        &lt;p class="desc"&gt;삼계탕은 어린 닭에다가 찹쌀, 인삼, 대추, 밤, 황기 등을 넣고 푹 고아서 만든 닭 요리다. 한국의 대표적인 보양식으로 유명하며, 특히 복날에 주로 먹는 여름 보양식이다.&lt;/p&gt;
-                        &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/article&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-    &lt;/body&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 인코딩, 디코딩 함수
+        var encodeStr = '자바스크립트';
+        console.log(encodeURIComponent(encodeStr));
+        var decodeStr = encodeURIComponent(encodeStr);
+        console.log(decodeURIComponent(decodeStr));
+    // 숫자, 유한 무한 값 판별 함수
+        var num1 = '숫자';
+        if (!isNaN(num1)) {
+            console.log('숫자');
+        } else {
+            console.log('숫자아님');
+        }
+        var num2 = 1 / 0;
+        if (isFinite(num2)) {
+            console.log('유한값');
+        } else {
+            console.log('무한값');
+        }
+    // 숫자, 문자 변환 함수
+        var num3 = '10';
+        console.log(Number(num3));
+        var num4 = '100px';
+        console.log(parseInt(num4));
+        var num5 = '33.3%';
+        console.log(parseFloat(num5));
+        var num6 = 10;
+        console.log(typeof num6);
+        console.log(typeof String(num6));
+    // 자바스크립트 코드 변경 함수
+        var str1 = 'var num7 = 10';
+        var str2 = 'var num8 = 20';
+        eval(str1);
+        eval(str2);
+        console.log(num7 + num8);
+    </script>
+</body>
+</html>
