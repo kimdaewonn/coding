@@ -21,9 +21,15 @@
 
                 <hr> <!-- 구간나눔 -->
 
-                <h3 class="t_tit2">01. &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt;</h3>
+                <h3 class="t_tit2">01. &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;,
+                        &lt;article&gt;,&lt;aside&gt;</h3>
                 <br>
                 <table class="t_table">
+                    <colgroup>
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                        <col style="width: 70%;">
+                    </colgroup>
                     <thead>
                         <tr>
                             <th>요소 유형</th>
@@ -41,132 +47,114 @@
                         <tr>
                             <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다. </td>
                         </tr>
-                    <tr>
-                        <td rowspan="2" class="ce">&lt;section&gt;<br>
-                            &lt;/section&gt;</td>
-                        <td>1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며 섹션 주제에
-                            대한 제목 요소 (&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. 텍스트, 인라인 요소,  블록레벨 요소를 포함할 수 있습니다. </td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="ce">&lt;footer&gt;<br>
-                            &lt;/footer&gt;</td>
-                        <td>1. HTML 문서의 푸터 영역을 의미하는 태그로 섹션 작성자나 저작권에 대한 정보,
-                            관련된 문서의 링크를 포함할 수 있습니다.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다. </td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="ce">&lt;nav&gt;<br>
-                            &lt;/nav&gt;</td>
-                        <td>1. HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그입니다.</td>
-                    </tr>
-                    <tr>
-                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="ce">&lt;article&gt;<br>
-                            &lt;/article&gt;</td>
-                        <td>1. HTML 문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그
-                            포스팅 등을 의미하는 태그이며 제목 요소 (&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다. </td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="ce">&lt;aside&gt;<br>
-                            &lt;/aside&gt;</td>
-                        <td>1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며 HTML 문서의
-                            오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용됩니다.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
-                    </tr>
-                        
+                        <tr>
+                            <td rowspan="2" class="ce">&lt;section&gt;<br>
+                                &lt;/section&gt;</td>
+                            <td>1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며 섹션 주제에
+                                대한 제목 요소 (&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있습니다. </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">&lt;footer&gt;<br>
+                                &lt;/footer&gt;</td>
+                            <td>1. HTML 문서의 푸터 영역을 의미하는 태그로 섹션 작성자나 저작권에 대한 정보,
+                                관련된 문서의 링크를 포함할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없습니다. </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">&lt;nav&gt;<br>
+                                &lt;/nav&gt;</td>
+                            <td>1. HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그입니다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">&lt;article&gt;<br>
+                                &lt;/article&gt;</td>
+                            <td>1. HTML 문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그
+                                포스팅 등을 의미하는 태그이며 제목 요소 (&lt;h2&gt;~&lt;h6&gt;)를 포함하는 것이 좋습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다. </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">&lt;aside&gt;<br>
+                                &lt;/aside&gt;</td>
+                            <td>1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며 HTML 문서의
+                                오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용됩니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.</td>
+                        </tr>
                     </tbody>
                 </table>
 
+            <hr>
 
-                <h3 class="t_tit2">두번째제목 h3와 함께</h3>
-                <p class="t_desc2">
-                    화려한 정리
-                </p>
-                <p class="t_desc">
-                    기본 정리
-                </p>
-                <h3 class="t_tit2">두번째 제목 h3</h3>
-                <h4 class="t_tit3">작은제목 h4와함께</h4>
-                <p class="t_desc">
-                    화려하지 않은 글
-                </p>
-                <div class="t_box">
-                    밋밋한 박스
+            <h3 class="t_tit2">02. Figma로 구조 잡기</h3>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYwoF43XlFnRZ7PUFz6jk0X%2F%25EA%25B3%25BC%25EC%25A0%259C%25EC%259A%25A9%3Fnode-id%3D2%253A2" allowfullscreen></iframe>
                 </div>
-                <h4 class="t_tit3">작은제목 h4와함께</h4>
-                <p class="t_desc">
-                    자바스크립트는 <em>기울기!</em> 사용합니다.
-                </p>
 
-                <hr> <!-- 구간나눔 -->
+            <hr>
 
-                <h3 class="t_tit2">2제목 h3</h3>
-                <p class="t_desc">화려하지않은글.</p>
-
-                <!-- T테이블 -->
-
-                <table class="t_table">
-                    <thead>
-                        <tr>
-                            <th>분류/th>
-                            <th>메서드</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="ce">가운데 정렬</td>
-                            <td>prompt()</td>
-                        </tr>
-                        <tr>
-                            <td class="ce" rowspan="3">가운데정렬 +합치기</td>
-                            <td>document.write()</td>
-                        </tr>
-                        <tr>
-                            <td>alert()</td>
-                        </tr>
-                        <tr>
-                            <td>console.log()</td>
-                        </tr>
-                        <tr>
-                            <td class="ce">--</td>
-                            <td>confirm()</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <hr> <!-- 구간나눔 -->
-
-                <h3 class="t_tit2">두번째ㅣ h3</h3>
-                <p class="t_desc2">
-                    1. 화려해 연결하는 방법<br>
-                    2. 화려해 태그에 사용하는 방법<br>
-                    3. 화려해 직접 기술하는 방법 등이 있습니다.
-                </p>
-
-                <!-- 티코드 드라큘라 -->
-
-                <div class="t_code">
-                    <pre><code class="language-js">{
-    d
+            <h3 class="t_tit2">03. HTML</h3>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;구조 요소&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;&lt;a href=""&gt;반응형웹&lt;/a&gt;&lt;/h1&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;MENU01&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;MENU02&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;MENU03&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;MENU04&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;MENU05&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+        &lt;div id="container"&gt;
+            &lt;section&gt;
+                &lt;h2&gt;콘텐츠 그룹01&lt;/h2&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+                &lt;h2&gt;콘텐츠 그룹02&lt;/h2&gt;
+            &lt;/section&gt;
+            &lt;article&gt;
+                &lt;h2&gt;주요 기사&lt;/h2&gt;
+            &lt;/article&gt;
+            &lt;aside&gt;광고&lt;/aside&gt;
+        &lt;/div&gt;
+        &lt;footer&gt;
+            &lt;adress&gt;경기도 안산시     031)123-4567     eodnjs9605@gmail.com&lt;/adress&gt;
+            &lt;p&gt;COPYRIGHT ⓒ All rights reserved.&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
 }
 </code></pre>
+
+
                 </div>
+                <h4>결과</h4>
             </div>
         </div>
     </main>
