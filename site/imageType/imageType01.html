@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imageType01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .NexonLv1Gothic {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* blind : 접근성을 이유 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* imageType01 */
+        h1 {
+            font-size: 50px;
+            text-align: center;
+        }
+        .figure1 {
+            width: 570px;
+            height: 370px;
+            position: relative;
+            margin-right: 20px;
+        }
+        .h1_p {
+            font-size: 22px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 70px;
+
+        }
+        .tit {
+            position: absolute;
+            top: 525px;
+            color: #fff;
+            margin-left: 30px;
+            
+        }
+        .desc {
+            position: absolute;
+            color: #fff;
+            top: 555px;
+            margin-left: 30px;
+            line-height: 1.5;
+        }
+        .foot {
+            background-color: #3A2A2A;
+            width: 120px;
+            height: 38px;
+            position: absolute;
+            top: 595px;
+            margin-left: 30px;
+            color: #fff;
+            line-height: 38px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .image_container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imageType01" class="NexonLv1Gothic wrap section">
+        <h1>육식 동물들</h1>
+        <p class="h1_p">사납고 무서운 동물 리스트 입니다.</p>
+        <div class="all_container container">
+            <div class="image_container">
+                <article class="card">
+                    <figure class="figure1">
+                        <img src="img/image_bg01_01.jpg" alt="호랑이">
+                    </figure>
+                    <h2 class="tit">무서운 맹수 호랑이</h2>
+                    <p class="desc">호랑이는 무섭습니다. 무서운 맹수입니다. 호랑이는 사납습니다.<br>
+                        호랑이는 매우 위협적인 동물입니다. 만나면 도망가야합니다.</p>
+                    <a class="foot" href="#">자세히보기</a>
+                </article>
+                <article class="card">
+                    <figure class="figure1">
+                        <img src="img/image_bg01-02.jpg" alt="늑대">
+                    </figure>
+                    <h2 class="tit">사나운 맹수 늑대</h2>
+                    <p class="desc">늑대는 무섭습니다. 무서운 맹수입니다 늑대는 사납습니다.<br>
+                        늑대는 매우 위협적인 동물입니다. 만나면 도망가야 합니다.</p>
+                    <a class="foot" href="#">자세히보기</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

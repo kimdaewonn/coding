@@ -1,3 +1,8 @@
+:root {
+    --htmlColor : #223547;
+    --cssColor : #472222;
+    --javscriptColor : #224736;
+}
 * {
     margin: 0;
     padding: 0;
@@ -12,18 +17,32 @@ a {
     color: #223547;
     text-decoration: none;
 }
+li {
+    list-style: none;
+}
+
 /* header */
-#header {}
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header h1 {
+    margin: 10px;
+    font-family: 'Tmon';
+    font-size: 40px;
+}
 #header nav {
     margin: 10px;
 }
 #header nav li {
+    position: relative;
     display: inline;
+
 }
 #header nav li a {
     width: 30px;
     height: 30px;
-    border: 1px solid #223547;
+    border: 1px solid var(--htmlColor);
     border-radius: 50%;
     display: inline-block;
     text-align: center;
@@ -34,6 +53,23 @@ a {
     background-color: #223547;
     color: #fff;
 }
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub a {
+    width: auto;
+    background-color: transparent;
+    color: #223547;
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+} 
 /* main */
 #main {
     margin: 50px 10px;
@@ -61,6 +97,14 @@ a {
 .search__box {
     margin-bottom: 40px;
 }
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
 .search__box input {
     border: 2px solid #223547;
     padding: 15px 40px;
@@ -68,10 +112,13 @@ a {
     border-radius: 50px;
     font-size: 20px;
 }
+
 .search__list li {
-    list-style: none;
     text-align: left;
     line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
 }
 @media (max-width: 600px){
     .search__wrap {
