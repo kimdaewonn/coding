@@ -442,10 +442,7 @@
         const searchInfo = document.querySelector(".search__info .num")         //전체 갯수
 
         //속성 갯수 설정하기
-        for(let i = 0; i<=searchList.length; i++){
-        document.querySelector(".num").innerHTML=i
-        }
-
+        searchInfo.textContent = searchList.length;
 
         // searchList.forEach(el => {
         //     el.classList.add("show");
