@@ -27,7 +27,7 @@
     <!-- //header -->
     <main id="main">
         <div class="search__wrap">
-            <span>indexOf()를 이용하여 검색하기</span>
+            <span>indexOf()/search()를 이용하여 검색하기</span>
             <h1>CSS 속성 검색하기</h1>
 
             <div class="search__box">
@@ -111,6 +111,7 @@
             searchList.forEach(el => {
                 const cssName = el.dataset.name;    //forEach문을 이용하여 search__list의 el 순환
                 
+                //clip.indexOf(clip)
                 if(cssName.indexOf(searchWord)){    //searchWord(사용자 입력값)이 맞을 경우 indexOf가 0을 반환합니다.
                     el.classList.add("hide");       
                 } else {                            //0 은 false로
