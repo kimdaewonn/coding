@@ -121,24 +121,35 @@ body {
 }
 /* intro_menu */
 .intro_menu {
-    height: 10vw;
+    width: 50vw;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
     background: rgba(255,255,255,0.4);
-    padding: 1vw;
+    padding: 2vw;
     border-radius: 1vw;
     font-size: 1vw;
     text-align: center;
-    color: #8200c9;
+    color: #2222a4;
+    font-weight: bold;
 }
-.intro_menu li a {
-    color: #8200c9;
+.intro_menu li a{
+    display: inline-block;
+    padding: 5px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(101, 165, 222, 0.317);
+    border-radius: 20%;
+    color: #f5f5fa;
 }
-.intro_menu li a:hover {
-    text-decoration: underline;
+.intro_menu li:last-child a{
+    margin-bottom: 0;
+}
+.intro_menu li a:hover{
+    background-color: rgb(31, 0, 145);
+    color: #fff;
 }
 @media (max-width: 600px){
     .intro_menu {

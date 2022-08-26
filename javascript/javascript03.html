@@ -840,6 +840,102 @@
     </div>
 </div>
 <!-- //sample19 -->
+<div id="sample20" class="sample">
+    <h3> 20. 즉시 실행 함수</h3>
+        <p></p>
+        <div class="script">
+<pre><code class="language-js">
+{
+
+    (() =>{
+        document.write("함수실행");
+    })();
+
+}
+</code></pre>
+        </div>
+    <div class="result">
+    <details>
+        <summary>결과보기</summary>
+        <div class="sample20_result">
+            <script>
+                
+            (() =>{
+                document.write("함수실행");
+            })();
+
+            </script>
+        </div>
+    </details>
+    </div>
+</div>
+<!-- //sample20 -->
+<div id="sample21" class="sample">
+    <h3> 21. 파라미터함수</h3>
+        <p></p>
+        <div class="script">
+<pre><code class="language-js">
+{
+    // 파라미터함수
+    function func(str = "함수가 실행"){
+        document.write(str);
+    }
+    func();
+}
+</code></pre>
+        </div>
+    <div class="result">
+    <details>
+        <summary>결과보기</summary>
+        <div class="sample21_result">
+            <script>
+                            // 파라미터함수
+            function func(str = "함수가 실행"){
+                document.write(str);
+            }
+            func();
+            </script>
+        </div>
+    </details>
+    </div>
+</div>
+<!-- //sample21 -->
+<div id="sample22" class="sample">
+    <h3> 22. arguments 함수</h3>
+        <p></p>
+        <div class="script">
+<pre><code class="language-js">
+{
+
+    // auguments함수
+    function func(a, b){
+        document.write(arguments[0])
+        document.write(arguments[1])
+    }
+    func("함수가실행", "함수가 실행");
+}
+</code></pre>
+        </div>
+    <div class="result">
+    <details>
+        <summary>결과보기</summary>
+        <div class="sample22_result">
+            <script>
+    
+            // auguments함수
+            function func(a, b){
+                document.write(arguments[0])
+                document.write(arguments[1])
+            }
+            func("함수가실행", "함수가 실행");
+            </script>
+        </div>
+    </details>
+    </div>
+</div>
+<!-- //sample22 -->
+
+
 </div>
         </div>
     </main>
@@ -853,6 +949,25 @@
         hljs.highlightAll();
     </script>
         <script>
+            //즉시실행함수
+
+            // (() =>{
+            //     document.write("함수실행");
+            // })();
+
+            // 파라미터함수
+            // function func(str = "함수가 실행"){
+            //     document.write(str);
+            // }
+            // func();
+
+            // // auguments함수
+            // function func(a, b){
+            //     document.write(arguments[0])
+            //     document.write(arguments[1])
+            // }
+            // func("함수가실행", "함수가 실행");
+
             // // 선언적 함수
             // function func(){
             //     document.write("함수실행")
