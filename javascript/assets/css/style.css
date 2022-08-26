@@ -29,6 +29,12 @@ body {
 #header {
     border-bottom: 1px dashed #DCDCDC;
     padding-bottom: 40px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.603);
+    width: 100%;
+    backdrop-filter: blur(20px);
 }
 #main {
     padding: 40px 0;
@@ -38,6 +44,13 @@ body {
     padding: 40px 0;
     text-align: center;
 }
+/* container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 428px;
+}
 
 #footer a:hover {
     text-decoration: underline;
@@ -45,23 +58,27 @@ body {
 /* 헤더 영역 */
 #header h1 a {
     font-size: 60px;
-    font-weight: 700;
+    font-weight: 800;
+    color: #0243f1;
 }
 .header_nav ul li {
     display: inline;
 }
 .header_nav ul li.active a{
-    background-color: #000;
+    background-color: #102663;
     color: #fff;
+
 }
 .header_nav ul li a {
-    border: 1px solid #222;
+    border: 1px dashed #102663;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
+    color: #000;
+    background-color: #f5f5fa;
 }
 .header_nav ul li a:hover {
-    background-color: #000;
+    background-color: #102663;
     color: #fff;
 }
 .header_nav .study {
@@ -97,7 +114,45 @@ body {
 }
 .main_sample .result {
     margin-bottom: 80px;
+    margin-top: 10px;
+    background: #c1cdf3;
+    padding: 10px;
+    border-radius: 5px;
 }
+/* intro_menu */
+.intro_menu {
+    height: 10vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.4);
+    padding: 1vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+    color: #8200c9;
+}
+.intro_menu li a {
+    color: #8200c9;
+}
+.intro_menu li a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px){
+    .intro_menu {
+        width: 96%;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
+}
+
+
 /* sample */
 .sample {
     margin-bottom: 80px;
