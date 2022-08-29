@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .button{
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <button class="hi">나를 누르면 사라져용!</button>
-</body>
-<script>
-    const a=document.querySelector(".hi")
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const slider = document.querySelectorAll(".slider");
+        let currentIndex = 0;
 
-    a.addEventListener("click",()=>{
-        a.classList.add("button");
-    })
-</script>
-</html>
+        setInterval(() =&gt; {
+            currentIndex = (currentIndex + 1) % slider.length; 
+
+            gsap.to(".slider__inner", {
+                x : -800 * currentIndex
+            });
+        }, 2000);
+    &lt;/script&gt;
