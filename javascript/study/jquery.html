@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP</title>
+    <title>JQuery</title>
     <link rel="stylesheet" href="../assets/css/dracular.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -52,36 +52,35 @@
     <main id="main">
         <div class="main_menu">
             <div class="document">
-                <h2 class="t_tit">GSAP</h2>
+                <h2 class="t_tit">JQuery</h2>
                 <p class="t_box">
-                    <i>GSAP</i>에 대해 알아보는 시간을 가지도록 하겠습니다.<br>
-                    GSAP를 이용해서 애니메이션 효과를 줘보도록 하겠습니다.
+                    <i>JQuery</i>에 대해 알아보는 시간을 가지도록 하겠습니다.<br>
+                    JQuery를 이용해서 애니메이션 효과를 줘보도록 하겠습니다.
                 </p>
                 <hr> <!-- 구간나눔 -->
-                <h3 class="t_tit2">01. GSAP란?</h3>
+                <h3 class="t_tit2">01. JQuery란?</h3>
                 <p class="t_desc2">
-                    GSAP는 GrennSock에서 만든 자바스크립트 애니메이션 라이브러리 입니다.<br>
-                    일반적으로 애니메이션 효과는 CSS로 처리하거나 제이쿼리(JQuery)에서 제공하는 .animate()나 fadeIn(), SlideDown() 등으로
-                    구현하는 것이 일반적이다. 하지만 사람의 욕구는 끝이 없고 그 이상의 복잡한 애니메이션을 구현하려면 다른 도구의 힘을 빌려야 하는데
-                    GSAP가 그 중 하나입니다.<br>
-                    GSAP는 제이쿼리보다 훨씬 퍼포먼스가 좋고 사용법도 간단합니다 또한 훨씬 부드럽게 표현 가능합니다.
+                    제이쿼리는 자바스크립트 언어를 간편하게 사용할 수 있도록 단순화시킨 오픈 소스 기반의 자바스크립트 라이브러리입니다.<br>
+                    제이쿼리를 이용하면 문서 객체 모델(DOM)과 이벤트에 관한 처리를 손쉽게 구현할 수 있습니다.
+                    또한, Ajax 응용 프로그램 및 플러그인도 제이쿼리를 활용하여 빠르게 개발할 수 있습니다.
+                    직접 코드를 변경하고, 그 결과를 확인할 수 있는 온라인 에디터입니다.
                 </p>
                 <hr>      
                 <h3 class="t_tit2">02. 사용법</h3>
-                <p class="t_desc">CDN을 가져와 위에 깔아주고 시작합니다.</p>
+                <p class="t_desc">
+                    &lt;script src="https://ajax.googleapis.com/ajax/libs//3.6.0/.min.js"&gt;&lt;/script&gt;를 준비하고 사용합니다.
+                </p>
                 <div class="t_code">
 <pre><code class="language-js">{
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs//3.6.0/.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
-        const slider = document.querySelectorAll(".slider");
         let currentIndex = 0;
 
         setInterval(() =&gt; {
-            currentIndex = (currentIndex + 1) % slider.length; 
+            currentIndex = (currentIndex + 1) % $(".slider").length; 
 
-            gsap.to(".slider__inner", {
-                x : -800 * currentIndex
-            });
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({ left : -800 * currentIndex }, 600);
         }, 2000);
     &lt;/script&gt;
 }

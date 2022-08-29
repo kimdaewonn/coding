@@ -1,13 +1,15 @@
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        const slider = document.querySelectorAll(".slider");
-        let currentIndex = 0;
-
-        setInterval(() =&gt; {
-            currentIndex = (currentIndex + 1) % slider.length; 
-
-            gsap.to(".slider__inner", {
-                x : -800 * currentIndex
-            });
-        }, 2000);
-    &lt;/script&gt;
+&lt;main id="main"&gt;
+    &lt;section id="sliderType01"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg08-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg09-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg10-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
