@@ -1,29 +1,35 @@
 hljs.highlightAll();
-//탭 메뉴
-const SCbtn = document.querySelectorAll(".menu-bar > span")
-const SCbox = document.querySelectorAll(".content .main > div")
-SCbtn.forEach((el,i)=>{
-    el.addEventListener("click", (event)=>{
-        event.preventDefault();
-        SCbtn.forEach(li => {
-            li.classList.remove("active");
+
+        // 모달
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalClose = document.querySelector(".modal__close");
+        const modalCont = document.querySelector(".modal__content");
+        
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+            modalCont.classList.remove("hide");
         });
-        el.classList.add("active");
-        SCbox.forEach(span => {
-            span.style.display = "none" ;
-        })
-        SCbox[i].style.display = "block";
-    })
-});
-//나오게 하기
-const swichBtn = document.querySelector(".screen__btn");
-const SCcont = document.querySelector(".window");
-const SCclose = document.querySelector(".window .close");
-swichBtn.addEventListener("click", ()=> {
-    SCcont.classList.add("show");
-    SCcont.classList.remove("hide");
-});
-SCclose.addEventListener("click", ()=> {
-    SCcont.classList.add("hide");
-    SCcont.classList.remove("show")
-})
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+        });
+
+        // 탭 메뉴
+        const tabBtn = document.querySelectorAll(".modal__box .tabs > div");
+        const tabCont = document.querySelectorAll(".modal__box .content > div");
+
+        tabBtn.forEach((element, index) => {
+            element.addEventListener("click", (event) => {
+                event.preventDefault();
+
+                tabBtn.forEach(li => {
+                    li.classList.remove("active");
+                })
+                element.classList.add("active");
+
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+
+                tabCont[index].style.display = "block";
+            });
+        });
