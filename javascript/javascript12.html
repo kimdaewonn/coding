@@ -49,7 +49,7 @@
                 <div id="sample01" class="sample">
                     <h3></h3>
                     <p></p>
-                    <div class="table">
+                    <div class="table left">
                         <table>
                             <colgroup>
                                 <col>
@@ -67,7 +67,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="5">기본 선택자</td>
+                                    <td rowspan="5" class="ce">기본 선택자</td>
                                     <td>$("*")</td>
                                     <td>document.querySelector("*")</td>
                                     <td></td>
@@ -93,7 +93,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="4">계층 선택자</td>
+                                    <td rowspan="4" class="ce">계층 선택자</td>
                                     <td>$("div p")</td>
                                     <td>document.querySelector("div p")</td>
                                     <td></td>
@@ -114,7 +114,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="8">속성 선택자</td>
+                                    <td rowspan="8" class="ce">속성 선택자</td>
                                     <td>$("div[class]")</td>
                                     <td>-</td>
                                     <td></td>
@@ -154,6 +154,9 @@
                                     <td>-</td>
                                     <td></td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="table left">
                         <table>
@@ -165,7 +168,7 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <td rowspan="10">Dimensions</td>
+                                    <td class="ce" rowspan="10">Dimensions</td>
                                     <td>width()</td>
                                     <td>-</td>
                                     <td>요소의 가로(패딩/보더/마진 미포함)</td>
@@ -216,7 +219,7 @@
                                     <td>브라우저의 가로 값(스크롤바 미포함 / 포함)</td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="5">offset</td>
+                                    <td class="ce" rowspan="5">offset</td>
                                     <td>offset().top / offset().left</td>
                                     <td>offsetTop / offsetLeft</td>
                                     <td>요소의 좌표값(문서 기준)</td>
@@ -244,6 +247,7 @@
                             </tbody>
                         </table>
                     </div>
+
                         <div class="table left">
                             <table>
                                 <colgroup>
@@ -254,7 +258,7 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="5">CSS</td>
+                                        <td class="ce" rowspan="5">CSS</td>
                                         <td>css()</td>
                                         <td>.style</td>
                                         <td>CSS 설정</td>
@@ -282,7 +286,6 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
                     <!-- //main sample01 -->
 
                 </div>
