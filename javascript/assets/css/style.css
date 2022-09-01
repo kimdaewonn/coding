@@ -192,12 +192,85 @@ body {
     color: #000;
     cursor: help;
 }
+.sample .table.left tr td{
+    text-align: left;
+}
+
+.sample .table.left tr td.ce{
+    text-align: center;
+}
 .sample .box {
     background-color: #f5f5f5;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
     color: #666;
+}
+.sample .blue {
+    background-color: #95bce9;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    border: solid 1px #e6e6e6;
+    border-bottom: 0;
+    color: #fff;
+}
+.sample .view{
+    border: 1px solid #E6E6E6;
+    padding: 30px 20px 20px 20px;
+}
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #EDEDED;
+    border: 1px solid #4390E1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #4390E1;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #4390E1;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sResult {
+    text-align: center;
+    padding-top: 10px;
+}
+.sample .button {
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+    padding: 20px;
+    
+}
+.sample .button a {
+    border: 1px solid #4390e1;
+    color: #4390e1;
+    border-radius: 40px;
+    padding: 10px 25px;
+    display: inline-block;
+    margin: 5px;
+}
+.sample .button a:hover {
+    background-color: #4390e1;
+    color: #fff;
 }
 
 @media (max-width: 800px) {

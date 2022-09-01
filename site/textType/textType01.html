@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>textType01</title>
+    <title>Document</title>
     <style>
-        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+       /* fonts */
+       @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
         .nexon {
-            font-family: NexonLv1Gothic;
-            font-weight: 300;
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
         }
         /* reset */
         * {
@@ -37,17 +38,27 @@
             padding: 120px 0;
         }
         .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
             font-size: 22px;
             font-weight: 300;
             color: #666;
             text-align: center;
-            margin-bottom: 10px;
-        }
-        .section > p {
-            font-size: 50px;
-            line-height: 1;
-            text-align: center;
             margin-bottom: 70px;
+        }
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .mb70 {
+            margin-bottom: 70px !important;
         }
         /* textType */
         .text__inner {
@@ -55,116 +66,111 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        .img__box {
-            width: 60px;
-            height: 60px;
-            padding: 20px;
-        }
         .text {
-            width: 373px;
-            height: 260px;
-            background-color: #D9D9D9;
-            position: relative;
+            width: 32%;
+            margin-bottom: 2%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            transition: background 0.4s;
         }
-        .text:nth-child(1) {
-            margin-bottom: 20px;
+        .text:hover {
+            background: #f5f5f5;
         }
         .text__title {
             font-size: 24px;
+            line-height: 1;
             margin-bottom: 10px;
-            margin-left: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            padding-top: 75px;
         }
-        .text__desc {
+        .text__title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: url(img/text_icon.svg);
+        }
+        .text.t1 .text__title::before {
+            background-position: 0 0;
+        }
+        .text.t2 .text__title::before {
+            background-position: -60px 0;
+        }
+        .text.t3 .text__title::before {
+            background-position: -120px 0;
+        }
+        .text.t4 .text__title::before {
+            background-position: -180px 0;
+        }
+        .text.t5 .text__title::before {
+            background-position: -240px 0;
+        }
+        .text.t6 .text__title::before {
+            background-position: -300px 0;
+        }
+        .text__dsec {
             font-size: 18px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            color: #666;
+            font-weight: 300;
             line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            color: #666;
+            margin-bottom: 20px;
         }
-        .text__btn {
-            font-weight: 500;
-            margin-left: 20px;
+        .text_btn {
+            font-size: 16px;
+            line-height: 1;
+            text-decoration: underline;
+            text-underline-position: under;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <section id="textType01" class="text__wrap nexon section">
-        <h2>순하고 순둥한 동물들 리스트 입니다.</h2>
-        <p>초식 동물들</p>
+    <section id="textType" class="text__wrap nexon section">
+        <span>텍스트 유형01</span>
+        <h2 class="mb70">스크립트를 익히는 방법</h2>
         <div class="text__inner container">
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img01" src="img/img_bg01_01.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img02" src="img/img_bg01_02.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img03" src="img/img_bg01_03.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img04" src="img/img_bg01_04.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img05" src="img/img_bg01_05.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
-            <article class="text text1">
-                <figure class="img__box">
-                    <img class="img06" src="img/img_bg01_06.png" alt="메시지">
-                </figure>
-                <h3 class="text__title">초식 동물들</h3>
-                <p class="text__desc">
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                    초식동물초식동물초식동물초식동물초식동물
-                </p>
-                <a class="text__btn" href="#">더보기</a>
-            </article>
+            <div class="text t1">
+                <h3 class="text__title">검색 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t2">
+                <h3 class="text__title">퀴즈 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t3">
+                <h3 class="text__title">마우스 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t4">
+                <h3 class="text__title">슬라이드 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t5">
+                <h3 class="text__title">패럴랙스 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
+            <div class="text t6">
+                <h3 class="text__title">검색 이펙트</h3>
+                <p class=text__dsec>자바스크립트의 기본 메서드를 통해 검색 스크립트를 완성하는 튜토리얼입니다.</p>
+                <a class="text_btn" href="/">더보기</a>
+            </div>
         </div>
+        
     </section>
 </body>
 </html>
