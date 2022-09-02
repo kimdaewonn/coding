@@ -60,6 +60,7 @@
                     <span>z</span>
                 </div>
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
+                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
             </div>
             <div class="search__list">
                 <div class="html">
@@ -213,7 +214,7 @@
                         <li><strong>font-synthesis</strong> : font-synthesis 속성은 ㅇㅇㅇㅇㅇ</li>
                         <li><strong>font-variant</strong> : font-variant 속성은 글꼴에 대한 모든 글꼴 변형을 설정 합니다.</li>
                         <li><strong>font-variant-alternates</strong> : font-variant-alternates 속성은 대체 글리프의 사용을 제어합니다.</li>
-                        <li><strong>	font-variant-caps</strong> : font-variant-caps 속성은 문자에 대한 대체 글리프의 사용을 제어합니다.</li>
+                        <li><strong>font-variant-caps</strong> : font-variant-caps 속성은 문자에 대한 대체 글리프의 사용을 제어합니다.</li>
                         <li><strong>font-variant-east-asian</strong> : font-variant-east-asian 속성은 일본어 및 중국어와 같은 동아시아 스크립트에 대한 대체 글리프 사용을 제어합니다.</li>
                         <li><strong>font-variant-ligatures</strong> : font-variant-ligatures 속성은 텍스트 콘텐츠에 사용되는 합자 및 컨텍스트 형식을 제어합니다.</li>
                         <li><strong>font-variant-numeric</strong> : font-variant-numeric 속성은 숫자, 분수 및 서수 마커에 대한 대체 글리프의 사용을 제어합니다.</li>
@@ -462,7 +463,7 @@
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");        //알파벳
         const searchList = document.querySelectorAll(".search__list ul li");                //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");                    //전체 갯수
-
+        const searchInfo2 = document.querySelector(".search__info .num2");                  //찾은 갯수
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
         
@@ -482,6 +483,8 @@
                         el.classList.add("hide");
                     }
                 })
+                const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+                searchInfo2.textContent = searchList.length - hidingNum.length;
             });
         });
     

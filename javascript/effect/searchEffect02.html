@@ -37,6 +37,7 @@
             <div class="search__info">
                 <div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!</div>
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
+                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
             </div>
             <div class="search__list">
                 <div class="html">
@@ -440,9 +441,11 @@
        const searchBox = document.querySelector(".search__box input");         //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+        const searchInfo2 = document.querySelector(".search__info .num2");      //찾은 갯수          
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
+        
 
         //검색 영역
         searchBox.addEventListener("keyup", () => {
@@ -458,6 +461,10 @@
                     el.classList.add("hide");
                 }
             });
+
+            const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+            searchInfo2.textContent = searchList.length - hidingNum.length;
+
         });  
     </script>
 </body>
