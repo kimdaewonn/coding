@@ -466,7 +466,7 @@
             }
         }
         .link {
-            position: relative;
+            position: absolute;
             right: 30px;
             top: 30px;
             z-index: 100000;
@@ -476,7 +476,7 @@
             display: inline;
         }
         .link li a {
-            position: absolute;
+            display: inline-block;
             right: 30px;
             top: 30px;
             width: 30px;
@@ -496,7 +496,6 @@
         .link li a:hover {
             background: #fff;
             color: #0066ff;
-
         }
     </style>
 </head>
@@ -504,9 +503,9 @@
 <body>
     <div class="link">
         <ul>
-            <li><a href="https://dw9605.tistory.com/" target="_blank">t</a></li>
-            <li><a href="https://github.com/kimdaewonn/coding" >g</a></li>
-            <li><a href="https://codepen.io/your-work/">v</a></li>
+            <li><a href="https://dw9605.tistory.com/" target="blank">t</a></li>
+            <li><a href="https://github.com/kimdaewonn/coding" target="blank">g</a></li>
+            <li><a href="https://codepen.io/your-work/" target="blank">v</a></li>
         </ul>
     </div>
     <main>
