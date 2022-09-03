@@ -1,0 +1,23 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;toggleClass() 메서드&lt;/title&gt;
+  &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+  
+  &lt;script&gt;
+    $(document).ready(function() {
+        $("#m_menu a.m").click(function() {
+            $(this).next().addBack().toggleClass("on").end().find(".m, ul").
+            removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on");
+                return false;
+        });
+    });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
