@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
+    
+
+
+    <style>
+       @import url("https://fonts.googleapis.com/css?family=Inconsolata");
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *::after, *::before {
+    box-sizing: inherit;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inconsolata", monospace;
+  }
+  
+  .window {
+    min-width: 360px;
+    min-height: 220px;
+    background-color: #c7c7c7;
+    padding: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+  }
+  
+  .title-bar {
+    background-color: #000080;
+    padding: 4px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .title-bar > .minimize, .title-bar > .maximize, .title-bar > .close {
+    width: 26px;
+    height: 22px;
+    background-color: #c7c7c7;
+    margin-left: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .title-bar > .minimize:hover, .title-bar > .maximize:hover, .title-bar > .close:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
+  .title-bar > .minimize {
+    align-items: flex-end;
+  }
+  .title-bar > .minimize > .symbol {
+    width: 60%;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 2px;
+  }
+  .title-bar > .maximize > .symbol {
+    width: 70%;
+    height: 80%;
+    border: 2px solid #000000;
+    border-top-width: 4px;
+  }
+  .title-bar > .close > .symbol {
+    width: 70%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+  }
+  .title-bar > .close > .symbol::after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(90deg);
+  }
+  
+  .menu-bar > span {
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .menu-bar > span::first-letter {
+    text-decoration: underline;
+  }
+  .menu-bar > span:hover {
+    background-color: #bababa;
+  }
+  
+  .content-container {
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
+  .content-container > .content {
+    display: flex;
+    height: 260px;
+  }
+  .content-container > .content > .main, .content-container > .content > .scroll-left {
+    height: 100%;
+  }
+  .content-container > .content > .main {
+    width: calc(100% - 26px);
+  }
+  .content-container > .content > .scroll {
+    width: 26px;
+  }
+  
+  .scroll {
+    background-color: #D7D7D7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .scroll > .progress {
+    width: 24px;
+    height: 70%;
+    cursor: pointer;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+  }
+  .scroll > .progress:hover {
+    background-color: #bababa;
+  }
+  .scroll > .start, .scroll > .end {
+    width: 24px;
+    height: 22px;
+    position: relative;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+  }
+  .scroll > .start:hover, .scroll > .end:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
+  .scroll > .start::after, .scroll > .end::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 6px;
+    left: 4px;
+    border-top: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000000;
+  }
+  .scroll > .end::after {
+    transform: rotate(180deg);
+  }
+  .scroll.-row {
+    flex-direction: row;
+  }
+  .scroll.-row > .progress {
+    width: 30%;
+    height: 24px;
+  }
+  .scroll.-row > .start::after {
+    transform: rotate(-90deg);
+  }
+  .scroll.-row > .end::after {
+    transform: rotate(90deg);
+  } 
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a><em>주관식 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- //header -->
+
+    <main id="main">
+    <div class="quiz__wrap">
+        <div class="quiz">
+            <span class="quiz__type"></span>
+            <h2 class="quiz__question">
+                <span class="number"></span>
+                <div class="ask">
+                </div>
+            </h2>
+            <div class="quiz__view">
+                <div class="true">정답입니다!</div>
+                <div class="false">틀렸습니다!</div>
+                <div class="dog">
+                    <div class="head">
+                        <div class="ears"></div>
+                        <div class="face"></div>
+                        <div class="eyes">
+                            <div class="teardrop"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouth">
+                            <div class="tongue"></div>
+                        </div>
+                        <div class="chin"></div>
+                    </div>
+                    <div class="body">
+                        <div class="tail"></div>
+                        <div class="legs"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz__answer">
+                <input type="text" class="input" placeholder="정답을 적어주세요!">
+                <button class="confirm">정답확인하기</button>
+                <div class="result"></div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+
+    <div class="window">
+        <div class="title-bar">
+          <div class="minimize">
+            <div class="symbol"></div>
+          </div>
+          <div class="maximize">
+            <div class="symbol"></div>
+          </div>
+          <div class="close">
+            <div class="symbol"></div>
+          </div>
+        </div>
+        <div class="menu-bar"><span>File</span><span>Edit</span><span>View</span><span>Help</span></div>
+        <div class="content-container">
+          <div class="content">
+            <div class="main"></div>
+            <div class="scroll">
+              <div class="start"></div>
+              <div class="progress"></div>
+              <div class="end"></div>
+            </div>
+          </div>
+          <div class="scroll -row">
+            <div class="start"></div>
+            <div class="progress"></div>
+            <div class="end"></div>
+          </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
+    </footer>
+
+    <!-- //footer -->
+    <script>
+        //선택자
+        const quizType = document.querySelector(".quiz__type");                     //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__question .number");       //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask");             //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");       //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result");         //정답 결과
+        const quizInput = document.querySelector(".quiz__answer .input");           //사용자 정답
+        const quizView = document.querySelector(".quiz__view");                     //강아지
+
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = "2";
+        const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지를 통합 전략은 무엇인가요?";
+        let answerResult = "CIP";
+
+        //문제 출력
+        quizType.innerText = answerType;
+        quizNumber.innerText = answerNum + ". ";
+        quizAsk.innerText = answerAsk;
+        quizResult.innerText = "정답은 : " + answerResult + " 입니다.";
+
+        quizConfirm.addEventListener("click", function(){
+        })
+        //정답 숨기기
+        quizResult.style.display = "none";
+
+        //정답 확인   //정답버튼을 클릭했을 때
+        quizConfirm.addEventListener("click", () => {  
+            quizInput.style.display = "none";
+            quizResult.style.display = "block";
+            quizConfirm.style.display = "none";
+            
+            //사용자 정답
+            const userWord = quizInput.value.toLowerCase().trim(); //소문자,여백
+            answerResult = answerResult.toLowerCase().trim();
+
+            // console.log(userWord);
+            // console.log(quizResult);
+
+            //사용자 정답 == 문제 정답
+            if(userWord == answerResult){
+                //정답
+                quizView.classList.add("like");
+                // alert("정답입니다.")
+            } else {
+                //오답
+                quizView.classList.add("dislike");
+                // alert("오답입니다.")
+
+            }
+        });
+        
+
+            
+    </script>
+</body>
+
+</html>

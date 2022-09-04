@@ -1,185 +1,19 @@
-:root {
-    --htmlColor : #223547;
-    --cssColor : #472222;
-    --javscriptColor : #224736;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
-    color: #223547;
-}
-*, *:before, *:after {
-    box-sizing:border-box;
-}
-a {
-    color: #223547;
-    text-decoration: none;
-}
-li {
-    list-style: none;
-}
+<!DOCTYPE html>
+<html lang="ko">
 
-/* header */
-#header {
-    display: flex;
-    justify-content: space-between;
-}
-#header h1 {
-    margin: 10px;
-    font-family: 'Tmon';
-    font-size: 40px;
-}
-#header nav {
-    margin: 10px;
-}
-#header nav li {
-    position: relative;
-    display: inline;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
 
-}
-#header nav li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--htmlColor);
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'NexonLv1Gothic';
-}
-#header nav li.active a {
-    background-color: #223547;
-    color: #fff;
-}
-#header nav li .sub {
-    position: absolute;
-    left: 0;
-    top: 35px;
-    width: 400px;
-}
-#header nav li .sub a {
-    width: auto;
-    background-color: transparent;
-    color: #223547;
-    border: 0;
-    text-align: left;
-    line-height: 1.2;
-}
-#header nav li .sub li.active a {
-    text-decoration: underline;
-} 
-/* main */
-#main {
-    margin: 50px 10px;
-}
-.search__wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    border: 3px solid #223547;
-    border-radius: 20px;
-    background-color: #F1F3F6;
-    padding: 30px;
-    text-align: center;
-}
-.search__wrap > span {
-    font-size: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-.search__wrap > h1 {
-    font-family: 'Tmon';
-    color: #223547;
-    font-size: 6vw;
-    margin-bottom: 10px;
-}
-.search__box {
-    margin-bottom: 40px;
-}
-.search__box label {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-}
-.search__box input {
-    border: 2px solid #223547;
-    padding: 15px 40px;
-    width: 70%;
-    border-radius: 50px;
-    font-size: 20px;
-}
+    <link rel="stylesheet" href="../assets/css/quiz.css">
 
-.search__list li {
-    text-align: left;
-    line-height: 1.7;
-}
-.search__list li.hide {
-    display: none;
-}
-.search__list li.show {
-    display: block;
-}
-.search__info {
-    text-align: right;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--htmlColor);
-}
-.search__info .type {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword span {
-    border: 2px solid var(--htmlColor);
-    border-radius: 50px;
-    padding: 10px;
-    display: inline-block;
-    margin-bottom: 4px;
-}
-.search__info  .keyword span:hover {
-    background-color: var(--htmlColor);
-    color: #fff;
-    cursor:pointer;
-}
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
 
-@media (max-width: 600px){
-    .search__wrap {
-        padding: 20px;
-    }
-    .search__wrap > span {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    .search__wrap > h1 {
-        font-size: 44px;
-    }
-    .search__box input {
-        font-size: 16px;
-        padding: 12px 30px;
-    }
-}
-/* footer */
-#footer {
-    text-align: center;
-}
-#footer a {
-    color: #000;
-    font-family: 'NexonLv1Gothic';
-    padding-bottom: 50px;
-}
-#footer a:hover {
-    text-decoration: underline;
-}
-
-
+    <style>
+        
 /* modal__wrap */
 .modal__btn {
     color: #fff;
@@ -187,18 +21,15 @@ li {
     border-radius: 50px;
     display: inline-block;
     padding: 10px 20px;
-    position: fixed;
+    position: absolute;
     right: 20px;
     bottom: 20px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgb(28, 113, 240);
 }
 .modal__btn:hover {
-    background-color: rgb(161, 217, 241);
-    color: #fff;
+    background-color: #fff;
+    color: #3b3d63;
 }
 .modal__cont {
     width: 100%;
@@ -219,7 +50,6 @@ li {
     border-radius: 0.6rem;
     box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     transform: scale(0);
-    background-color: #000;
 }
 .modal__box .title {
     padding-inline: 1rem;
@@ -286,7 +116,6 @@ li {
 }
 .modal__box .title .tabs > div em {
     font-style: normal;
-    color: #fff;
 }
 .modal__box .title .tabs > div .favicon {
     margin-right: 0.4rem;
@@ -311,10 +140,10 @@ li {
     height: 100%;
 }
 .modal__close {
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 20px;
-    background-color: rgb(28, 113, 240);
+    background-color: #1f224a;
     padding: 1rem 1rem 0.8rem 1rem;
     border-radius: 5px;
     box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.698);
@@ -323,8 +152,7 @@ li {
     opacity: 0;
 }
 .modal__close:hover {
-    background-color:  rgb(161, 217, 241);
-    color: #fff;
+    background-color: #33377d;
 }
 .modal__close svg {
     color: #fff;
@@ -405,3 +233,110 @@ li {
         width: 96%;
     }
 }
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        
+        <h1>Quiz <em>정답 확인하기 유형</em></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- //header -->
+    <main id="main">
+    <div class="quiz__wrap">
+        <div class="quiz">
+            <span class="quiz__type"></span>
+            <h2 class="quiz__question">
+                <span class="number"></span>
+                <div class="ask">
+                </div>
+            </h2>
+            <div class="quiz__view">
+                <div class="dog">
+                    <div class="head">
+                        <div class="ears"></div>
+                        <div class="face"></div>
+                        <div class="eyes">
+                            <div class="teardrop"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouth">
+                            <div class="tongue"></div>
+                        </div>
+                        <div class="chin"></div>
+                    </div>
+                    <div class="body">
+                        <div class="tail"></div>
+                        <div class="legs"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz__answer">
+                <button class="confirm">정답확인하기</button>
+                <div class="result"></div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- //main -->
+    <footer id="footer">
+        
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title"></div>
+
+
+        <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
+    </footer>
+
+    <!-- //footer -->
+    <script>
+        //선택자
+        const quizType = document.querySelector(".quiz__type");                     //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__question .number");       //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask");             //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");       //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result");         //정답 결과
+        const quizDog = document.querySelector(".quiz__view .dog");                 //강아지
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = "1";
+        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+        const answerResult = "연변대비";
+
+        //문제 출력
+        quizType.innerText = answerType;
+        quizNumber.innerText = answerNum + ". ";
+        quizAsk.innerText = answerAsk;
+        quizResult.innerText = answerResult;
+
+        //정답 숨기기
+        quizResult.style.display = "none";
+
+        //정답 확인
+        //정답 버튼을 클릭하면 // 확인버튼 안보이게... 숨겨진 정답은 보이게...
+        //정답을 확인하면 강아지가 웃고 있어야 함 //클래스 like 추가함
+        quizConfirm.addEventListener("click", function(){
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
