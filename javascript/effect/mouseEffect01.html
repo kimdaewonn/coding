@@ -308,31 +308,27 @@
         //         cursor.classList.remove("style"+i); 
         //     });
         // }
-        // forEach 문
+        // forEach문
+        //   document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+        //     span.addEventListener("mouseover", () => {
+        //       cursor.classList.add("style" + (num+1));
+        //     });
+        //     span.addEventListener("mouseout", () => {
+        //       cursor.classList.remove("style" + (num+1));
+        //     });
+        //   });
+        // getAtrribute()
+            document.querySelectorAll(".mouse__wrap span").forEach((span) => {
+            let attr = span.getAttribute("class");
 
-        document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
-            e.addEventListener("mouseover", ()=>{
-                cursor.classList.add("style"+(i+1));
-            })
-            e.addEventListener("mouseout", ()=>{
-                cursor.classList.remove("style"+(i+1));
-            })
-        })
+            span.addEventListener("mouseover", () => {
+            cursor.classList.add(attr);
+            });
+            span.addEventListener("mouseout", () => {
+            cursor.classList.remove(attr);
+            });
+        });
 
-
-
-
-        //getAttribute()
-        // document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
-        //     let attr = span.getAttribute("class");
-            
-        //     e.addEventListener("mouseover", ()=>{
-        //         cursor.classList.add("attr"+(i+1));
-        //     })
-        //     e.addEventListener("mouseout", ()=>{
-        //         cursor.classList.remove("attr"+(i+1));
-        //     })
-        // })
         
     </script>
 </body>
