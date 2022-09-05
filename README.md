@@ -2,6 +2,7 @@
 
 ### 메인 페이지
 https://kimdaewonn.github.io/coding/index.html   
+https://kimdaewonn.netlify.app/   
 
 ### 자기소개 페이지
 https://kimdaewonn.github.io/coding/class/index.html   
