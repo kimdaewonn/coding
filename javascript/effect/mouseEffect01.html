@@ -108,7 +108,7 @@
         }
     </style>
 </head>
-<body class="img07">
+<body class="img10">
     <header id="header">
         <h1>Javascript Mouse Effect01</h1>
         <p>마우스 이펙트 - 마우스 따라다니기</p>
@@ -238,6 +238,7 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+        // 마우스 좌표
         window.addEventListener("mousemove", (event) => {
             document.querySelector(".clientX").innerText = event.clientX;
             document.querySelector(".clientY").innerText = event.clientY;
@@ -248,7 +249,7 @@
             document.querySelector(".screenX").innerText = event.screenX;
             document.querySelector(".screenY").innerText = event.screenY;
         });
-
+        // 따라다니게 하기
         const cursor = document.querySelector(".mouse__cursor");
 
         window.addEventListener("mousemove", (e) => {
