@@ -8,6 +8,7 @@
 body {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 body.img01 {
     background: #000 url(../img/effect_bg01@2x-min.jpg) no-repeat center / cover;
@@ -56,6 +57,9 @@ img {
 a {
     color: #fff;
     text-decoration: none;
+}
+li {
+    list-style: none;
 }
 
 /* scroll */

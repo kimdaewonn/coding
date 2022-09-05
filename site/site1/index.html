@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="assets/css/image.css">
     <link rel="stylesheet" href="assets/css/text.css">
     <link rel="stylesheet" href="assets/css/imgtext.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
 
-    
 </head>
 <body>
     <div id="skip">
@@ -59,11 +61,39 @@
     </header>
 >
         <!-- //headerType -->
-    <main id="mainType">
-        
-        <section id="sliderType" class="slider__wrap">
-            <h2>슬라이드 영역</h2>
-        </section>  <!-- //sliderType -->
+        <main id="mainType">
+            <section id="slideTyper" class="slider__wrap">
+                <h2 class="blind">슬라이드 영역</h2>
+                <div class="slider__inner">
+                    <div class="slider">
+                        <div class="slider__img">
+                            <div class="desc">
+                                <span>ARTIST</span>
+                                <h3>COLOR'S POWER</h3>
+                                <p>
+                                    색은 많은 의미를 내포하고 있습니다. <br> 함께 배워보시죠!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">정보 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__arrow">
+                            <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                            <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                        </div>
+                        <div class="slider__dot">
+                            <a href="#" class="dot active"><span class="ir">1</span></a>
+                            <a href="#" class="dot"><span class="ir">2</span></a>
+                            <a href="#" class="dot"><span class="ir">3</span></a>
+                            <a href="#" class="play"><span class="ir">플레이</span></a>
+                            <a href="#" class="stop"><span class="ir">정지</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // sliderType -->
         <section id="imageType01" class="image__wrap nexon section">
             <h2>육식 동물들</h2>
             <p>사납고 무서운 동물들 리스트 입니다.</p>
@@ -169,8 +199,16 @@
             </div>
         </section>
      <!-- //cardType -->
-        <section id="bannerType" class="banner__wrap">
-            <h2>배너 영역</h2>
+        <section id="bannerType" class="banner__wrap nexon">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">유튜버 웹보이</h3>
+                <p class="desc">
+                    더 다양한 강의는 유튜브를 통해 제공하고잇습니다.
+                    <a href="/" title="유튜브페이지로이동">youtube.com</a>
+                </p>
+                <span class="small">배너 유형01</span>
+            </div>
         </section> <!-- //bannerType -->
         <section id="textType" class="text__wrap nexon section">
             <span>텍스트 유형01</span>
@@ -213,8 +251,65 @@
     </main>
         <!-- //mainType -->
 
-    <footer id="footerType">
-        <h2>푸터 영역</h2>
+    <footer id="footerType" class="footer__wrap nexon section gray">
+        <h2 class-="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">반응형 사이트</a></li>
+                        <li><a href="/">패럴랙스 사이트</a></li>
+                        <li><a href="/">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="/">메뉴 유형01</a></li>
+                        <li><a href="/">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="/">슬라이드 유형01</a></li>
+                        <li><a href="/">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">이미지 유형01</a></li>
+                        <li><a href="/">이미지 유형02</a></li>
+                        <li><a href="/">이미지/텍스트 유형01</a></li>
+                        <li><a href="/">이미지/텍스트 유형02</a></li>
+                        <li><a href="/">텍스트 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">카드 유형01</a></li>
+                        <li><a href="/">카드 유형02</a></li>
+                        <li><a href="/">카드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">푸터 메뉴 유형01</a></li>
+                        <li><a href="/">푸터 컨텍트 유형02</a></li>
+                        <li><a href="/">푸터 이메일 유형03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                2022 Webstory. Portfolio is Power<br>
+                All rights reserved.
+            </div>
+        </div>
     </footer>
         <!-- //footerType -->
 </body>
