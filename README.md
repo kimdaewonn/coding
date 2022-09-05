@@ -1,7 +1,9 @@
 # coding
 
-### 메인 페이지
+### 메인 페이지1
 https://kimdaewonn.github.io/coding/index.html   
+
+### 메인 페이지2
 https://kimdaewonn.netlify.app/   
 
 ### 자기소개 페이지
