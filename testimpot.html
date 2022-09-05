@@ -1,45 +1,34 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>위치 관련 메서드</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    footer {
-      width: 500px;
-      height: 500px;
-      margin: 50px;
-      position: relative;
-      background: #ff6600;
-    }
-    #inner {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      left: 80px;
-      top: 50px;
-      background: #ccc;
-    }
-  </style>
-  <script src="jquery-3.3.1.min.js"></script>
-  
-  <script>
-    $(document).ready(function() {
-      console.log($("#inner").offset().left);
-      console.log($("#inner").offset().top);
-      console.log($("#inner").position().left);
-      console.log($("#inner").position().top);
-    });
-  </script>
-</head>
-<body>
-  <div id="outer">
-    <div id="inner">내용</div>
-  </div>
-</body>
-</html>
+&lt;body&gt;
+  &lt;section id="slideTyper" class="slider__wrap"&gt;
+      &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+      &lt;div class="slider__inner"&gt;
+          &lt;div class="slider"&gt;
+              &lt;div class="slider__img"&gt;
+                  &lt;div class="desc"&gt;
+                      &lt;span&gt;ANIMAL&lt;/span&gt;
+                      &lt;h3&gt;동물의 왕국&lt;/h3&gt;
+                      &lt;p&gt;
+                          동물의 왕국입니다
+                          
+                      &lt;/p&gt;
+                      &lt;div class="btn"&gt;
+                          &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                          &lt;a href="#" class="black"&gt;정보 보기&lt;/a&gt;
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="slider__arrow"&gt;
+                  &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                  &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+              &lt;/div&gt;
+              &lt;div class="slider__dot"&gt;
+                  &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                  &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                  &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                  &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                  &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/body&gt;

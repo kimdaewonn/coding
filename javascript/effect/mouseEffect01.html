@@ -256,6 +256,8 @@
             cursor.style.left = e.clientX - 25 + "px";
             cursor.style.top = e.clientY - 25 + "px";
         });
+        
+        // 노가다 방법
 
         // document.querySelector(".style1").addEventListener("mouseover", () => {
         //    cursor.classList.add("style1"); 
@@ -300,6 +302,7 @@
         // });
 
         // for문
+
         // for(let i=1; i<=6; i++){
         //     document.querySelector(".style"+i).addEventListener("mouseover", () => {
         //         cursor.classList.add("style"+i); 
@@ -308,7 +311,9 @@
         //         cursor.classList.remove("style"+i); 
         //     });
         // }
+
         // forEach문
+
         //   document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
         //     span.addEventListener("mouseover", () => {
         //       cursor.classList.add("style" + (num+1));
@@ -317,7 +322,9 @@
         //       cursor.classList.remove("style" + (num+1));
         //     });
         //   });
+
         // getAtrribute()
+
             document.querySelectorAll(".mouse__wrap span").forEach((span) => {
             let attr = span.getAttribute("class");
 
