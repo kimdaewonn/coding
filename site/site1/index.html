@@ -47,7 +47,7 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
+                    <li class="active"><a href="#">헤더 영역</a></li>
                     <li><a href="#">슬라이드 영역</a></li>
                     <li><a href="#">배너 영역</a></li>
                     <li><a href="#">컨텐츠 영역</a></li>
@@ -248,6 +248,21 @@
         </section>
      <!-- //textType -->
     </main>
+
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+        <div class="infoTop">
+            <ul>
+                <li>#section1 offset() : <span class="offset1">0</span>px</li>
+                <li>#section2 offset() : <span class="offset2">0</span>px</li>
+                <li>#section3 offset() : <span class="offset3">0</span>px</li>
+                <li>#section4 offset() : <span class="offset4">0</span>px</li>
+                <li>#section5 offset() : <span class="offset5">0</span>px</li>
+            </ul>
+        </div>
+    </aside>
+
+
         <!-- //mainType -->
 
     <footer id="footerType" class="footer__wrap nexon section gray">
@@ -305,14 +320,33 @@
                 </div>
             </div>
             <div class="footer__right">
-                2022 Webstory. Portfolio is Power<br>
+                2022 Kimdaewonn. Portfolio is Power<br>
                 All rights reserved.
             </div>
         </div>
     </footer>
         <!-- //footerType -->
         <script>
-            
+        const scroll = document.querySelector("#parallax__info .scroll span");
+
+            window.addEventListener("click",()=>{
+                let scrollTop = window.scrollY;
+
+                document.querySelectorAll(".header__menu").forEach((el,i) => {
+        if(scrollTop>=offsetTop -2){
+            document.querySelectorAll("header__menu ul li").forEach(li => {
+                li.classList.remove("active");
+            });
+            document.querySelector(".header__menu li:nth-child("+(i+1)+")").classList.add("active");
+        }
+    });
+
+
+    for(let i=1; i<=5; i++) {
+        document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+    }
+});
+
         </script>    
 </body>
 </html>
