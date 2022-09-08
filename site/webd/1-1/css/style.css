@@ -3,125 +3,71 @@
     margin: 0;
     padding: 0;
 }
-
+li {
+    list-style: none;
+}
 a {
+    color: #333;
     text-decoration: none;
 }
-
+.clearfix::before, .clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
 /* layout */
 #wrap {
-    width: 960px;
+    width: 1000px;
+    height: 1000px;
     margin: 0 auto;
-  
 }
-/* header */
 #header {
-    width: 960px;
     height: 100px;
-    overflow: hidden;
-    position: relative;
 }
-#header .logo {
+
+/* header */
+#header h1{
     float: left;
-    padding: 20px;
+    padding-top: 5px;
+}
+#header h1 img{
+    width: 130px;
 }
 #header .nav {
     float: right;
 }
-#header .nav li {
-    display: inline;
-}
-#header .nav li a {
-    display: inline-block;
-    padding: 30px;
-    color: #222328;
-    font-size: 18px;
-}
-.logo1 img{
-    width: 70px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 20px;
-
-}
-/* section */
-
-/* slider */
-#slider {
+#header .nav ul{}
+#header .nav li{
+    float: left;
     
 }
-.slider1 img{
-    width: 960px;
-    height: 300px;
-    margin-bottom: 20px;
-}
-/* text */
-.text {
-    overflow: hidden;
-}
-.text1 {
-    width: 48%;
-    height: 300px;
-    float: left;
-}
-.text2 {
-    width: 48%;
-    height: 300px;
-    float: left;
-
-}
-.text__head {
-}
-.notice {
-    float: left;
+#header .nav li a {
+    display: block; padding: 30px 15px;
 }
 
-.news {
-    display: inline;
+#banner {}
+#banner img {
     width: 100%;
-    white-space: normal;
 }
-.news:nth-child(1) {
-    border-right: solid 1px #000;
-    padding-right: 20px;
+#content1 {
+    margin-top: 15px;
 }
-.more_big {
-    float: right;
-}
-.m {
-    display: inline;
-}
-.more {
-    border-radius: 100%;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-}
-
-.cont {
-    overflow: hidden;
-
-}
-.dd1 {
+#content1 .notice {
     float: left;
-    padding: 5px;
+    width: 49%;
+    background: #ccc;
+    margin-right: 2%;
+    height: 200px;
 }
-.dd2 {
-    float: right;
-    padding:5px
+#content1 .ad {
+    float: left;
+    width: 49%;
+    background: #444;
+    margin-right: 0;
 }
-/* footer */
-.big {
-    display: flex;
-    justify-content: space-between;
+#content1 .ad img {
+    width: 100%;
+    display: block;
 }
-.small {
-    width: 220px;
-    height: 220px;
-    background: url(image)
-}
+#content2 {}
+#footer {}

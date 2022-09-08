@@ -1,0 +1,16 @@
+/* layout */
+* {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    width: 1000px;
+    height: 1000px;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+#header {}
+#banner {}
+#content1 {}
+#content2 {}
+#footer {}
