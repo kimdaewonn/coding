@@ -56,20 +56,74 @@ a {
 #content1 .notice {
     float: left;
     width: 49%;
-    background: #ccc;
+    border: 1px solid #ccc;
     margin-right: 2%;
     height: 220px;
+    box-sizing: border-box;
 }
 #content1 .ad {
     float: left;
     width: 49%;
-    background: #444;
     margin-right: 0;
 }
 #content1 .ad img {
     width: 100%;
     display: block;
 }
+/* notice */
+.notice {
+    padding: 30px;
+    position: relative;
+}
+.notice ul {
+
+}
+.notice ul li {
+    float: left;
+    margin-right: 20px;
+}
+.notice ul li a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+}
+.notice ul li.active a{
+    color: #000;
+}
+.notice ul li ul {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+    float: none;
+    width: 100%;
+}
+.notice ul li ul li {
+    width: 100%;
+    padding: 5px 0;
+}
+.notice ul li ul li a {
+    float: left;
+    font-size: 18px;
+    color: #333;
+    font-weight: normal;
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+   
+}
+.notice ul li ul li span {
+    float: right;
+    width: 25%;
+}
+.notice .more {
+    position: absolute;
+    right: 30px;
+    top: 35px;
+}
+
+
+
 /* content2 */
 #content2 {
     margin-top: 25px;
@@ -133,4 +187,28 @@ a {
 #footer address p{
     text-transform: uppercase;
     padding-top: 30px;
+}
+
+/* layer */
+.layer {
+    display: none;
+    width: 500px;
+    height: 500px;
+    background: #ccc;
+    border: 2px solid #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+    transform: translate(-50%,-50%);
+}
+.layer h2 {
+    padding: 20px;
+    font-size: 30px;
+}
+.layer .close {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 20px;
 }
