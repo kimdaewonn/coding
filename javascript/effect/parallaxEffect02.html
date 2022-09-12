@@ -447,6 +447,7 @@
       document.querySelectorAll("#parallax__dot a").forEach(el => {
         el.addEventListener("click", e => {
             e.preventDefault();
+            // 이동 막음
 
           document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
         })
@@ -454,11 +455,12 @@
 
     window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-            
+            // 스크롤바 현재 위치 scrollTop에 저장
         document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
-
+            // 소수점 제거
         document.querySelectorAll(".content__item").forEach((e,i)=>{
             if(scrollTop >= e.offsetTop - 10){
+                // 오차 고려
                 document.querySelectorAll("#parallax__dot li").forEach(li => {
                     li.classList.remove("active")
                 });

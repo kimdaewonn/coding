@@ -435,61 +435,64 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+         window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
 
-    window.addEventListener("scroll", ()=>{
+              // 01
+              // if(scrollTop > 0) {
+              //   document.querySelector("#parallax__nav").classList.add("show");
+              // } else {
+              //   document.querySelector("#parallax__nav").classList.remove("show");
+              // }
 
-        let scrollTop = window.scrollY;
-        document.querySelector("#parallax__info span").innerText=Math.ceil(scrollTop);
+              // 02
+              // top 버튼 보여주기/안보여주기
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
 
-        if(scrollTop>0){
-            document.querySelector("#parallax__nav").classList.add("show");
-        } else {
-            document.querySelector("#parallax__nav").classList.remove("show");
-        }
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              // 소수점 제거
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+            });
 
 
+            // 03 트리거
+            let nowScroll = true;
+            let lastScroll = 0;
 
-    })
-     
+            function scrollProgress() {
+              nowScroll = true;
+
+              setInterval(() => {
+                if(nowScroll) {
+                  nowScroll = false;
+                  hasScroll();
+                }
+              }, 300)
+            }
+            // scrollTop < lastScroll 스크롤 올리고있다.
+            // scrollTop > lastScroll 스크롤 내리고있다.
+            function hasScroll() {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            // 스크롤을 올릴때 메뉴바를 보여주고, 내릴때 숨긴다.
+              if(scrollTop < lastScroll) {
+                document.querySelector("#parallax__nav").classList.add("show");
+              } else {
+                document.querySelector("#parallax__nav").classList.remove("show");
+              }
+              lastScroll = scrollTop;
+            }
+
+            window.addEventListener("scroll", scrollProgress);
     </script>
 </body>
 </html>
 
 
-<!-- 
-//02
-window.addEventListener("scroll", ()=>{
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-    if(scrollTop + window.innerHeight >= document.body.scrollHeight){
-        document.querySelector("#parallax__top").classList.add("show")
-    }else {
-        document.querySelector("#parallax__top").classList.remove("show")
-    }
-})
-document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop)
-})
-document.querySelector("#parallax__top").addEventListener("click", ()=>{
-window.scrollTo({left: 0, top: 0, behavior: "smooth"});
-})
-//03
-let nowScroll = true;  //실행 : 트리거 변수라고 부름
-let lastScroll = 0;
-function scrollProgress(){
-    nowScroll = true;
-    setInterval(()=>{
-        if(nowScroll){
-            nowScroll = false;
-            hasScroll();
-        }
-    }, 300)
-}
-function hasScroll(){       // hasScroll에 일단
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-    if(scrollTop < lastScroll){ //현재 스크롤 값이 이전 스크롤 값보다 작다면
-        document.querySelector("#parallax__nav").classList.add("show")
-    } else {
-        document.querySelector("#parallax__nav").classList.remove("show")
-    }
-    lastScroll = scrollTop; // 지금 현재 스크롤 값을 이전 스크롤 값에 넣은 뒤
-}
-window.addEventListener("scroll",scrollProgress); -->
