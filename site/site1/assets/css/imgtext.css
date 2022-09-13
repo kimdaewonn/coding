@@ -1,3 +1,4 @@
+/* imgTextType */
 .imgText__inner {
     display: flex;
     justify-content: space-between;
@@ -15,17 +16,17 @@
     margin-bottom: 20px;
    }
    .imgText__txt h3 {
-    font-size: 50px;
-    font-weight: 300;
+    font-size: 47px;
+    font-weight: 400;
     word-break: keep-all;
     line-height: 1.4;
     margin-bottom: 20px;
     margin-top: 20px;
    }
    .imgText__txt p {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #666;
     margin-bottom: 10px;
    }
