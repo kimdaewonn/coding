@@ -22,3 +22,11 @@
     color:#666;
     line-height: 1.5;
 }
+@media(max-width: 768px){
+    .footer__menu {
+        width: 65%;
+    }
+    .footer__right {
+        margin-right: 500px;
+    }
+}

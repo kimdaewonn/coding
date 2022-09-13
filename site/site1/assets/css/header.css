@@ -55,3 +55,37 @@
     margin-right: 10px;
     background: #B5FF6B;
 }
+figure {
+    width: 30px;
+    height: 30px;
+    margin-left: 100px;
+}
+/* 미디어 */
+@media(max-width: 1220px){
+    .header__menu{
+        width: 45%;
+    }
+    .header__member{
+        width: 35%;
+    }
+}
+@media(max-width: 768px){
+    .header__logo{
+        font-size: 20px;
+    }
+    .header__menu{
+        font-size:12px;
+        width: 70%;
+    }
+    .header__member{
+        width: 40%;
+
+    }
+    .header__member a{
+        font-size: 10px;
+        padding: 10px;
+    }
+    figure {
+        margin-left: 20px;
+    }
+}
