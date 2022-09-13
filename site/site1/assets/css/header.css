@@ -55,11 +55,15 @@
     margin-right: 10px;
     background: #B5FF6B;
 }
-figure {
+.figure1 {
     width: 30px;
     height: 30px;
     margin-left: 100px;
 }
+.header__menu2 {
+display: none;
+}
+
 /* 미디어 */
 @media(max-width: 1220px){
     .header__menu{
@@ -85,7 +89,7 @@ figure {
         font-size: 10px;
         padding: 10px;
     }
-    figure {
+    .figure1 {
         margin-left: 20px;
     }
 }
