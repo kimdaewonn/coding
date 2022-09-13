@@ -126,10 +126,20 @@
             margin-right: 10px;
             background: #B5FF6B;
         }
+        /* 블라인드 효과 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
     </style>
 </head>
 <body>
     <section id="headerType" class="header__wrap nexon">
+        <h2 class="blind">푸터 영역</h2>     
         <div class="header__inner">
             <div class="header__logo">
                 <a href="#">간식박스</a>
