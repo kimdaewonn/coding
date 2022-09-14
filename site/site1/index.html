@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="assets/css/banner.css">
     <link rel="stylesheet" href="assets/css/text.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <style>
+        #headerType {display: none;}
+    </style>
 
 </head>
 <body>
@@ -69,14 +75,13 @@
                 <a href="#"><img src="assets/img/ham.png" alt="메뉴바"></a>
             </figure>
         </div>
-        <a href="#" class="ham"></a>
     </header>
         <!-- //headerType -->
         <main id="mainType">
             <section id="slideTyper" class="slider__wrap">
                 <h2 class="blind">슬라이드 영역</h2>
                 <div class="slider__inner">
-                    <div class="slider">
+                    <!-- <div class="slider">
                         <div class="slider__img">
                             <div class="desc">
                                 <span>SNACKBOX</span>
@@ -103,10 +108,60 @@
                             <a href="#" class="stop"><span class="ir">정지</span></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="desc">
+                                <span>SNACKBOX</span>
+                                <h3>에너지가 필요할 때</h3>
+                                <p>
+                                    에너지가 부족한 당신!! 식사를 하기에는<br>
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">정보 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="swiper-slide">
+                            <div class="desc">
+                                <span>SNACKBOX</span>
+                                <h3>에너지가 필요할 때</h3>
+                                <p>
+                                    에너지가 부족한 당신!! 식사를 하기에는<br>
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">정보 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="swiper-slide">
+                            <div class="desc">
+                                <span>SNACKBOX</span>
+                                <h3>에너지가 필요할 때</h3>
+                                <p>
+                                    에너지가 부족한 당신!! 식사를 하기에는<br>
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">정보 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
             </section>
             <!-- // sliderType -->
-            <section id="imageType01" class="image__wrap nexon section target">
+            <section id="imageType" class="image__wrap nexon section target">
                 <h2 class="blind">이미지 영역</h2>
                 <h2>간식박스의 특별함</h2>
                 <p>신선도, 영양, 균형, 가공단계까지 고려한 간식 = 식품입니다.</p>
@@ -158,7 +213,7 @@
         </div>
     </section>
      <!-- //imgTextType -->
-     <section id="cardType01"class="card__wrap nexon section target">
+     <section id="cardType"class="card__wrap nexon section target">
         <h2 class="blind">카드 영역</h2>
         <h2>도시락 부터 샐러드 까지</h2>
         <p>신선한 품질과 좋은 식사를 합리적인 가격으로 만나볼 기회!!</p>
@@ -384,58 +439,20 @@
             </div>
         </footer>
             <!-- //footerType -->
-    <script>
-       // 헤더 메뉴
-       document.querySelectorAll('.header__menu2 li a').forEach((li) => {
-            li.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute('href')).scrollIntoView({
-                    behavior: "smooth",
-                });
+            <script src="assets/js/swiper.min.js"></script>
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                cssMode: true,
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                el: ".swiper-pagination",
+                },
+                mousewheel: true,
+                keyboard: true,
             });
-        });
-        // 탑버튼
-        const top__btn = document.querySelector('#top__btn');
-        top__btn.addEventListener('click', () => {
-            window.scrollTo({left : 0, top : 0, behavior : "smooth"});
-        });
-
-        // scroll active
-        const section = document.querySelectorAll('.target');
-
-        window.addEventListener('scroll', () => {
-            // 탑 버튼
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-            if (scrollTop > (document.documentElement.scrollHeight - window.innerHeight) - 200) {
-                top__btn.classList.add('show');
-            }
-            else {
-                top__btn.classList.remove('show');
-            }
-
-            // active
-            section.forEach((element, index) => {
-                if(scrollTop >= element.offsetTop - 1) {
-                    document.querySelectorAll('.header__menu2 li').forEach((li) => {
-                        li.classList.remove('active');
-                    });
-
-                    document.querySelector(`.header__menu2 li:nth-child(${index+1})`).classList.add('active');
-                }
-            });
-        });
-        // 햄버거 메뉴
-        const ham = document.querySelector('.ham');
-                const menu = document.querySelector('.header__menu2');
-
-                ham.addEventListener('mouseover', (e) => {
-                    menu.classList.add('show');
-                });
-
-                menu.addEventListener('mouseleave', (e) => {
-                    menu.classList.remove('show');
-                });
-    </script>  
+            </script>
 </body>
 </html>
