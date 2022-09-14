@@ -29,10 +29,8 @@
             <hr> <!-- 구간나눔 -->
             <h3 class="t_tit2">02. HTML</h3>
             <div class="t_desc2">
-                <p> 피그마 구도에 맞게 틀을 잡아줍니다.
-                </p>
+                헤더, 슬라이드, 이미지, 이미지/텍스트 카드, 배너, 텍스트, 푸터 순으로 배치합니다.
             </div>
-
             <div class="result">
                 <details>
                     <summary>코드 보기</summary>
@@ -59,17 +57,12 @@
             &lt;/div&gt;
             &lt;div class="header__menu"&gt;
                 &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;스낵 박스&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;키친 박스&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;스토리&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;ul class="header__menu2"&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;에너지 보충&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;영양식&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;24시간&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;식사&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;키친 박스&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;간식박스 설치&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="active"&gt;&lt;a href="#slideTyper"&gt;에너지 보충&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#imageType"&gt;영양식&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#imgTextType"&gt;24시간&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#cardType"&gt;식사&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#bannerType"&gt;키친 박스&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#textType"&gt;간식박스 설치&lt;/a&gt;&lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/div&gt;
             &lt;div class="header__member"&gt;
@@ -80,14 +73,13 @@
                 &lt;a href="#"&gt;&lt;img src="assets/img/ham.png" alt="메뉴바"&gt;&lt;/a&gt;
             &lt;/figure&gt;
         &lt;/div&gt;
-        &lt;a href="#" class="ham"&gt;&lt;/a&gt;
     &lt;/header&gt;
         &lt;!-- //headerType --&gt;
         &lt;main id="mainType"&gt;
             &lt;section id="slideTyper" class="slider__wrap"&gt;
                 &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
                 &lt;div class="slider__inner"&gt;
-                    &lt;div class="slider"&gt;
+                    &lt;!-- &lt;div class="slider"&gt;
                         &lt;div class="slider__img"&gt;
                             &lt;div class="desc"&gt;
                                 &lt;span&gt;SNACKBOX&lt;/span&gt;
@@ -114,10 +106,60 @@
                             &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/div&gt;
+                &lt;/div&gt; --&gt;
+                    &lt;div class="swiper mySwiper"&gt;
+                        &lt;div class="swiper-wrapper"&gt;
+                          &lt;div class="swiper-slide"&gt;
+                            &lt;div class="desc"&gt;
+                                &lt;span&gt;SNACKBOX&lt;/span&gt;
+                                &lt;h3&gt;에너지가 필요할 때&lt;/h3&gt;
+                                &lt;p&gt;
+                                    에너지가 부족한 당신!! 식사를 하기에는&lt;br&gt;
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                &lt;/p&gt;
+                                &lt;div class="btn"&gt;
+                                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                                    &lt;a href="#" class="black"&gt;정보 보기&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                          &lt;div class="swiper-slide"&gt;
+                            &lt;div class="desc"&gt;
+                                &lt;span&gt;SNACKBOX&lt;/span&gt;
+                                &lt;h3&gt;에너지가 필요할 때&lt;/h3&gt;
+                                &lt;p&gt;
+                                    에너지가 부족한 당신!! 식사를 하기에는&lt;br&gt;
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                &lt;/p&gt;
+                                &lt;div class="btn"&gt;
+                                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                                    &lt;a href="#" class="black"&gt;정보 보기&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                          &lt;div class="swiper-slide"&gt;
+                            &lt;div class="desc"&gt;
+                                &lt;span&gt;SNACKBOX&lt;/span&gt;
+                                &lt;h3&gt;에너지가 필요할 때&lt;/h3&gt;
+                                &lt;p&gt;
+                                    에너지가 부족한 당신!! 식사를 하기에는&lt;br&gt;
+                                    애매하고 출출해서 무언가 먹고 싶지 않나요?                            
+                                &lt;/p&gt;
+                                &lt;div class="btn"&gt;
+                                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                                    &lt;a href="#" class="black"&gt;정보 보기&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+                        &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+                        &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
             &lt;/section&gt;
             &lt;!-- // sliderType --&gt;
-            &lt;section id="imageType01" class="image__wrap nexon section target"&gt;
+            &lt;section id="imageType" class="image__wrap nexon section target"&gt;
                 &lt;h2 class="blind"&gt;이미지 영역&lt;/h2&gt;
                 &lt;h2&gt;간식박스의 특별함&lt;/h2&gt;
                 &lt;p&gt;신선도, 영양, 균형, 가공단계까지 고려한 간식 = 식품입니다.&lt;/p&gt;
@@ -169,7 +211,7 @@
         &lt;/div&gt;
     &lt;/section&gt;
      &lt;!-- //imgTextType --&gt;
-     &lt;section id="cardType01"class="card__wrap nexon section target"&gt;
+     &lt;section id="cardType"class="card__wrap nexon section target"&gt;
         &lt;h2 class="blind"&gt;카드 영역&lt;/h2&gt;
         &lt;h2&gt;도시락 부터 샐러드 까지&lt;/h2&gt;
         &lt;p&gt;신선한 품질과 좋은 식사를 합리적인 가격으로 만나볼 기회!!&lt;/p&gt;
@@ -319,20 +361,13 @@
         &lt;/section&gt;
     
      &lt;!-- //textType --&gt;
-     &lt;div id="top__btn"&gt;TOP&lt;/div&gt;
+     &lt;div id="parallax__top"&gt;
+        Top
+    &lt;/div&gt;
     &lt;/main&gt;
 
     &lt;aside id="parallax__info"&gt;
         &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-        &lt;div class="infoTop"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-                &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-                &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-                &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-                &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
     &lt;/aside&gt;
         &lt;!-- //mainType --&gt;
 
@@ -397,14 +432,11 @@
     &lt;/body&gt;
 }
 </code></pre>
-                </div>
-                    </div>
-                </details>
             </div>
             <hr> <!-- 구간나눔 -->
             <h3 class="t_tit2">03. CSS</h3>
             <p class="t_desc2">
-                자세한 css는 소스보기를 참고해주세요.
+                자세한 CSS는 하단에 원본 소스 보기 버튼을 클릭해서 깃허브에서 확인해주세요!
             </p>
             <div class="t_code">
 <pre><code class="language-html">{
@@ -412,7 +444,7 @@
     &lt;link rel="stylesheet" href="assets/css/fonts.css"&gt;
     &lt;link rel="stylesheet" href="assets/css/reset.css"&gt;
     &lt;link rel="stylesheet" href="assets/css/common.css"&gt;
-
+  
     &lt;!-- CSS(섹션별) --&gt;
     &lt;link rel="stylesheet" href="assets/css/header.css"&gt;
     &lt;link rel="stylesheet" href="assets/css/slider.css"&gt;
@@ -422,16 +454,102 @@
     &lt;link rel="stylesheet" href="assets/css/banner.css"&gt;
     &lt;link rel="stylesheet" href="assets/css/text.css"&gt;
     &lt;link rel="stylesheet" href="assets/css/footer.css"&gt;
-
+    
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" href="assets/css/swiper.css"&gt;
 }
 </code></pre>
             </div>
             <hr> <!-- 구간나눔 -->
             <h3 class="t_tit2">04. JS</h3>
-
+            <p class="t_desc2">
+                메뉴 클릭으로 부드러운 이동 기능, 슬라이드 기능, 탑버튼 기능이 구현되었습니다.
+            </p>
             <div class="t_code">
 <pre><code class="language-html">{
+    &lt;script src="assets/js/swiper.min.js"&gt;&lt;/script&gt;
+    var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+        el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+    });
 
+
+        // 부드러운 메뉴이동
+    document.querySelectorAll(".header__menu a").forEach(el => {
+        el.addEventListener("click", e => {
+            e.preventDefault();
+            // 이동 막음
+
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        })
+    });
+
+
+
+        window.addEventListener("scroll", () => {
+      let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+      // 01
+      // if(scrollTop > 0) {
+      //   document.querySelector("#parallax__nav").classList.add("show");
+      // } else {
+      //   document.querySelector("#parallax__nav").classList.remove("show");
+      // }
+
+      // 02
+      // top 버튼 보여주기/안보여주기
+      if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+        document.querySelector("#parallax__top").classList.add("show");
+      } else {
+        document.querySelector("#parallax__top").classList.remove("show");
+      }
+
+      // top 버튼
+      document.querySelector("#parallax__top").addEventListener("click", () => {
+        window.scrollTo({left:0, top:0, behavior:"smooth"});
+      });
+      // 소수점 제거
+      document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    });
+
+
+    // 03 트리거
+    let nowScroll = true;
+    let lastScroll = 0;
+
+    function scrollProgress() {
+      nowScroll = true;
+
+      setInterval(() => {
+        if(nowScroll) {
+          nowScroll = false;
+          hasScroll();
+        }
+      }, 300)
+    }
+    // scrollTop &lt; lastScroll 스크롤 올리고있다.
+    // scrollTop > lastScroll 스크롤 내리고있다.
+    function hasScroll() {
+      let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    // 스크롤을 올릴때 메뉴바를 보여주고, 내릴때 숨긴다.
+      if(scrollTop &lt; lastScroll) {
+        document.querySelector(".header__menu").classList.add("show");
+      } else {
+        document.querySelector(".header__menu").classList.remove("show");
+      }
+      lastScroll = scrollTop;
+    }
+
+    window.addEventListener("scroll", scrollProgress);
 }
 </code></pre>
             </div>

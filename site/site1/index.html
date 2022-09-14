@@ -29,10 +29,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/swiper.css">
-    <style>
-        #headerType {display: none;}
-    </style>
-
+    
 </head>
 <body>
     <div id="skip">
@@ -54,17 +51,12 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">스낵 박스</a></li>
-                    <li><a href="#">키친 박스</a></li>
-                    <li><a href="#">스토리</a></li>
-                </ul>
-                <ul class="header__menu2">
-                    <li><a href="#">에너지 보충</a></li>
-                    <li><a href="#">영양식</a></li>
-                    <li><a href="#">24시간</a></li>
-                    <li><a href="#">식사</a></li>
-                    <li><a href="#">키친 박스</a></li>
-                    <li><a href="#">간식박스 설치</a></li>
+                    <li class="active"><a href="#slideTyper">에너지 보충</a></li>
+                    <li><a href="#imageType">영양식</a></li>
+                    <li><a href="#imgTextType">24시간</a></li>
+                    <li><a href="#cardType">식사</a></li>
+                    <li><a href="#bannerType">키친 박스</a></li>
+                    <li><a href="#textType">간식박스 설치</a></li>
                 </ul>
             </div>
             <div class="header__member">
@@ -363,20 +355,13 @@
         </section>
     
      <!-- //textType -->
-     <div id="top__btn">TOP</div>
+     <div id="parallax__top">
+        Top
+    </div>
     </main>
 
     <aside id="parallax__info">
         <div class="scroll">scrollTop : <span>0</span>px</div>
-        <div class="infoTop">
-            <ul>
-                <li>#section1 offset() : <span class="offset1">0</span>px</li>
-                <li>#section2 offset() : <span class="offset2">0</span>px</li>
-                <li>#section3 offset() : <span class="offset3">0</span>px</li>
-                <li>#section4 offset() : <span class="offset4">0</span>px</li>
-                <li>#section5 offset() : <span class="offset5">0</span>px</li>
-            </ul>
-        </div>
     </aside>
         <!-- //mainType -->
 
@@ -453,6 +438,76 @@
                 mousewheel: true,
                 keyboard: true,
             });
+
+
+                // 부드러운 메뉴이동
+            document.querySelectorAll(".header__menu a").forEach(el => {
+                el.addEventListener("click", e => {
+                    e.preventDefault();
+                    // 이동 막음
+
+                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+                })
+            });
+
+
+
+                window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+              // 01
+              // if(scrollTop > 0) {
+              //   document.querySelector("#parallax__nav").classList.add("show");
+              // } else {
+              //   document.querySelector("#parallax__nav").classList.remove("show");
+              // }
+
+              // 02
+              // top 버튼 보여주기/안보여주기
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
+
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              // 소수점 제거
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+            });
+
+
+            // 03 트리거
+            let nowScroll = true;
+            let lastScroll = 0;
+
+            function scrollProgress() {
+              nowScroll = true;
+
+              setInterval(() => {
+                if(nowScroll) {
+                  nowScroll = false;
+                  hasScroll();
+                }
+              }, 300)
+            }
+            // scrollTop < lastScroll 스크롤 올리고있다.
+            // scrollTop > lastScroll 스크롤 내리고있다.
+            function hasScroll() {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            // 스크롤을 올릴때 메뉴바를 보여주고, 내릴때 숨긴다.
+              if(scrollTop < lastScroll) {
+                document.querySelector(".header__menu").classList.add("show");
+              } else {
+                document.querySelector(".header__menu").classList.remove("show");
+              }
+              lastScroll = scrollTop;
+            }
+
+            window.addEventListener("scroll", scrollProgress);
             </script>
 </body>
 </html>
