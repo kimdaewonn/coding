@@ -63,9 +63,11 @@
                 <a href="#" class="header__member1">온라인 주문하기</a>
                 <a href="#" class="header__member2">문의하기</a>
             </div>
-            <figure class="figure1">
-                <a href="#"><img src="assets/img/ham.png" alt="메뉴바"></a>
-            </figure>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
         <!-- //headerType -->
@@ -146,9 +148,13 @@
                             </div>
                         </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                       </div>
                     </div>
             </section>
@@ -361,7 +367,7 @@
     </main>
 
     <aside id="parallax__info">
-        <div class="scroll">scrollTop : <span>0</span>px</div>
+        <!-- <div class="scroll">scrollTop : <span>0</span>px</div> -->
     </aside>
         <!-- //mainType -->
 
@@ -425,19 +431,71 @@
         </footer>
             <!-- //footerType -->
             <script src="assets/js/swiper.min.js"></script>
+            <!-- Initialize Swiper -->
             <script>
                 var swiper = new Swiper(".mySwiper", {
-                cssMode: true,
-                navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-                },
-                pagination: {
-                el: ".swiper-pagination",
-                },
-                mousewheel: true,
-                keyboard: true,
-            });
+                  navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
+                  autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  },
+                  pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true
+                  }
+                });
+        
+                const btnStart = document.querySelector(".swiper-button-play");
+                const btnStop = document.querySelector(".swiper-button-stop");
+                const btnHam = document.querySelector(".header__ham");
+                const btnMenu = document.querySelector(".header__menu");
+                const btnMenuList = btnMenu.querySelectorAll("ul li a");
+        
+                btnStart.style.display = "none";
+        
+                btnStop.addEventListener("click", () => {
+                    swiper.autoplay.stop();
+                    btnStart.style.display = "block";
+                    btnStop.style.display = "none";
+                });
+        
+                btnStart.addEventListener("click", () => {
+                    swiper.autoplay.start();
+                    btnStart.style.display = "none";
+                    btnStop.style.display = "block";
+                });
+                // 메뉴 버튼 (반응형)
+                btnHam.addEventListener("click", () => {
+                    btnHam.classList.toggle("active");
+                    btnMenu.classList.toggle("active");
+                    document.body.classList.toggle("fixed");
+                });
+
+                btnMenuList.forEach((list)=>{
+                    list.addEventListener("click", ()=>{
+                        document.body.classList.remove("fixed");
+                        btnMenu.classList.remove("active");
+                        btnHam.classList.remove("active");
+                    });
+                })
+
+                window.addEventListener("resize", ()=>{
+                    let width = window.innerWidth;
+                    if(width > 1300){
+                        document.body.classList.remove("fixed");
+                        btnMenu.classList.remove("active");
+                        btnHam.classList.remove("active");
+
+                    }
+                });
+//스와이퍼
+
+
+
 
 
                 // 부드러운 메뉴이동
