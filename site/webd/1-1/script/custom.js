@@ -1,45 +1,29 @@
-// //첫번째 유형
-// $(".nav > ul > li").mouseover(function(){
-//     $(this).find(".submenu").stop().slideDown(200);
-// });
+// slider
+const sliderInner = document.querySelector(".slider__inner");
+const slider = document.querySelectorAll(".slider");
 
-// $(".nav > ul > li").mouseout(function(){
-//     $(this).find(".submenu").stop().slideUp(200);
-// });
+let currentIndex = 0;
+sliderInner.style.transition = "all 0.6s";
+setInterval(()=>{
+    currentIndex = (currentIndex+1) % slider.length;
+    sliderInner.style.transform = "translateX(-" + 1000*currentIndex + "px)";
+},1000);
 
-// var currentIndex = 0;       //현재 이미지를 변수에 저장
+// 탭메뉴 2
+const tabBtn = document.querySelectorAll(".notice > ul > li");
+const tabCont = document.querySelectorAll(".notice > ul > li > ul > li > a");
+tabBtn.forEach((e,i)=>{
+    e.addEventListener("click",(event)=>{
+        event.preventDefault();
 
-// setInterval(function(){
-//     if(currentIndex < 2){
-//         currentIndex++
-//     } else {
-//         currentIndex = 0;
-//     }
-//     var slidePosition = currentIndex * (-378)+"px";
+        tabBtn.forEach((li)=>{
+        li.classList.remove("active");
+        });
+        e.classList.add("active");
 
-//     //console.log(slidePosition);
-//     $(".slideList").animate({ top:slidePosition},400);
-// },3000);
-
-
-// //탭메뉴
-// var tabMenu = $(".notice");
-
-// tabMenu.find("ul > li > ul").hide();
-// tabMenu.find("ul > li.active > ul").show();
-
-// function tabList(e){
-//     e.preventDefault();
-//     var target = $(this);
-//     target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find("ul").hide();
-// };
-
-// tabMenu.find("ul > li > a").click(tabList).focus(tabList);
-
-// //팝업
-// $(".ad").click(function(){
-//     $(".layer_bg").css("display","block");
-// });
-// $(".layer .close").click(function(){
-//     $(".layer_bg").css("display","none");
-// });
+        tabCont.forEach((c)=>{
+        c.style.display="none";
+        });
+        tabCont[i].style.display="block";
+    });
+});

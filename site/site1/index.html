@@ -431,8 +431,15 @@
         </footer>
             <!-- //footerType -->
             <script src="assets/js/swiper.min.js"></script>
-            <!-- Initialize Swiper -->
             <script>
+                // 선택자
+                const btnStart = document.querySelector(".swiper-button-play");
+                const btnStop = document.querySelector(".swiper-button-stop");
+                const btnHam = document.querySelector(".header__ham");
+                const btnMenu = document.querySelector(".header__menu");
+                const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+                // 스와이퍼
                 var swiper = new Swiper(".mySwiper", {
                   navigation: {
                     nextEl: ".swiper-button-next",
@@ -448,21 +455,15 @@
                     clickable: true
                   }
                 });
-        
-                const btnStart = document.querySelector(".swiper-button-play");
-                const btnStop = document.querySelector(".swiper-button-stop");
-                const btnHam = document.querySelector(".header__ham");
-                const btnMenu = document.querySelector(".header__menu");
-                const btnMenuList = btnMenu.querySelectorAll("ul li a");
-        
+                // 스타트버튼 안보이게
                 btnStart.style.display = "none";
-        
+                // 스탑버튼 누르면 스타트보임
                 btnStop.addEventListener("click", () => {
                     swiper.autoplay.stop();
                     btnStart.style.display = "block";
                     btnStop.style.display = "none";
                 });
-        
+                // 스타트 누르면 스탑보임
                 btnStart.addEventListener("click", () => {
                     swiper.autoplay.start();
                     btnStart.style.display = "none";
@@ -492,24 +493,19 @@
 
                     }
                 });
-//스와이퍼
-
-
-
-
+            //T
 
                 // 부드러운 메뉴이동
             document.querySelectorAll(".header__menu a").forEach(el => {
                 el.addEventListener("click", e => {
                     e.preventDefault();
                     // 이동 막음
-
                 document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
                 })
             });
 
 
-
+            //top버튼 시작
                 window.addEventListener("scroll", () => {
               let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
 
@@ -527,45 +523,15 @@
               } else {
                 document.querySelector("#parallax__top").classList.remove("show");
               }
-
               // top 버튼
               document.querySelector("#parallax__top").addEventListener("click", () => {
                 window.scrollTo({left:0, top:0, behavior:"smooth"});
               });
-              // 소수점 제거
-              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
             });
 
 
-            // 03 트리거
-            let nowScroll = true;
-            let lastScroll = 0;
-
-            function scrollProgress() {
-              nowScroll = true;
-
-              setInterval(() => {
-                if(nowScroll) {
-                  nowScroll = false;
-                  hasScroll();
-                }
-              }, 300)
-            }
-            // scrollTop < lastScroll 스크롤 올리고있다.
-            // scrollTop > lastScroll 스크롤 내리고있다.
-            function hasScroll() {
-              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-            // 스크롤을 올릴때 메뉴바를 보여주고, 내릴때 숨긴다.
-              if(scrollTop < lastScroll) {
-                document.querySelector(".header__menu").classList.add("show");
-              } else {
-                document.querySelector(".header__menu").classList.remove("show");
-              }
-              lastScroll = scrollTop;
-            }
-
-            window.addEventListener("scroll", scrollProgress);
+           
             </script>
 </body>
 </html>

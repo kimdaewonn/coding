@@ -71,9 +71,11 @@
                 &lt;a href="#" class="header__member1"&gt;온라인 주문하기&lt;/a&gt;
                 &lt;a href="#" class="header__member2"&gt;문의하기&lt;/a&gt;
             &lt;/div&gt;
-            &lt;figure class="figure1"&gt;
-                &lt;a href="#"&gt;&lt;img src="assets/img/ham.png" alt="메뉴바"&gt;&lt;/a&gt;
-            &lt;/figure&gt;
+            &lt;div class="header__ham"&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;span&gt;&lt;/span&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/header&gt;
         &lt;!-- //headerType --&gt;
@@ -154,9 +156,13 @@
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;/div&gt;
-                        &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
-                        &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
                         &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+                    &lt;div class="swiper-button"&gt;
+                        &lt;div class="swiper-button-play"&gt;&lt;span class="ir"&gt;play&lt;/span&gt;&lt;/div&gt;
+                        &lt;div class="swiper-button-stop"&gt;&lt;span class="ir"&gt;stop&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+                    &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
                       &lt;/div&gt;
                     &lt;/div&gt;
             &lt;/section&gt;
@@ -369,7 +375,7 @@
     &lt;/main&gt;
 
     &lt;aside id="parallax__info"&gt;
-        &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+        &lt;!-- &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt; --&gt;
     &lt;/aside&gt;
         &lt;!-- //mainType --&gt;
 
@@ -467,94 +473,108 @@
             <hr> <!-- 구간나눔 -->
             <h3 class="t_tit2">04. JS</h3>
             <p class="t_desc2">
-                메뉴 클릭으로 부드러운 이동 기능, 슬라이드 기능, 탑버튼 기능이 구현되었습니다.
+                메뉴 클릭으로 부드러운 이동 기능, 햄버거메뉴 기능(반응형), 슬라이드 기능, 탑버튼 기능이 구현되었습니다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">{
     &lt;script src="assets/js/swiper.min.js"&gt;&lt;/script&gt;
+    // 선택자
+    const btnStart = document.querySelector(".swiper-button-play");
+    const btnStop = document.querySelector(".swiper-button-stop");
+    const btnHam = document.querySelector(".header__ham");
+    const btnMenu = document.querySelector(".header__menu");
+    const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+    // 스와이퍼
     var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        navigation: {
+      navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-        el: ".swiper-pagination",
-        },
-        mousewheel: true,
-        keyboard: true,
-    });
-
-
-        // 부드러운 메뉴이동
-    document.querySelectorAll(".header__menu a").forEach(el => {
-        el.addEventListener("click", e => {
-            e.preventDefault();
-            // 이동 막음
-
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
-        })
-    });
-
-
-
-        window.addEventListener("scroll", () => {
-      let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
-
-      // 01
-      // if(scrollTop > 0) {
-      //   document.querySelector("#parallax__nav").classList.add("show");
-      // } else {
-      //   document.querySelector("#parallax__nav").classList.remove("show");
-      // }
-
-      // 02
-      // top 버튼 보여주기/안보여주기
-      if(scrollTop + window.innerHeight >= document.body.scrollHeight){
-        document.querySelector("#parallax__top").classList.add("show");
-      } else {
-        document.querySelector("#parallax__top").classList.remove("show");
+      },
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
       }
-
-      // top 버튼
-      document.querySelector("#parallax__top").addEventListener("click", () => {
-        window.scrollTo({left:0, top:0, behavior:"smooth"});
-      });
-      // 소수점 제거
-      document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    });
+    // 스타트버튼 안보이게
+    btnStart.style.display = "none";
+    // 스탑버튼 누르면 스타트보임
+    btnStop.addEventListener("click", () => {
+        swiper.autoplay.stop();
+        btnStart.style.display = "block";
+        btnStop.style.display = "none";
+    });
+    // 스타트 누르면 스탑보임
+    btnStart.addEventListener("click", () => {
+        swiper.autoplay.start();
+        btnStart.style.display = "none";
+        btnStop.style.display = "block";
+    });
+    // 메뉴 버튼 (반응형)
+    btnHam.addEventListener("click", () => {
+        btnHam.classList.toggle("active");
+        btnMenu.classList.toggle("active");
+        document.body.classList.toggle("fixed");
     });
 
+    btnMenuList.forEach((list)=>{
+        list.addEventListener("click", ()=>{
+            document.body.classList.remove("fixed");
+            btnMenu.classList.remove("active");
+            btnHam.classList.remove("active");
+        });
+    })
 
-    // 03 트리거
-    let nowScroll = true;
-    let lastScroll = 0;
+    window.addEventListener("resize", ()=>{
+        let width = window.innerWidth;
+        if(width > 1300){
+            document.body.classList.remove("fixed");
+            btnMenu.classList.remove("active");
+            btnHam.classList.remove("active");
 
-    function scrollProgress() {
-      nowScroll = true;
-
-      setInterval(() => {
-        if(nowScroll) {
-          nowScroll = false;
-          hasScroll();
         }
-      }, 300)
-    }
-    // scrollTop &lt; lastScroll 스크롤 올리고있다.
-    // scrollTop > lastScroll 스크롤 내리고있다.
-    function hasScroll() {
-      let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    });
+//T
 
-    // 스크롤을 올릴때 메뉴바를 보여주고, 내릴때 숨긴다.
-      if(scrollTop &lt; lastScroll) {
-        document.querySelector(".header__menu").classList.add("show");
-      } else {
-        document.querySelector(".header__menu").classList.remove("show");
-      }
-      lastScroll = scrollTop;
-    }
+    // 부드러운 메뉴이동
+document.querySelectorAll(".header__menu a").forEach(el => {
+    el.addEventListener("click", e => {
+        e.preventDefault();
+        // 이동 막음
+    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+    })
+});
 
-    window.addEventListener("scroll", scrollProgress);
-}
+
+//top버튼 시작
+    window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+  // 01
+  // if(scrollTop > 0) {
+  //   document.querySelector("#parallax__nav").classList.add("show");
+  // } else {
+  //   document.querySelector("#parallax__nav").classList.remove("show");
+  // }
+
+  // 02
+  // top 버튼 보여주기/안보여주기
+  if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+    document.querySelector("#parallax__top").classList.add("show");
+  } else {
+    document.querySelector("#parallax__top").classList.remove("show");
+  }
+  // top 버튼
+  document.querySelector("#parallax__top").addEventListener("click", () => {
+    window.scrollTo({left:0, top:0, behavior:"smooth"});
+  });
+
+});
 </code></pre>
             </div>
 
