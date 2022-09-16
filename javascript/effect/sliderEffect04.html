@@ -331,7 +331,6 @@
         sliderBtnPrev.addEventListener("click", () => {
             let leftIndex = (currentIndex - 1) % sliderCount
             gotoSlider(-1);
-
         });
         //오른쪽 버튼 클릭
         sliderBtnNext.addEventListener("click", () => {
@@ -342,3 +341,11 @@
     </script>
 </body>
 </html>
+
+
+<!-- //왼쪽 버튼 클릭
+        sliderBtnPrev.addEventListener("click", ()=>{
+            let nextIndex = (currentIndex + (slider.length-1)) % sliderCount
+            gotoSlider(nextIndex);
+            //0 1 2 3 4
+        }); -->

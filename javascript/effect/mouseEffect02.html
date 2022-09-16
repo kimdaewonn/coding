@@ -83,6 +83,14 @@
             transform: scale(10);
             background: rgba(255,166,0,0.6);
         }
+        .mouse__cursor.headeractive {
+            transform: scale(0);
+        }
+        .mouse__cursor2.headeractive {
+            transform: scale(10);
+            background: rgba(20, 47, 225, 0.6);
+        }
+
       
     </style>
 </head>
@@ -208,6 +216,7 @@
         const cursor = document.querySelector(".mouse__cursor");
         const cursor2 = document.querySelector(".mouse__cursor2");
         const span = document.querySelectorAll(".mouse__wrap span");
+        const header = document.querySelectorAll("#header > ul > li")
 
         window.addEventListener("mousemove", e=>{
             // 커서 좌표값 할당
@@ -233,7 +242,17 @@
                 });
             });
 
-            document.querySelector
+            header.forEach(header =>{
+                header.addEventListener("mouseenter", () =>{
+                    cursor.classList.add("headeractive");
+                    cursor2.classList.add("headeractive");
+                });
+                header.addEventListener("mouseleave", () =>{
+                    cursor.classList.remove("headeractive");
+                    cursor2.classList.remove("headeractive");
+                });
+            });
+
         });
     </script>
 </body>
