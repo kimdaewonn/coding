@@ -90,6 +90,13 @@
             transform: scale(10);
             background: rgba(20, 47, 225, 0.6);
         }
+        .mouse__cursor.Btnactive {
+            transform: scale(0);
+        }
+        .mouse__cursor2.Btnactive {
+            transform: scale(10);
+            background: rgba(212, 88, 231, 0.6);
+        }
     </style>
 </head>
 <body class="img09">
@@ -112,7 +119,7 @@
             <div class="mouse__cursor"></div>
             <div class="mouse__cursor2"></div>
             <div class="mouse__wrap">
-                <p>Better the <span class="style1">last smile </span>than the first laughter.</p>
+                <p>Better the <span class="style">last smile </span>than the first laughter.</p>
                 <p>처음의 큰 웃음보다 <span class="style2">마지막의 미소</span>가 더 좋다.</p>
             </div>
         </section>
@@ -214,7 +221,8 @@
         const cursor = document.querySelector(".mouse__cursor");
         const cursor2 = document.querySelector(".mouse__cursor2");
         const span = document.querySelectorAll(".mouse__wrap span");
-        const header = document.querySelectorAll("#header > ul > li")
+        const header = document.querySelectorAll("#header > ul > li");
+        const Btn = document.querySelector(".modal__btn");
 
         window.addEventListener("mousemove", e=>{
             // 커서 좌표값 할당
@@ -250,6 +258,15 @@
                     cursor2.classList.remove("headeractive");
                 });
             });
+
+                Btn.addEventListener("mouseenter", () =>{
+                    cursor.classList.add("Btnactive");
+                    cursor2.classList.add("Btnactive");
+                });
+                Btn.addEventListener("mouseleave", () =>{
+                    cursor.classList.remove("Btnactive");
+                    cursor2.classList.remove("Btnactive");
+                });
 
         });
     </script>

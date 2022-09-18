@@ -49,7 +49,7 @@
             <h3 class="t_tit2">마우스 이펙트 02</h3>
             <p class="t_desc2">
                 1번 유형과 크게 달라진게 없으며 움직임이 더욱 부드러워졌습니다.<br>
-                메뉴바와 메인단어에 transform효과를 적용하였습니다.
+                메뉴바와 메인단어와 소스 보기에 transform효과를 적용하였습니다.
             </p>
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
                 <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/mouseEffect02.html"
@@ -175,6 +175,13 @@
         transform: scale(10);
         background: rgba(20, 47, 225, 0.6);
     }
+    .mouse__cursor.Btnactive {
+        transform: scale(0);
+    }
+    .mouse__cursor2.Btnactive {
+        transform: scale(10);
+        background: rgba(212, 88, 231, 0.6);
+    }
 }
 </code></pre>
                 </div>
@@ -189,7 +196,8 @@
     const cursor = document.querySelector(".mouse__cursor");
     const cursor2 = document.querySelector(".mouse__cursor2");
     const span = document.querySelectorAll(".mouse__wrap span");
-    const header = document.querySelectorAll("#header > ul > li")
+    const header = document.querySelectorAll("#header > ul > li");
+    const Btn = document.querySelector(".modal__btn");
 
     window.addEventListener("mousemove", e=>{
         // 커서 좌표값 할당
@@ -226,6 +234,14 @@
             });
         });
 
+            Btn.addEventListener("mouseenter", () =>{
+                cursor.classList.add("Btnactive");
+                cursor2.classList.add("Btnactive");
+            });
+            Btn.addEventListener("mouseleave", () =>{
+                cursor.classList.remove("Btnactive");
+                cursor2.classList.remove("Btnactive");
+            });
     });
 }
 </code></pre>
