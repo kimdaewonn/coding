@@ -325,12 +325,10 @@
             sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
             currentIndex = num;
         }
-        gotoSlider();
-
-        //왼쪽 버튼 클릭
-        sliderBtnPrev.addEventListener("click", () => {
-            let leftIndex = (currentIndex - 1) % sliderCount
-            gotoSlider(-1);
+        // 왼쪽 버튼 클릭
+        sliderBtnPrev.addEventListener("click", ()=>{
+            let prevIndex = (currentIndex + sliderCount -1) % sliderCount;
+            gotoSlider(prevIndex);
         });
         //오른쪽 버튼 클릭
         sliderBtnNext.addEventListener("click", () => {
