@@ -172,12 +172,13 @@
     setInterval(() => {
         currentIndex = (currentIndex + 1) % slider.length;   
 
-        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+        sliderInner.style.transform = "translateX(-"+ 800 * currentIndex +"px)";
     }, 2000);
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-js">
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
     const slider = document.querySelectorAll(".slider");
     let currentIndex = 0;
 
@@ -188,10 +189,12 @@
             x : -800 * currentIndex
         });
     }, 2000);
+
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-">
+<pre><code class="language-js">
+    &lt;script src="https://ajax.googleapis.com/ajax/libs//3.6.0/.min.js"&gt;&lt;/script&gt;
     let currentIndex = 0;
 
     setInterval(() => {
@@ -200,6 +203,7 @@
         $(".slider__inner").css("position", "relative");
         $(".slider__inner").animate({ left : -800 * currentIndex }, 600);
     }, 2000);
+
 </code></pre>
                         </div>
                     </div>

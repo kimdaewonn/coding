@@ -192,14 +192,177 @@
                     <div class="cont">
                         <div class="active">
 <pre><code class="language-js">
+    &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt;
+    const cursor = document.querySelector(".mouse__cursor");
+    const cursor2 = document.querySelector(".mouse__cursor2");
+    const span = document.querySelectorAll(".mouse__wrap span");
+    const header = document.querySelectorAll("#header > ul > li");
+    const Btn = document.querySelector(".modal__btn");
+
+    window.addEventListener("mousemove", e=>{
+        // 커서 좌표값 할당
+        // cursor.style.left = e.pageX -5 + "px";
+        // cursor.style.top = e.pageY -5 + "px";
+        // cursor2.style.left = e.pageX -15 + "px";
+        // cursor2.style.top = e.pageY -15 + "px";
+
+        // GSAP
+        gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY - 5});
+        gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY - 15});
+
+        // 오버 효과
+        // mouseenter / mouseover / 이벤트 버블링
+        span.forEach(span => {
+            span.addEventListener("mouseenter", () =>{
+                cursor.classList.add("active");
+                cursor2.classList.add("active");
+            });
+            span.addEventListener("mouseleave", () =>{
+                cursor.classList.remove("active");
+                cursor2.classList.remove("active");
+            });
+        });
+
+        header.forEach(header =>{
+            header.addEventListener("mouseenter", () =>{
+                cursor.classList.add("headeractive");
+                cursor2.classList.add("headeractive");
+            });
+            header.addEventListener("mouseleave", () =>{
+                cursor.classList.remove("headeractive");
+                cursor2.classList.remove("headeractive");
+            });
+        });
+
+            Btn.addEventListener("mouseenter", () =>{
+                cursor.classList.add("Btnactive");
+                cursor2.classList.add("Btnactive");
+            });
+            Btn.addEventListener("mouseleave", () =>{
+                cursor.classList.remove("Btnactive");
+                cursor2.classList.remove("Btnactive");
+            });
+
+    });
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-html">
+    &lt;header id="header"&gt;
+    &lt;h1&gt;Javascript Mouse Effect02&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 마우스 따라다니기(GSAP)&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/header&gt;
+  &lt;!-- //header --&gt;
+  &lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;Better the &lt;span class="style"&gt;last smile &lt;/span&gt;than the first laughter.&lt;/p&gt;
+            &lt;p&gt;처음의 큰 웃음보다 &lt;span class="style2"&gt;마지막의 미소&lt;/span&gt;가 더 좋다.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-css">
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        overflow: hidden;
+        cursor: none;
+    }
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 3vw;
+        font-weight: 400;
+    }
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed orange;
+        color: orange;
+    }
+    @media (max-width: 800px){
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+    }
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+    }
+    }
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        z-index: 9999;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.3s, opacity 0.2s;
+
+    }
+    .mouse__cursor2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        z-index: 9998;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.3s, opacity 0.2s;
+    }
+    .mouse__cursor.active {
+        transform: scale(0);
+    }
+    .mouse__cursor2.active {
+        transform: scale(10);
+        background: rgba(255,166,0,0.6);
+    }
+    .mouse__cursor.headeractive {
+        transform: scale(0);
+    }
+    .mouse__cursor2.headeractive {
+        transform: scale(10);
+        background: rgba(20, 47, 225, 0.6);
+    }
+    .mouse__cursor.Btnactive {
+        transform: scale(0);
+    }
+    .mouse__cursor2.Btnactive {
+        transform: scale(10);
+        background: rgba(212, 88, 231, 0.6);
+    }
 </code></pre>
                         </div>
                     </div>
