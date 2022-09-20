@@ -8,6 +8,45 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracular.css">
+    <style>
+         #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    #parallax__info li, .scrollTop {
+        line-height: 1.4;
+    }
+    #parallax__top {
+        position: fixed;
+        left: 50%;
+        bottom: -200px;
+        z-index: 10000;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #parallax__top.show {
+        bottom: 20px;
+    }
+    #parallax__top:hover {
+        background: #fff;
+        color: #000;
+    }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -572,6 +611,11 @@
     </main>
     <!-- //main -->
 
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
+    <!-- parallax__info -->
+    
     <footer id="footer">
         <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
     </footer>
@@ -845,6 +889,34 @@
             obj.a+ "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.b + "<br>"
             obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d; ;
     }
+
+    // scrollTop
+    window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+              // 01
+              // if(scrollTop > 0) {
+              //   document.querySelector("#parallax__nav").classList.add("show");
+              // } else {
+              //   document.querySelector("#parallax__nav").classList.remove("show");
+              // }
+
+              // 02
+              // top 버튼 보여주기/안보여주기
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
+
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              // 소수점 제거
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+            });
+
 
     </script>
     
