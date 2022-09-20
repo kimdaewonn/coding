@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>펼침 연산자</title>
+    <title>펼침 연산자 / 객체구조,비구조 할당</title>
     <link rel="stylesheet" href="../assets/css/dracular.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -35,9 +35,9 @@
     <main id="main">
         <div class="main_menu">
             <div class="document">
-                <h2 class="t_tit">펼침 연산자</h2>
+                <h2 class="t_tit">펼침 연산자 / 객체구조, 비구조 할당</h2>
                 <p class="t_box">
-                    <i>펼침 연산자</i>에 대해 알아보는 시간을 가지도록 하겠습니다.
+                    펼침 연산자와 객체구조, 비구조 할당에 대해 알아보는 시간을 가지도록 하겠습니다.
                 </p>
                 <hr> <!-- 구간나눔 -->
                 <h3 class="t_tit2">01. 펼침연산자란?</h3>
@@ -47,7 +47,7 @@
                     펼침 연산자는 단독으로 쓰일 수 없습니다.<br>
                     배열에 포함된 항목을 목록으로 바꿨다면 이를 배열이나 객체 등에 담아줘야합니다. 변수에 담을 시 에러가 발생합니다.
                 </p>      
-                <h3 class="t_tit2">02. 펼침연산자 : 복사</h3>
+                <h3 class="t_tit2">01-1. 펼침연산자 : 복사</h3>
                 <div class="t_code">
 <pre><code class="language-js">{
         // 복사
@@ -75,7 +75,7 @@
                         </div>
                     </details>
                 </div>
-                <h3 class="t_tit2">03. 펼침연산자 : 추가</h3>
+                <h3 class="t_tit2">01-2. 펼침연산자 : 추가</h3>
                 <div class="t_code">
 <pre><code class="language-js">{
         // 20. 추가
@@ -106,7 +106,7 @@
                         </div>
                     </details>
                 </div>
-                <h3 class="t_tit2">04. 펼침연산자 : 결합</h3>
+                <h3 class="t_tit2">01-3. 펼침연산자 : 결합</h3>
                 <div class="t_code">
 <pre><code class="language-js">{
     // 21. 결합
@@ -140,6 +140,62 @@
                         </div>
                     </details>
                 </div>
+                <h3 class="t_tit2">02. 객체 구조분해(비구조) 할당이란?</h3>
+                <p class="t_desc2">
+                    구조 분해 할당 구문은 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 JavaScript 표현식입니다.
+                </p>
+                <h3 class="t_tit2">02-1. 비구조화 할당</h3>
+                <div class="t_code">
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    const { a, b, c } = obj;
+
+    document.write(a);
+    document.write(b);
+    document.write(c);
+}
+</code></pre>
+                </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample_result">
+                        100<br>
+                        200<br>
+                        javascript
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">02-2. 객체 구조분해 할당</h3>
+                <div class="t_code">
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    const { a:name1, b:name2, c:name3 } = obj;
+
+    document.write(name1);
+    document.write(name2);
+    document.write(name3);
+}
+</code></pre>
+                </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample_result">
+                        100<br>
+                        200<br>
+                        javascript
+                    </div>
+                </details>
+            </div>
 
             </div>
         </div>
