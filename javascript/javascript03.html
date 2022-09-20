@@ -1109,7 +1109,75 @@
         <p></p>
         <div class="script">
 <pre><code class="language-js">
-  
+    // 26. 콜백 함수 : 동기/비동기
+    {
+        function funcA() {
+            document.write("funcA가 실행되었습니다.<br>");
+        }
+        function funcB() {
+            document.write("funcB가 실행되었습니다.<br>");
+        }
+        funcA();
+        funcB();
+
+        function funcA() {
+            setTimeout(() => {
+                console.log("funcA가 실행되었습니다.<br>");
+            },1000);
+        }
+        function funcB() {
+            console.log("funcB가 실행되었습니다.<br>");
+        }
+        funcA();
+        funcB();
+        // B->A
+
+        function funcA(callback) {
+            setTimeout(() => {
+                console.log("funcA가 실행되었습니다.<br>");
+                callback();
+            }, 1000);
+        }
+        function funcB() {
+            console.log("funcB가 실행되었습니다.<br>");
+        }
+        funcA(function(){
+            funcB();
+        })
+        // A->B
+        
+        function funcA(callback) {
+            setTimeout(() => {
+                console.log("funcA가 실행되었습니다.<br>");
+                callback();
+            }, 1000);
+        }
+        function funcB(callback) {
+            setTimeout(() => {
+                console.log("funcB가 실행되었습니다.<br>");
+                callback();
+            }, 1000);
+        }
+        function funcC(callback) {
+            setTimeout(() => {
+                console.log("funcC가 실행되었습니다.<br>");
+                callback();
+            }, 1000);
+        }
+        function funcD(callback) {
+            setTimeout(() => {
+                console.log("funcD가 실행되었습니다.<br>");
+            }, 1000);
+        }
+
+        funcA(function(){
+            funcB(function(){
+                funcC(function(){
+                    funcD();
+                });
+            });
+        });
+    }
 </code></pre>
         </div>
     <div class="result">
@@ -1640,81 +1708,75 @@
 
         //     callback(func);
         // }
-        //  26. 콜백함수 동기/비동기
-    //     {
-    //         function funcA(){
-    //             document.write("funcA가 실행되었습니다.<br>")
-    //         }
-    //         function funcB(){
-    //             document.write("funcB가 실행되었습니다.<br>")
-    //         }
-    //         funcA();
-    //         funcB();
+        // 26. 콜백 함수 : 동기/비동기
+        {
+            function funcA() {
+                document.write("funcA가 실행되었습니다.<br>");
+            }
+            function funcB() {
+                document.write("funcB가 실행되었습니다.<br>");
+            }
+            funcA();
+            funcB();
 
-    //         //a
-    //         //b
+            function funcA() {
+                setTimeout(() => {
+                    console.log("funcA가 실행되었습니다.<br>");
+                },1000);
+            }
+            function funcB() {
+                console.log("funcB가 실행되었습니다.<br>");
+            }
+            funcA();
+            funcB();
+            // B->A
 
-    //         function funcA(){
-    //             setTimeout(() => {
-    //                 console.log("funcA가 실행되었습니다.<br>")
-    //             },1000);
-    //         }
-    //         function funcB(){
-    //             console.log("funcB가 실행되었습니다.<br>")
-    //         }
-    //         funcA();
-    //         funcB();
+            function funcA(callback) {
+                setTimeout(() => {
+                    console.log("funcA가 실행되었습니다.<br>");
+                    callback();
+                }, 1000);
+            }
+            function funcB() {
+                console.log("funcB가 실행되었습니다.<br>");
+            }
+            funcA(function(){
+                funcB();
+            })
+            // A->B
+            
+            function funcA(callback) {
+                setTimeout(() => {
+                    console.log("funcA가 실행되었습니다.<br>");
+                    callback();
+                }, 1000);
+            }
+            function funcB(callback) {
+                setTimeout(() => {
+                    console.log("funcB가 실행되었습니다.<br>");
+                    callback();
+                }, 1000);
+            }
+            function funcC(callback) {
+                setTimeout(() => {
+                    console.log("funcC가 실행되었습니다.<br>");
+                    callback();
+                }, 1000);
+            }
+            function funcD(callback) {
+                setTimeout(() => {
+                    console.log("funcD가 실행되었습니다.<br>");
+                }, 1000);
+            }
 
-    //         //b
-    //         //a
-
-    //         function funcA(callback){
-    //             setTimeout(()=>{
-    //                 console.log("funcA가 실행되었습니다.<br>");
-    //                 callback();
-    //             },1000);
-    //         }
-    //         function funcB(){
-    //             console.log("funcB가 실행되었습니다.<br>")
-    //         }
-    //         funcA(function(){
-    //             funcB();
-    //         })
-
-    //         //a
-    //         //b
-
-    //         function funcA(callback){
-    //             setTimeout(()=>{
-    //                 console.log("funcA가 실행되었습니다.<br>");
-    //                 callback();
-    //             },1000);
-    //         }
-    //         function funcB(callback){
-    //             setTimeout(()=>{
-    //                 console.log("funcB가 실행되었습니다.<br>");
-    //                 callback();
-    //             },1000);
-    //         function funcC(callback){
-    //         setTimeout(()=>{
-    //             console.log("funcC가 실행되었습니다.<br>");
-    //             callback();
-    //         },1000);
-    //         function funcD(callback){
-    //             setTimeout(()=>{
-    //                 console.log("funcD가 실행되었습니다.<br>");
-    //                 callback();
-    //             },1000);
-    //         }
-    //         funcA(function(){
-    //             funcB(function(){
-    //                 funcC(function(){
-    //                     funcD()
-    //                 })
-    //             })
-    //         }) 
-    //     }
-    // }
+            funcA(function(){
+                funcB(function(){
+                    funcC(function(){
+                        funcD();
+                    });
+                });
+            });
+        }
 
         // 28. 스코프, 클로져
         // {
