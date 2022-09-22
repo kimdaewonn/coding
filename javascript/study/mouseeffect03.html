@@ -75,6 +75,9 @@
                 </div>
 
                 <h3 class="t_tit2">02. CSS 코드</h3>
+                <p class="t_desc2">
+                    커서포인터의 배경이미지를 배경과 같은이미지로 해주고 중앙으로 맞춰줍니다.
+                </p>
                 <div class="t_code">
 <pre><code class="language-css">{
     .mouse__wrap {
@@ -136,7 +139,9 @@
                 </div>
             <h3 class="t_tit2">03. script 코드</h3>
             <p class="t_desc2">
-                
+                먼저, getBoundingClientRect를 이용해서 커서 위치값을 객체 형태로 구해줍니다.<br>
+                좌표의 기준값을 중앙으로 잡기 위해서 left: e.pageX - circle.width/2, top: e.pageY - circle.height/2,로 맞춰줍니다.<br>
+                addEventListener를 통해 mousemove에 gsap효과를 넣어줍니다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">{
