@@ -160,14 +160,14 @@
                 </div>
             <h3 class="t_tit2">03. script 코드</h3>
             <p class="t_desc2">
-                마우스이펙트 3번과 같이 getBoundingClientRect를 이용해서 좌표값을 객체로 불러오고 커서값을 중앙으로 맞춰줍니다.<br>
-                다음으로, 마우스 좌표값을 중앙으로 맞춰 초기화시켜줍니다.<br>
-                
-                centerPageX값 window.innerWidth/2(고정값) - mousePageX(움직임에 따라 변하는 값)
-                centerPageY값 window.innerHeight/2(고정값) - mousePageY(움직임에 따라 변하는 값)
-                
-                gsap에 만들어둔 imgMove 를 넣어 효과를 줍니다.<br>
-                마지막으로 효과가 너무 과하지 않게 20으로 나눠줍니다.
+                1. 마우스이펙트 3번과 같이 getBoundingClientRect를 이용해서 좌표값을 객체로 불러오고 커서값을 중앙으로 맞춰줍니다.<br>
+                2. 마우스 좌표값을 변수로 설정해줍니다.<br>
+                3. 움직이게 될 centerPage값을 변수로 저장해줍니다.<br>
+                    centerPageX값 = window.innerWidth/2(고정값) - mousePageX(움직임에 따라 변하는 값)<br>
+                    centerPageY값 = window.innerHeight/2(고정값) - mousePageY(움직임에 따라 변하는 값)<br>
+                4. imgMove 변수에 이미지를 저장합니다.<br>
+                    gsap 를 이용해서 이미지를 x축, y축으로 움직여줍니다.<br>
+                    마지막으로 움직임 효과가 너무 과하지 않게 값을 20으로 나눠줍니다.<br>
                 
                 
                 
@@ -197,7 +197,7 @@
       // 마우스 좌표 값 가운데로 초기화
       // 전체 길이/2 - 마우스 좌표값 == 0
       let centerPageX = window.innerWidth/2 -mousePageX;
-      let centerPageY = window.innerWidth/2 -mousePageY;
+      let centerPageY = window.innerHeight/2 -mousePageY;
 
       // 이미지 움직이기
       const imgMove = document.querySelector(".mouse__wrap figure img");
