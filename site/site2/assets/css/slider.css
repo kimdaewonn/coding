@@ -1,7 +1,4 @@
-.slider__wrap {
-    width: 1160px;
-    margin: 0 auto;
-}
+
 .slider__inner {
     margin-top: 90px;
 }
@@ -112,7 +109,6 @@
 .swiper-slide .desc {
     width: 1160px;
     margin: 0 auto;
-    padding-left: 20px;
     box-sizing: border-box;
 }
 
