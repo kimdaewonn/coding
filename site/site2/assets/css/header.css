@@ -9,7 +9,6 @@
     z-index: 10000;
     background: #fff;
     position: fixed;
-
 }
 .header__logo{
     width: 100%;
@@ -26,7 +25,7 @@
 }
 .header__menu li{
     display: inline;
-    padding-bottom: 21px;
+    margin-bottom: 21px;
 }
 .header__menu > ul > li:nth-child(1){
     padding-right: 108px;  
@@ -116,8 +115,6 @@
         margin-top: -2px;
         transform: rotate(135deg);
     }
-    
-    
     .header__menu {
         position: fixed;
         right: -100%;

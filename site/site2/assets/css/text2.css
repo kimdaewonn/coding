@@ -28,7 +28,7 @@
     background-color: #fff9f9;
     padding: 30px 30px 21px 30px;
 }
-.desc {
+.text2__desc {
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
@@ -37,7 +37,7 @@
     font-family: 'NexonLv1Gothic';
     border-bottom: 1px solid #D9D9D9;
 }
-.desc2 {
+.text2__desc2 {
     padding-bottom: 48px;
 }
 
