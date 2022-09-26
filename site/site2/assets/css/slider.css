@@ -229,7 +229,6 @@
     background-color: #fff;
     padding: 15px 67px;
     margin-bottom: 169px;
-
 }
 
 .swiper-slide .desc .btn a.black {
@@ -287,6 +286,16 @@
     height: 16px;
 }
 /* media */
+@media(max-width : 1300px) {
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
 @media(max-width : 960px) {
     .swiper-slide .desc {
         width: 100%;

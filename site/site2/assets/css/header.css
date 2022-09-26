@@ -115,20 +115,11 @@
         margin-top: -2px;
         transform: rotate(135deg);
     }
-    .header__menu {
-        position: fixed;
-        right: -100%;
-        top: 69px;
-        background: #fff;
-        width: 60%;
-        height: 100vh;
-        padding: 20px;
-        text-align: right;
-        transition: right 0.4s ease-in;
-    }
     .header__menu ul li {
         display: block;
         margin: 20px;
+        width: 100%;
+        display: inline;
     }
     .header__menu ul li a {
         padding: 10px;
@@ -144,7 +135,7 @@
         display: block;
     }
     .header__logo {
-        width: 50%;
+        width: 100%;
     }
     .header__member {
         width: 50%;
