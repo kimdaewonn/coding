@@ -8,6 +8,32 @@
     <title>자바스크립트 </title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracular.css">
+    <style>
+        #parallax__top {
+            position: fixed;
+            left: 50%;
+            bottom: -200px;
+            z-index: 10000;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #parallax__top.show {
+            bottom: 20px;
+        }
+        #parallax__top:hover {
+            background: rgb(31, 56, 238);
+            color: #fff;
+        }
+        </style>
 </head>
 
 <body>
@@ -745,6 +771,12 @@
         </div>
     </main>
     <!-- //main -->
+    <div id="parallax__top">
+        Top
+    </div>
+    <aside id="parallax__info" style="opacity:0;">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
 
     <footer id="footer">
         <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
@@ -1108,26 +1140,38 @@
             const currentStr15 = str1.endsWith('reference', 7);       //false
             const currentStr16 = str1.endsWith('reference', 20);      //true
 
-            console.log(currentStr15)
+            // console.log(currentStr15)
         }
         
+
+                // scrollTop
+   window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+              // 01
+              // if(scrollTop > 0) {
+              //   document.querySelector("#parallax__nav").classList.add("show");
+              // } else {
+              //   document.querySelector("#parallax__nav").classList.remove("show");
+              // }
+
+              // 02
+              // top 버튼 보여주기/안보여주기
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
+
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              
+              // 소수점 제거
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+            });
     </script>
 </body>
 
 </html>
-
-
-<!-- // 3가지 400 500
-
-{
-const number1 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-const result1 = number1.slice(3,5);
-
-const number2 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-const result2 = number2.filter(el => el === 300,400);
-
-
-
-console.log(result2);
-
-} -->

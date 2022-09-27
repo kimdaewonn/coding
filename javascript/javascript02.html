@@ -954,6 +954,9 @@ obj.map((el) => {
     <div id="parallax__top">
         Top
     </div>
+    <aside id="parallax__info" style="opacity:0;">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
     <footer id="footer">
         <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
     </footer>
@@ -1281,6 +1284,7 @@ obj.map((el) => {
               document.querySelector("#parallax__top").addEventListener("click", () => {
                 window.scrollTo({left:0, top:0, behavior:"smooth"});
               });
+              
               // 소수점 제거
               document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
             });
