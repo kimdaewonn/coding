@@ -28,7 +28,7 @@
             transition: all 0.1s;
         }
         .mouse__wrap figure img{
-            width: 40vw;
+            width: 30vw;
             position: relative;
         }
         .mouse__wrap figure::before {
@@ -38,7 +38,7 @@
             bottom: -30px;
             width: 90%;
             height: 40px;
-            background: url(../assets/img/effect_bg15-min.jpg) center no-repeat;
+            background: url(../assets/img/effect_bg16-min.jpg) center no-repeat;
             background-size: 100% 40px;
             filter: blur(15px) grayscale(50%);
             z-index: -1;
@@ -101,7 +101,7 @@
             <div class="mouse__wrap">
                 <div class="mouse__img">
                     <figure>
-                        <img src="../assets/img/effect_bg15-min.jpg" alt="이미지">
+                        <img src="../assets/img/effect_bg16-min.jpg" alt="이미지">
                     </figure>
                     <figcaption>
                         <p>Life is a choice</p>
@@ -364,8 +364,6 @@
             softPageY += (anglePageY - softPageY) * 0.4;
 
             // 이론상0인데 오차에 0.4 곱해줌
-
-            console.log(maxPageX)
 
             // 이미지 움직이기
             const ImgMove = document.querySelector(".mouse__img");
