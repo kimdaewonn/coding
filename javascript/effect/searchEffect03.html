@@ -33,6 +33,7 @@
 
             <div class="search__info">
                 <div class="keyword">
+                    <span class="ALL">ALL</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -1187,7 +1188,11 @@ li {
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");        //알파벳
         const searchList = document.querySelectorAll(".search__list ul li");                //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");                    //전체 갯수
-        const searchInfo2 = document.querySelector(".search__info .num2");                  //찾은 갯수
+        const searchInfo2 = document.querySelector(".search__info .num2");
+
+        const searchKeywordALL = document.querySelectorAll(".search__info .keyword .ALL");        //알파벳
+
+                         //찾은 갯수
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
         
@@ -1211,6 +1216,21 @@ li {
                 searchInfo2.textContent = searchList.length - hidingNum.length;
             });
         });
+
+        searchKeywordALL.forEach(el => {
+            el.addEventListener("click",()=>{
+                const searchWord = el.innerText;
+
+                searchList.forEach(el => {
+                    const cssName = el.querySelector("strong").innerText;
+
+                    
+                });
+                
+            });
+        });
+
+        
     
     </script>
 </body>

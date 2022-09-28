@@ -1929,16 +1929,38 @@
     //     const number3 = [100,200,300,400,500,600,700,800,900];
     //     const result3 = number3.slice(-6,-4);
 
-    //     const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-    //     const result4 = number4.filter(el=>(el===300||el===400));
+        // const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+        // const result4 = number4.filter(el=>(el===300||el===400));
 
-    //         console.log(result4)
+        //     console.log(result4)
 
     // 미션 b d f h k 4가지
 
-        const num = [a,b,c,d,e,f,g,h,i,k];
- 
+        const num1 = ["a","b","c","d","e","f","g","h","i","k"];
+        const result1 = num1.slice(1,2) + num1.slice(3,4) + num1.slice(5,6) + num1.slice(7,8) + num1.slice(9,10);
+        
+        const num2 = ["a","b","c","d","e","f","g","h","i","k"];
+        const result2 = num2.splice(1,1)+num2.splice(2,1)+num2.splice(3,1)+num2.splice(4,1)+num2.splice(5,1)
+                
+        const num3 = ["a","b","c","d","e","f","g","h","i","k"];
+        for(let i=0; i<=num3.length;i++){
+            if(i%2==1){
+                // console.log(num3[i]);
+            }
+        }
+        const num4 = ["a","b","c","d","e","f","g","h","i","k"];
+        const result4 = num4.map((el,i)=>{
+            if(i%2==1){
+                // console.log(num4[i]);
+            }
+        });
+
     }
+
+
+
+
+
 
 
 
