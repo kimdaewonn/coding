@@ -350,7 +350,7 @@
             let centerPageX = window.innerWidth/2 - mousePageX;
             let centerPageY = window.innerHeight/2 - mousePageY;
 
-            // 최소값은 -100 최댓값은 100 설정
+            // 최소값은 -200 최댓값은 200 설정
             let maxPageX = Math.max(-200, Math.min(200, centerPageX));
             let maxPageY = Math.max(-200, Math.min(200, centerPageY));
 
@@ -369,6 +369,7 @@
             const ImgMove = document.querySelector(".mouse__img");
             ImgMove.style.transform = "perspective(600px) rotateX(" + softPageY + "deg) rotateY("+ -softPageX +"deg)";
 
+            // 커서
             gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 50, top: mousePageY - 50})
 
             // 출력

@@ -827,11 +827,13 @@ li {
         // 미션 클릭시 설명
         const searchList2 = document.querySelector(".search__list span");
 
-        searchList2.addEventListener("click",()=>{
+        searchList2.forEach((e)=>{
+        e.addEventListener("click",()=>{
 
-
-            innerText +=  `<span>${element.desc}</span>`;
+        innerText +=  `<span>${element.desc}</span>`;
         });
+        });
+
         
     </script>
 </body>
