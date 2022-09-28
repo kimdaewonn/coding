@@ -40,7 +40,6 @@
         </div>
         <div class="search__info">
             <div>전체 속성 갯수 : <span class="num">0</span></div>
-            <div>찾은 속성 갯수 : <span class="num2">0</span></div>
         </div>
         <div class="search__list">
             
@@ -777,7 +776,7 @@ li {
 
     <script>
        const cssProperty = [
-       { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+                { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
                 { name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
                 { name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
                 { name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
@@ -1160,13 +1159,11 @@ li {
                 { name: "writing-mode", desc: "텍스트 줄을 가로 또는 세로로 배치할지 여부와 블록이 진행되는 방향을 설정합니다." },
                 { name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
                     ];
+        // 선택자
         const searchList = document.querySelector(".search__list");
         const searchNum = document.querySelector(".search__info .num");
         const searchBox = document.querySelector(".search__box input");
         const searchDesc = document.querySelector(".search__desc");
-
-        const searchList2 = document.querySelectorAll(".search__list span");
-
 
         // 출력하기
         cssProperty.map((element, index) => {
@@ -1174,14 +1171,14 @@ li {
             searchList.innerHTML += `<span>${element.name}</span>`;
         });
 
-        // 입력하기
-        searchBox.addEventListener("keyup", ()=>{
-            const searchWord = searchBox.value;
-            // console.log(searchWord);
-            findProperty(searchWord);
+        // 미션(클릭시 설명 나오게)
+        const searchListspan = document.querySelectorAll(".search__list span");
+        searchListspan.forEach((e, i) => {
+            e.addEventListener("click", () => {
+                searchDesc.textContent = cssProperty[i].desc;
+            });
         });
-        // 전역변수로 쓰거나 매개변수로 전달해줌
-        
+
         // 속성 찾기
         function findProperty(searchData){
            const targetData = cssProperty.find((data) => data.name === searchData);
@@ -1190,19 +1187,15 @@ li {
                 searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!"
                 return;
             }
-
-           searchDesc.textContent = targetData.desc;
+           searchDesc.textContent = targetData.desc;           
         };
-        
-        // 미션 클릭시 설명
 
-        searchList2.forEach((e)=>{
-        e.addEventListener("click",()=>{
-
-        innerText +=`<span>${element.desc}</span>`;
-        });
-        });
-        
+        // 입력하기
+        searchBox.addEventListener("keyup", ()=>{
+                const searchWord = searchBox.value;
+                // console.log(searchWord);
+                findProperty(searchWord);
+            });
     </script>
 </body>
 </html>
