@@ -59,7 +59,7 @@
 
             <h3 class="t_tit2">01. HTML</h3>
             <p class="t_box">
-                스크립트로 불러오기 위해서 search__list를 삭제했습니다.
+                스크립트로 불러오기 위해서 search__list를 삭제했고 search__desc가 추가되었습니다.
             </p>
             <div class="result">
                 <details>
@@ -67,10 +67,28 @@
                     <div class="sample_result">
                         <div class="t_code">
 <pre><code class="language-html">{
-   
+    &lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;find()를 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+    &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="search__desc"&gt;
+            속성을 검색하시면 화면이 표시됩니다!!!
+    &lt;/div&gt;
+    &lt;div class="search__info"&gt;
+        &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="search__list"&gt;
+        
+    &lt;/div&gt;
+  &lt;/main&gt;
 }
 </code></pre>
-                        </div>
+                </div>
 
                     </div>
                 </details>
@@ -83,6 +101,110 @@
                     <div class="sample_result">
                         <div class="t_code">
 <pre><code class="language-js">{
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    .search__box input {
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__list span {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        margin-bottom: 5px;
+        text-align: left;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .search__list span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    .search__info {
+        text-align: right;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info  .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor:pointer;
+    }
+    .search__desc {
+        padding: 20px 40px 20px 60px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        display: inline-block;
+        background: var(--htmlColor);
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 22px 17px;
+    }
 }
 </code></pre>
                 </div>
@@ -92,6 +214,12 @@
             </div>
             <h3 class="t_tit2">03. JAVASCRIPT</h3>
             <p class="t_desc2">
+               1. 출력 : map() 메서드를 이용해서 전체속성 개수와  cssProperty 데이터를 출력합니다.<br>
+               2. 입력 : searchBox에 addEventListener("keyup")을 걸고 searchBox의 value값을 저장시켜서 findProperty에 넣어줍니다.<br>
+               3. 속성 찾기 : findProperty 함수를 만들고 그 안에서 cssProperty안에 있는 데이터(name)에 대해서 find() 메서드를 이용해서 찾아줍니다.<br>
+               조건문을 걸어서 일치하는 데이터를 찾지 못한 경우에는 "해당 속성은 존재하지 않습니다. 다시 검색해주세요!" 메시지를 출력해주고 return으로 종료시킵니다.<br>
+               4. 미션 : 1번에서 출력된 데이터를 선택해서 searchListspan 변수를 만들어주고 forEach와 addEventListener를 돌려서 속성박스 클릭시 desc박스에 cssProperty 설명이 나오게 출력해줍니다.
+               
             </p>
             <div class="t_code">
 <pre><code class="language-js">{
@@ -132,41 +260,41 @@
                                             ...
     ];
     // 선택자
-const searchList = document.querySelector(".search__list");
-const searchNum = document.querySelector(".search__info .num");
-const searchBox = document.querySelector(".search__box input");
-const searchDesc = document.querySelector(".search__desc");
+    const searchList = document.querySelector(".search__list");
+    const searchNum = document.querySelector(".search__info .num");
+    const searchBox = document.querySelector(".search__box input");
+    const searchDesc = document.querySelector(".search__desc");
 
-// 출력하기
-cssProperty.map((element, index) =&gt; {
-    searchNum.innerText = index + 1;
-    searchList.innerHTML += `&lt;span&gt;${element.name}&lt;/span&gt;`;
-});
-
-// 미션(클릭시 설명 나오게)
-const searchListspan = document.querySelectorAll(".search__list span");
-searchListspan.forEach((e, i) =&gt; {
-    e.addEventListener("click", () =&gt; {
-        searchDesc.textContent = cssProperty[i].desc;
+    // 출력하기
+    cssProperty.map((element, index) =&gt; {
+        searchNum.innerText = index + 1;
+        searchList.innerHTML += `&lt;span&gt;${element.name}&lt;/span&gt;`;
     });
-});
 
-// 속성 찾기
-function findProperty(searchData){
-   const targetData = cssProperty.find((data) =&gt; data.name === searchData);
-
-    if(targetData == null){
-        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!"
-        return;
-    }
-   searchDesc.textContent = targetData.desc;           
-};
-
-// 입력하기
-searchBox.addEventListener("keyup", ()=&gt;{
+    // 입력하기
+    searchBox.addEventListener("keyup", ()=&gt;{
         const searchWord = searchBox.value;
         // console.log(searchWord);
         findProperty(searchWord);
+    });
+
+    // 속성 찾기
+    function findProperty(searchData){
+       const targetData = cssProperty.find((data) =&gt; data.name === searchData);
+
+        if(targetData == null){
+            searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!"
+            return;
+        }
+       searchDesc.textContent = targetData.desc;           
+    };
+
+    // 미션(클릭시 설명 나오게)
+    const searchListspan = document.querySelectorAll(".search__list span");
+    searchListspan.forEach((e, i) =&gt; {
+        e.addEventListener("click", () =&gt; {
+            searchDesc.textContent = cssProperty[i].desc;
+        });
     });
 }
 </code></pre>
