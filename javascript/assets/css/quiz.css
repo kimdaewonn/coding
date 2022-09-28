@@ -732,6 +732,7 @@ body {
     bottom: 20px;
     right: 20px;
     background-color: rgb(28, 113, 240);
+    z-index: 10001;
 }
 .modal__btn:hover {
     background-color: rgb(161, 217, 241);
