@@ -30,9 +30,9 @@
         <div class="search__wrap">
             <span>charAt()를 이용하여 검색하기</span>
             <h1>CSS 속성 검색하기</h1>
-
             <div class="search__info">
                 <div class="keyword">
+                    <span class="All">All</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -983,186 +983,186 @@ searchKeyword.forEach(el => {
                 </div>
             <div>
 <pre><code class="language-css">
-:root {
-    --htmlColor : #223547;
-    --cssColor : #472222;
-    --javscriptColor : #224736;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
-    color: #223547;
-}
-*, *:before, *:after {
-    box-sizing:border-box;
-}
-a {
-    color: #223547;
-    text-decoration: none;
-}
-li {
-    list-style: none;
-}
+    :root {
+        --htmlColor : #223547;
+        --cssColor : #472222;
+        --javscriptColor : #224736;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'NexonLv1Gothic';
+        color: #223547;
+    }
+    *, *:before, *:after {
+        box-sizing:border-box;
+    }
+    a {
+        color: #223547;
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
 
-/* header */
-#header {
-    display: flex;
-    justify-content: space-between;
-}
-#header h1 {
-    margin: 10px;
-    font-family: 'Tmon';
-    font-size: 40px;
-}
-#header nav {
-    margin: 10px;
-}
-#header nav li {
-    position: relative;
-    display: inline;
+    /* header */
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #header h1 {
+        margin: 10px;
+        font-family: 'Tmon';
+        font-size: 40px;
+    }
+    #header nav {
+        margin: 10px;
+    }
+    #header nav li {
+        position: relative;
+        display: inline;
 
-}
-#header nav li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--htmlColor);
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'NexonLv1Gothic';
-}
-#header nav li.active a {
-    background-color: #223547;
-    color: #fff;
-}
-#header nav li .sub {
-    position: absolute;
-    left: 0;
-    top: 35px;
-    width: 400px;
-}
-#header nav li .sub a {
-    width: auto;
-    background-color: transparent;
-    color: #223547;
-    border: 0;
-    text-align: left;
-    line-height: 1.2;
-}
-#header nav li .sub li.active a {
-    text-decoration: underline;
-} 
-/* main */
-#main {
-    margin: 50px 10px;
-}
-.search__wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    border: 3px solid #223547;
-    border-radius: 20px;
-    background-color: #F1F3F6;
-    padding: 30px;
-    text-align: center;
-}
-.search__wrap > span {
-    font-size: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-.search__wrap > h1 {
-    font-family: 'Tmon';
-    color: #223547;
-    font-size: 6vw;
-    margin-bottom: 10px;
-}
-.search__box {
-    margin-bottom: 40px;
-}
-.search__box label {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-}
-.search__box input {
-    border: 2px solid #223547;
-    padding: 15px 40px;
-    width: 70%;
-    border-radius: 50px;
-    font-size: 20px;
-}
-
-.search__list li {
-    text-align: left;
-    line-height: 1.7;
-}
-.search__list li.hide {
-    display: none;
-}
-.search__list li.show {
-    display: block;
-}
-.search__info {
-    text-align: right;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--htmlColor);
-}
-.search__info .type {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword span {
-    border: 2px solid var(--htmlColor);
-    border-radius: 50px;
-    padding: 10px;
-    display: inline-block;
-    margin-bottom: 4px;
-}
-.search__info  .keyword span:hover {
-    background-color: var(--htmlColor);
-    color: #fff;
-    cursor:pointer;
-}
-
-@media (max-width: 600px){
+    }
+    #header nav li a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-family: 'NexonLv1Gothic';
+    }
+    #header nav li.active a {
+        background-color: #223547;
+        color: #fff;
+    }
+    #header nav li .sub {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 400px;
+    }
+    #header nav li .sub a {
+        width: auto;
+        background-color: transparent;
+        color: #223547;
+        border: 0;
+        text-align: left;
+        line-height: 1.2;
+    }
+    #header nav li .sub li.active a {
+        text-decoration: underline;
+    } 
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
     .search__wrap {
-        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
     }
     .search__wrap > span {
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
     }
     .search__wrap > h1 {
-        font-size: 44px;
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
     }
     .search__box input {
-        font-size: 16px;
-        padding: 12px 30px;
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
     }
-}
-/* footer */
-#footer {
-    text-align: center;
-}
-#footer a {
-    color: #000;
-    font-family: 'NexonLv1Gothic';
-    padding-bottom: 50px;
-}
-#footer a:hover {
-    text-decoration: underline;
-}
+
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__info {
+        text-align: right;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info  .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor:pointer;
+    }
+
+    @media (max-width: 600px){
+        .search__wrap {
+            padding: 20px;
+        }
+        .search__wrap > span {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .search__wrap > h1 {
+            font-size: 44px;
+        }
+        .search__box input {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+    /* footer */
+    #footer {
+        text-align: center;
+    }
+    #footer a {
+        color: #000;
+        font-family: 'NexonLv1Gothic';
+        padding-bottom: 50px;
+    }
+    #footer a:hover {
+        text-decoration: underline;
+    }
 </code></pre>
                     </div>
                 </div>
@@ -1190,34 +1190,53 @@ li {
         const searchInfo2 = document.querySelector(".search__info .num2");
 
 
-                         //찾은 갯수
+
+
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
         
         searchKeyword.forEach(el => {
             el.addEventListener("click", () => {
                 const searchWord = el.innerText;        //사용자가 클릭한 알파벳
-                //console.log(searchWord);
-
+                // console.log(searchWord);
+                
                 searchList.forEach(el => {
                     const cssName = el.querySelector("strong").innerText;       //CSS 속성 텍스트
+                    
                     // console.log(cssName)
-
+                    
                     //알파벳 첫글자 == CSS 속성의 첫글자
                     if(searchWord.charAt(0) === cssName.charAt(0)){
                         el.classList.remove("hide");
                     } else {
                         el.classList.add("hide");
                     }
-                })
+                });
                 const hidingNum = document.querySelectorAll(".search__list ul li.hide");
-                searchInfo2.textContent = searchList.length - hidingNum.length;
+                searchInfo2.innerHTML = "CSS 속성 중 "+ (searchWord) +"로 시작하는 속성은 "+(searchList.length - hidingNum.length) + "개입니다.";
+
+                
             });
         });
 
+                const Allbtn = document.querySelector(".All");
 
-        
-    
+                Allbtn.addEventListener("click",()=>{
+                    searchList.forEach((el,i)=>{
+                        if(0<=searchList.length){                         
+                            el.classList.remove("hide")
+                        } else {
+                            el.classList.add("hide")
+                        }
+                    });
+                });
+
+
+
+
+
+
+                    
     </script>
 </body>
 </html>
