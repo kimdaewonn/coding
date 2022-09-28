@@ -799,6 +799,9 @@ li {
         const searchBox = document.querySelector(".search__box input");
         const searchDesc = document.querySelector(".search__desc");
 
+        const searchList2 = document.querySelectorAll(".search__list span");
+
+
         // 출력하기
         cssProperty.map((element, index) => {
             searchNum.innerText = index + 1;
@@ -824,16 +827,15 @@ li {
 
            searchDesc.textContent = targetData.desc;
         };
+        
         // 미션 클릭시 설명
-        const searchList2 = document.querySelector(".search__list span");
 
         searchList2.forEach((e)=>{
         e.addEventListener("click",()=>{
 
-        innerText +=  `<span>${element.desc}</span>`;
+        innerText +=`<span>${element.desc}</span>`;
         });
         });
-
         
     </script>
 </body>
