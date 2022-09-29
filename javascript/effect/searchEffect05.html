@@ -24,39 +24,42 @@
             </ul>
         </nav>
     </header>
-
     <!-- //header -->
     <main id="main">
         <div class="search__wrap">
             <span>filter()를 이용하여 속성의 중요도 보여주기</span>
             <h1>CSS 속성 검색하기</h1>
-        <div class="search__click">
-            <ul>
-                <li data-star="0"><a href="#">☆☆☆☆☆</a></li>
-                <li data-star="1"><a href="#">★☆☆☆☆</a></li>
-                <li data-star="2"><a href="#">★★☆☆</a></li>
-                <li data-star="3"><a href="#">★★★☆</a></li>
-                <li data-star="4"><a href="#">★★★★☆</a></li>
-                <li data-star="5"><a href="#">★★★★★</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">1개 이상</a></li>
-                <li><a href="#">2개 이상</a></li>
-                <li><a href="#">3개 이상</a></li>
-                <li><a href="#">4개 이상</a></li>
-            </ul>
-        </div>
-
-        <div class="search__info">
-            <div>전체 속성 갯수 : <span class="num">0</span></div>
-        </div>
-        <div class="search__list">
-            <ul class="line">
-
-            </ul>
-        </div>
+          
+            <div class="search__click">
+                <ul>
+                    <li data-star="0"><a href="#">☆☆☆☆☆</a></li>
+                    <li data-star="1"><a href="#">★☆☆☆☆</a></li>
+                    <li data-star="2"><a href="#">★★☆☆☆</a></li>
+                    <li data-star="3"><a href="#">★★★☆☆</a></li>
+                    <li data-star="4"><a href="#">★★★★☆</a></li>
+                    <li data-star="5"><a href="#">★★★★★</a></li>
+                </ul>
+                <ul>
+                    <li data-num="1"><a href="#">1개 이상</a></li>
+                    <li data-num="2"><a href="#">2개 이상</a></li>
+                    <li data-num="3"><a href="#">3개 이상</a></li>
+                    <li data-num="4"><a href="#">4개 이상</a></li>
+                </ul>
+            </div>
+          
+            <div class="search__info">
+                <div>찾은 속성 갯수 : <span class="num">0</span></div>
+            </div>
+          
+            <div class="search__list">
+                <ul class="line">
+          
+                </ul>
+            </div>
+          
+          </div>
     </main>
-    <!-- //main -->
+          <!-- //main -->
     <div class="modal__wrap">
         <div class="modal__btn">소스 보기</div>
         <div class="modal__cont">
@@ -701,36 +704,68 @@
                 { star: 5, name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
                     ];
     
+       //선택자~~
         const searchList = document.querySelector(".search__list ul");
         const searchClick = document.querySelectorAll(".search__click ul li");
 
-        // 출력하기
+        //출력하기 (매개변수 사용)
         function updateList(list){
-            listCSS = "";
-            
-            for(const data of list){
-                listCSS += `<li> : ${data.name} : ${data.desc}<em>${data.star}</em></li>`;
-            }
+        listCSS = "";
 
-            searchList.innerHTML = listCSS;
+        for(const data of list){
+            switch(data.star){
+                case 0:
+                listCSS += `<li>${data.name} : ${data.desc}<em>☆☆☆☆☆</em></li>`;
+                break;
+                case 1:
+                listCSS += `<li>${data.name} : ${data.desc}<em>★☆☆☆☆</em></li>`;
+                break;
+                case 2:
+                listCSS += `<li>${data.name} : ${data.desc}<em>★★☆☆☆</em></li>`;
+                break;
+                case 3:
+                listCSS += `<li>${data.name} : ${data.desc}<em>★★★☆☆</em></li>`;
+                break;
+                case 4:
+                listCSS += `<li>${data.name} : ${data.desc}<em>★★★★☆</em></li>`;
+                break;
+                case 5:
+                listCSS += `<li>${data.name} : ${data.desc}<em>★★★★★</em></li>`;
+                break;
+                default:
+                listCSS += `<li>${data.name} : ${data.desc}<em>값이 없음</em></li>`;
+                break;
+            }
+        }
+
+        searchList.innerHTML = listCSS;
+
+        const searchList2 = document.querySelectorAll(".search__list ul li");
+        document.querySelector(".num").textContent=searchList2.length;
         }
         updateList(cssProperty);
 
-        // 클릭하기
-        searchClick.forEach(star => {
-            star.addEventListener("click", ()=>{
-                const target = star.dataset.star;
-                const filsterList = cssProperty.filter(data=>data.star == target);
-
-                updateList(filsterList);
-            });
+        //클릭하기
+        searchClick.forEach((star) => {
+        star.addEventListener("click",()=>{
+            const target = star.dataset.star;
+            const target2 = star.dataset.num;
+            const filterList = cssProperty.filter(data => data.star == target || data.star >= target2 );
+            
+            
+            updateList(filterList);
         });
+        })
+
+
 
         // 숫자를 별로 치환해주기! 힌트 
-        // dataset 안쓰고 가져오는 방법(고민)index값
-        // 조건문 들어간거 완료하기(1개이상 2개이상)
-        // 전체 속성 갯수 표시
 
+        // dataset 안쓰고 가져오는 방법(고민)index값
+
+        // 조건문 들어간거 완료하기(1개이상 2개이상)
+
+        // 전체 속성 갯수 표시
     </script>
 </body>
 </html>
