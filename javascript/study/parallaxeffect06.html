@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트 06</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">패럴랙스 이펙트 06</h2>
+            <div class="t_desc2">
+                    페럴랙스 이펙트 여섯번째 시간입니다.<br>
+                    이번 시간에는 스크롤을 내릴때 텍스트를 한자씩 쪼개서 떨어지도록 효과를 줬습니다.
+            </div>
+            <hr>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/parallaxEffect06.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/parallaxEffect06.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/parallaxEffect06.html>원본 소스 보기</a>
+            </div>
+            <h3 class="t_tit2">01. HTML 코드</h3>
+            <div class="t_code">
+<pre><code class="language-html">{
+
+}
+</code></pre>
+                </div>
+
+                <h3 class="t_tit2">02. CSS 코드</h3>
+                <p class="t_desc2">
+                    cubic-bezie효과를 줬습니다.
+
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">{
+    #parallax__nav {
+        position:fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top .4s ease;
+    }
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+
+    }
+
+    #parallax__nav li.active a {
+        background-color: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+    #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255,255,255,0.1); */
+    }
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255,255,255,0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 8vw;
+    }
+    .content__item:nth-child(even){
+        margin-left: 0;
+        text-align: right;
+    }
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+    .content__item:nth-child(even) .content__item__num {
+        left: auto;
+        right: -5vw;
+    }
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+        
+    }
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .content__item__img {
+        position: absolute;
+        background: url(../assets/img/effect_bg18-min.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        /* transition: all 1s; */
+        padding-top: 8vw;
+    }
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../assets/img/effect_bg14-min.jpg);
+    }
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../assets/img/effect_bg15-min.jpg);
+    }
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../assets/img/effect_bg16-min.jpg);
+    }
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../assets/img/effect_bg17-min.jpg);
+    }
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../assets/img/effect_bg18-min.jpg);
+    }
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../assets/img/effect_bg19-min.jpg);
+    }
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../assets/img/effect_bg01-min.jpg);
+    }
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../assets/img/effect_bg02-min.jpg);
+    }
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../assets/img/effect_bg03-min.jpg);
+    }
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+    }
+
+    @media (max-width: 800px){
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.8);
+        }
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1;
+
+        }
+        #parallax__nav li.active a {
+            border-radius: 5px;
+        }
+        #parallax__info {
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    /* option */
+    .split span {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
+        display: inline-block;
+        min-width: 1vw;
+        min-height: 1vw;
+    }
+    .split span.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+     /* .split span:nth-child(1) {
+        transition-delay: 100ms;
+     }
+     .split span:nth-child(2) {
+        transition-delay: 150ms;
+     }
+     .split span:nth-child(3) {
+        transition-delay: 200ms;
+     }
+     .split span:nth-child(4) {
+        transition-delay: 250ms;
+     }
+     .split span:nth-child(5) {
+        transition-delay: 300ms;
+     }
+     .split span:nth-child(6) {
+        transition-delay: 350ms;
+     }
+     .split span:nth-child(7) {
+        transition-delay: 400ms;
+     }
+     .split span:nth-child(8) {
+        transition-delay: 450ms;
+     }
+     .split span:nth-child(9) {
+        transition-delay: 500ms;
+     }
+     .split span:nth-child(10) {
+        transition-delay: 550ms;
+     }
+     .split span:nth-child(11) {
+        transition-delay: 600ms;
+     }
+     .split span:nth-child(12) {
+        transition-delay: 650ms;
+     }
+     .split span:nth-child(13) {
+        transition-delay: 700ms;
+     }
+     .split span:nth-child(14) {
+        transition-delay: 750ms;
+     }
+     .split span:nth-child(15) {
+        transition-delay: 800ms;
+     }
+     .split span:nth-child(16) {
+        transition-delay: 850ms;
+     }
+     .split span:nth-child(17) {
+        transition-delay: 900ms;
+     }
+     .split span:nth-child(18) {
+        transition-delay: 950ms;
+     }
+     .split span:nth-child(19) {
+        transition-delay: 1000ms;
+     }
+     .split span:nth-child(20) {
+        transition-delay: 1050ms;
+     }
+     .split span:nth-child(21) {
+        transition-delay: 1100ms;
+     }
+     .split span:nth-child(22) {
+        transition-delay: 1150ms;
+     }
+     .split span:nth-child(23) {
+        transition-delay: 1200ms;
+     }
+     .split span:nth-child(24) {
+        transition-delay: 1250ms;
+     }
+     .split span:nth-child(25) {
+        transition-delay: 1300ms;
+     }
+     .split span:nth-child(26) {
+        transition-delay: 1350ms;
+     }
+     .split span:nth-child(27) {
+        transition-delay: 1400ms;
+     }
+     .split span:nth-child(28) {
+        transition-delay: 1450ms;
+     }
+     .split span:nth-child(29) {
+        transition-delay: 1500ms;
+     }
+     .split span:nth-child(30) {
+        transition-delay: 1550ms;
+     } */
+}
+</code></pre>
+                </div>
+
+            <h3 class="t_tit2">03. script 코드</h3>
+            <p class="t_desc2">
+    
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+
+}
+</code></pre>
+            </div>
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
