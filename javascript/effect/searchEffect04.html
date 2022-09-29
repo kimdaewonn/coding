@@ -708,6 +708,14 @@
             findProperty(searchWord);
         });
 
+        // 클릭하기
+        document.querySelectorAll(".search__list span").forEach(span =>{
+            sapn.addEventListener("click",()=>{
+                const clickWord = span.innerText;
+                findProperty(clickWord);
+            });
+        });
+
         // 속성 찾기
         function findProperty(searchData){
            const targetData = cssProperty.find((data) => data.name === searchData);
@@ -720,12 +728,12 @@
         };
 
         // 미션(클릭시 설명 나오게)
-        const searchListspan = document.querySelectorAll(".search__list span");
-        searchListspan.forEach((e, i) => {
-            e.addEventListener("click", () => {
-                searchDesc.textContent = cssProperty[i].desc;
-            });
-        });
+        // const searchListspan = document.querySelectorAll(".search__list span");
+        // searchListspan.forEach((e, i) => {
+        //     e.addEventListener("click", () => {
+        //         searchDesc.textContent = cssProperty[i].desc;
+        //     });
+        // });
 
     </script>
 </body>
