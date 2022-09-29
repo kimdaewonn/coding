@@ -70,6 +70,9 @@
             user-select: none;
             pointer-events: none;
         }
+        .mouse__cursor.active{
+            transform: scale(5);
+        }
        
     </style>
 </head>
@@ -101,48 +104,48 @@
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <div class="spanSlow">Pain Past</div>
+                            <div class="spanSlow span">Pain Past</div>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <div class="spanSlow">Pain Past</div>
+                            <div class="spanSlow span">Pain Past</div>
                         </div>
                     </div>
                 </div>
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <div class="spanFast">is pleasure</div>
+                            <div class="spanFast span">is pleasure</div>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <div class="spanFast">is pleasure</div>
+                            <div class="spanFast span">is pleasure</div>
                         </div>
                     </div>
                 </div>
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <div class="spanSlow">지나간 고통은</div>
+                            <div class="spanSlow span">지나간 고통은</div>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <div class="spanSlow">지나간 고통은</div>
+                            <div class="spanSlow span">지나간 고통은</div>
                         </div>
                     </div>
                 </div>
                 <div class="line">
                     <div class="left">
                         <div class="spanWrap">
-                            <div class="spanFast">쾌락이다.</div>
+                            <div class="spanFast span">쾌락이다.</div>
                         </div>
                     </div>
                     <div class="right">
                         <div class="spanWrap">
-                            <div class="spanFast">쾌락이다.</div>
+                            <div class="spanFast span">쾌락이다.</div>
                         </div>
                     </div>
                 </div>        
@@ -249,6 +252,10 @@
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
+
+    const cursor = document.querySelector(".mouse__cursor");
+    const span = document.querySelectorAll(".spanWrap .span");
+
         const mouseMove = (e) => {
             let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
             let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
@@ -261,6 +268,18 @@
        window.addEventListener("mousemove", mouseMove);
 
     //  마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전효과 추가
+        window.addEventListener("mousemove",()=>{
+            span.forEach(span => {
+                span.addEventListener("mouseenter", () =>{
+                    cursor.classList.add("active");
+                });
+                span.addEventListener("mouseleave", () =>{
+                    cursor.classList.remove("active");
+                });
+            });
+        })
+
+
     </script>
 </body>
 </html>

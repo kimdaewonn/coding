@@ -185,7 +185,7 @@
         border-radius: 10px;
     }
     /* option */
-    /* .split span {
+    .split span {
         opacity: 0;
         transform: translateY(50px);
         transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
@@ -193,11 +193,11 @@
         min-width: 1vw;
         min-height: 1vw;
     }
-    .split .span .show {
+    .split span.show {
         opacity: 1;
         transform: translateY(0);
     }
-     .split span:nth-child(1) {
+     /* .split span:nth-child(1) {
         transition-delay: 100ms;
      }
      .split span:nth-child(2) {
@@ -532,6 +532,7 @@
                 if(scrollTop >= item.offsetTop){
                     item.querySelectorAll(".split span").forEach((span, index) => {
                         span.classList.add("show");
+                        span.style.transitionDelay = `${index * 50}ms`
                     });
                 }
             })
