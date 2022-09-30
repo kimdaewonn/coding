@@ -25,7 +25,7 @@ function sliderEffect(){
 
     }
 }
-// setInterval(sliderEffect,2000);
+setInterval(sliderEffect,2000);
 
 const sliderBtn = document.querySelector(".slider__btn");
 const prevBtn = document.querySelector(".prev");
