@@ -718,6 +718,9 @@ body {
 
 
 /* modal__wrap */
+.modal__wrap {
+    text-align: left;
+}
 .modal__btn {
     color: #fff;
     border: 1px solid #fff;
@@ -750,6 +753,7 @@ body {
     align-items: center;
     justify-content: center;
     transform: scale(0);
+    z-index: 1000;
 }
 .modal__box {
     width: 70%;
