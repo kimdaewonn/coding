@@ -617,15 +617,21 @@
         //     }
         // }
         // document.write(solution(10))
+
+ 
     }
-    function func() {
-                let a = 0, sum = 0;
-                while (a < 10) {
-                    a++;
+    // 1
+    {
+        function func(xx, you){
+                let result = 2;
+                for( i = 1; i<you; i++){
+                    result = result * i;
                 }
-                document.write(a);
+                document.write(result + xx);
             }
-            func();
+            func(1, 3)
+    }
+    
 
     </script>
 </body>
