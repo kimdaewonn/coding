@@ -242,9 +242,14 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
 <pre class="line-numbers"><code class="language-js">{
     function func(){
         let xx,yy = 0;
+        const a = 6;
+        const b = 24;
 
         for( xx=0; xx&lt;4; xx++){
             yy -= xx;
+        }
+        if(yy&lt;0){
+            yy=yy+a
         }
         document.write(yy*xx);
     }
@@ -450,9 +455,14 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         {
             // function func(){
             //     let xx,yy = 0;
+            //     const a = 6;
+            //     const b = 24;
 
             //     for( xx=0; xx<4; xx++){
             //         yy -= xx;
+            //     }
+            //     if(yy<0){
+            //         yy=yy+a
             //     }
             //     document.write(yy*xx);
             // }
