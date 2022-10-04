@@ -249,8 +249,11 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
             yy -= xx;
         }
         if(yy&lt;0){
-            yy=yy+a
+            yy+=a;
+        } else {
+            yy+=b;
         }
+
         document.write(yy*xx);
     }
     func();
@@ -338,7 +341,7 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
             if( i %2 == 0) continue;
             pp +=i;
         }
-        document.write(pp);
+        document.write(pp+i);
     }
     func();
 }
@@ -353,13 +356,18 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function func(xx, you){
-        let result = 2;
-        for( i = 1; i&lt;=you; i++){
+        let result = 10;
+        for( i = 1; i&lt;=xx.length; i++){
             result = result * i;
         }
-        document.write(result - xx);
+        if(you>2){
+            xx.push(result);
+        } else{
+            xx.unshift(result);
+        }
+        document.write(xx);
     }
-    func(2, 4)
+    func(['7번','정답은','무엇일까요?'], 3);
 }
 </code></pre>
         </div>
@@ -462,8 +470,11 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
             //         yy -= xx;
             //     }
             //     if(yy<0){
-            //         yy=yy+a
+            //         yy+=a;
+            //     } else {
+            //         yy+=b;
             //     }
+
             //     document.write(yy*xx);
             // }
             // func();
@@ -523,21 +534,26 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
             //         if( i %2 == 0) continue;
             //         pp +=i;
             //     }
-            //     document.write(pp);
+            //     document.write(pp+i);
             // }
             // func();
         }
 
         // //sample07
         {
-             // function func(xx, you){
-            //     let result = 2;
-            //     for( i = 1; i<=you; i++){
+            //  function func(xx, you){
+            //     let result = 10;
+            //     for( i = 1; i<=xx.length; i++){
             //         result = result * i;
             //     }
-            //     document.write(result - xx);
+            //     if(you>2){
+            //         xx.push(result);
+            //     } else{
+            //         xx.unshift(result);
+            //     }
+            //     document.write(xx);
             // }
-            // func(2, 4)
+            // func(['7번','정답은','무엇일까요?'], 3);
         }
 
         // //sample08
@@ -584,4 +600,9 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
             // document.write(func());
 
         }
+       {
+
+}
+
+
         </script>
