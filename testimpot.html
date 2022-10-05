@@ -1,62 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
+</html><!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> 꾸다 - 인덱스 </title>
     <style>
-        .slider__wrap {
-            
+        @font-face {
+            font-family: 'PyeongChangPeace';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.ttf') format("truetype");
+            font-display: swap;
         }
-        .slider__img {
-            width: 1100px;
+        * {
+            margin: 0;
+            padding: 0;
         }
-        .slider__inner {
-            width: 4800px;
+        body {
+            margin: 0 auto;
+            font-family: 'PyeongChangPeace';
+            font-weight: 700;
+            font-size: 50px;
         }
-        .slider {
-            width: 1100px;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+        }
+        h2 {
+            padding-top: 30px;
+            color: #5C6E6C;
+            font-size: 46px;
+            transition: all 0.3s;
+        }
+        .figma {
+            width: 33.3%;
+            background-color: #E0E3DA;
+            padding-top: 30px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        .html {
+            width: 33.3%;
+            background-color: #FFFFF3;
+            padding-top: 30px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        .php {
+            width: 33.3%;
+            background-color: #C3CFDD;
+            padding-top: 30px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        .EX__box {
+            display: none;
+        }
+        .figma > a{
+           color: rgb(150 165 163);
+           border-bottom: 5px solid rgb(150 165 163);
+        }
+        .html a{
+            color: rgb(196 207 205);
+        }
+        .php a{
+            color: rgb(141 162 175);
+        }
+        .figma__wrap h3 {
+            font-size: 30px;
+            padding-top: 30px;
+            color: #5C6E6C;
+        }
+        .figma__wrap li {
+            margin: -15px;
+        }
+        .figma__wrap li > a {
+            color: rgb(150 165 163);
+            font-size: 26px;
         }
     </style>
 </head>
 <body>
-    <div class="slider__wrap">
-        <div class="slider__img">
-            <div class="slider__inner">
-                <div class="slider"></div>
-                <div class="slider"></div>
-                <div class="slider"></div>
+    <div class="wrap">
+        <div class="figma"><a href="https://www.figma.com/file/JfmnC5oLEfHDRkkT8obVcE/Untitled?node-id=0%3A1" target="_blank">Figma</a>
+            <div class="figma__wrap">
+                <h2 class="Up">로그인 디자인
+                <div class="EX__box">
+                    <ul>
+                        <h3>로그인 팝업 UI</h3>
+                        <li><a href="Figma_side/F_login.html" target="_blank">로그인 팝업창</a></li>
+                    </ul>
+                    <ul>
+                        <h3>아이디 찾기 UI</h3>
+                        <li><a href="Figma_side/F_ID.html" target="_blank">아이디 찾기</a></li>
+                        <li><a href="Figma_side/F_ID_clear.html" target="_blank">찾기 완료</a></li>
+                    </ul>
+                    <ul>
+                        <h3>비밀번호 찾기 UI</h3>
+                        <li><a href="Figma_side/F_password.html" target="_blank">비밀번호 찾기</a></li>
+                        <li><a href="Figma_side/F_password_clear.html" target="_blank">찾기 완료</a></li>
+                    </ul>
+                    <ul>
+                        <h3>회원가입 UI</h3>
+                        <li><a href="Figma_side/F_OK.html" target="_blank">회원가입 동의</a></li>
+                        <li><a href="Figma_side/F_ing.html" target="_blank">회원가입 진행</a></li>
+                        <li><a href="Figma_side/F_clear.html" target="_blank">회원가입 완료</a></li>
+                    </ul>
+                </div>
+                </h2>
+                <h2 class="Up">게시판 디자인
+                <div class="EX__box">
+                    <ul>
+                        <h3>로그인 팝업 UI</h3>
+                        <li><a href="Figma_side/F_login.html" target="_blank">로그인 팝업창</a></li>
+                    </ul>
+                    <ul>
+                        <h3>아이디 찾기 UI</h3>
+                        <li><a href="Figma_side/F_ID.html" target="_blank">아이디 찾기</a></li>
+                        <li><a href="Figma_side/F_ID_clear.html" target="_blank">찾기 완료</a></li>
+                    </ul>
+                    <ul>
+                        <h3>비밀번호 찾기 UI</h3>
+                        <li><a href="Figma_side/F_password.html" target="_blank">비밀번호 찾기</a></li>
+                        <li><a href="Figma_side/F_password_clear.html" target="_blank">찾기 완료</a></li>
+                    </ul>
+                    <ul>
+                        <h3>회원가입 UI</h3>
+                        <li><a href="Figma_side/F_OK.html" target="_blank">회원가입 동의</a></li>
+                        <li><a href="Figma_side/F_ing.html" target="_blank">회원가입 진행</a></li>
+                        <li><a href="Figma_side/F_clear.html" target="_blank">회원가입 완료</a></li>
+                    </ul>
+                </div>
+                </h2>
             </div>
         </div>
+        <div class="html"><a href="#">html</a></div>
+        <div class="php"><a href="#">php</a></div>
     </div>
-    <script>
-        const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = document.querySelector(".slider__img");
-        const sliderInner = document.querySelector(".slider__inner");
-        const Slider  = document.querySelectorAll(".slider");
-
-        let currentIndex = 0;
-        let sliderCount = slider.length;
-        let sliderWidth = sliderImg.offsetwidth;
-        let sliderCopty = sliderInner.firstElementChild.cloneNode(true);
-        sliderInner.appendChild(sliderCopty);
-
-        function sliderEffect(){
-            currentIndex++
-            sliderInner.style.transition = "all 0.6s"
-            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex +"px)";
-            
-            if(currentIndex == sliderCount){
-                setTimeout(()=>{
-                    sliderInner.style.transition = "0s"
-                    sliderInner.style.transform = "translateX(0px)"
-                },700)
-                currentIndex=0;
-            }
-            
-        }
-        setInterval(sliderEffect,2000);
-    </script>
 </body>
+<script>
+    const btn = document.querySelectorAll(".figma__wrap .Up")
+    function open(){
+        const box = document.querySelectorAll(".figma__wrap .EX__box");
+        // box.forEach(e=>{
+        //     if(e.style.display === 'block'){
+        //         e.style.display = 'none';
+        //     }else {
+        //         e.style.display = 'block';
+        //     }
+        // })
+    }
+    btn.forEach((btn,i)=>{btn.addEventListener('click',open)})
+</script>
 </html>
