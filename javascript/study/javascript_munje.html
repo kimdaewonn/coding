@@ -601,8 +601,14 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
 
         }
        {
+        {
+            const arr = ['a', 'b', 'c'];
 
+const result = arr.reduceRight(function (str, currValue) {
+    return str + currValue;
+}, '');
+
+document.write(result);
 }
-
-
+}
         </script>
