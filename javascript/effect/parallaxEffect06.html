@@ -184,113 +184,7 @@
         padding: 20px;
         border-radius: 10px;
     }
-    /* option */
-    .split span {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
-        display: inline-block;
-        min-width: 1vw;
-        min-height: 1vw;
-    }
-    .split span.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-     /* .split span:nth-child(1) {
-        transition-delay: 100ms;
-     }
-     .split span:nth-child(2) {
-        transition-delay: 150ms;
-     }
-     .split span:nth-child(3) {
-        transition-delay: 200ms;
-     }
-     .split span:nth-child(4) {
-        transition-delay: 250ms;
-     }
-     .split span:nth-child(5) {
-        transition-delay: 300ms;
-     }
-     .split span:nth-child(6) {
-        transition-delay: 350ms;
-     }
-     .split span:nth-child(7) {
-        transition-delay: 400ms;
-     }
-     .split span:nth-child(8) {
-        transition-delay: 450ms;
-     }
-     .split span:nth-child(9) {
-        transition-delay: 500ms;
-     }
-     .split span:nth-child(10) {
-        transition-delay: 550ms;
-     }
-     .split span:nth-child(11) {
-        transition-delay: 600ms;
-     }
-     .split span:nth-child(12) {
-        transition-delay: 650ms;
-     }
-     .split span:nth-child(13) {
-        transition-delay: 700ms;
-     }
-     .split span:nth-child(14) {
-        transition-delay: 750ms;
-     }
-     .split span:nth-child(15) {
-        transition-delay: 800ms;
-     }
-     .split span:nth-child(16) {
-        transition-delay: 850ms;
-     }
-     .split span:nth-child(17) {
-        transition-delay: 900ms;
-     }
-     .split span:nth-child(18) {
-        transition-delay: 950ms;
-     }
-     .split span:nth-child(19) {
-        transition-delay: 1000ms;
-     }
-     .split span:nth-child(20) {
-        transition-delay: 1050ms;
-     }
-     .split span:nth-child(21) {
-        transition-delay: 1100ms;
-     }
-     .split span:nth-child(22) {
-        transition-delay: 1150ms;
-     }
-     .split span:nth-child(23) {
-        transition-delay: 1200ms;
-     }
-     .split span:nth-child(24) {
-        transition-delay: 1250ms;
-     }
-     .split span:nth-child(25) {
-        transition-delay: 1300ms;
-     }
-     .split span:nth-child(26) {
-        transition-delay: 1350ms;
-     }
-     .split span:nth-child(27) {
-        transition-delay: 1400ms;
-     }
-     .split span:nth-child(28) {
-        transition-delay: 1450ms;
-     }
-     .split span:nth-child(29) {
-        transition-delay: 1500ms;
-     }
-     .split span:nth-child(30) {
-        transition-delay: 1550ms;
-     } */
-
-
-
-
+    
     </style>
 </head>
 <body>
@@ -319,7 +213,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
+                <p class="content__item__desc split style1">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
             </section>
             <!-- //section1 -->
             <section id="section2" class="content__item">
@@ -328,7 +222,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">피할수 없으면 즐겨라</p>
+                <p class="content__item__desc split style2">피할수 없으면 즐겨라</p>
             </section>
             <!-- //section2 -->
             <section id="section3" class="content__item">
@@ -337,7 +231,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다</p>
+                <p class="content__item__desc split style3">승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다</p>
             </section>
             <!-- //section3 -->
             <section id="section4" class="content__item">
@@ -346,7 +240,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.</p>
+                <p class="content__item__desc split style4">과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.</p>
             </section>
             <!-- //section4 -->
             <section id="section5" class="content__item">
@@ -935,26 +829,60 @@
             //     }
             // })
 
-            document.querySelectorAll(".content__item").forEach(item => {
+            
+  document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop >= item.offsetTop){
                     item.querySelectorAll(".split span").forEach((span, index) => {
                         span.classList.add("show");
-                        span.style.transitionDelay = `${index * 50}ms`
+                        //힌트는 인덱스 인덱스를 이용해서
+                        //첫 번째 span --> 0.01
+                        //두 번째 span --> 0.02
+                        //세 번째 span --> 0.03
+                        //네 번째 span --> 0.04
+                        //다섯 번째 span --> 0.05
+                        //여섯 번째 span --> 0.06
+                        //일곱 번째 span --> 0.07
+                        //내 방법 : span.style.transitionDelay = `${index * 50}ms`
+                        //선생님 방법
+                        setTimeout(()=>{
+                            span.classList.add("show");
+                        }, 50 * index);
                     });
                 }
-            })
-
+            });
+            //scrollTo보다 이걸 사용하는 것이 더 좋음
             requestAnimationFrame(scroll);
-
-            //첫번째 span ---> 0.01
-            //두번째 span ---> 0.02
-            //세번째 span ---> 0.03
-            //네번째 span ---> 0.04
-            //다섯번째 span ---> 0.05
-            //여섯번째 span ---> 0.06
-            //...
         }
         scroll();
+
+
+
+
+
+
+
+
+
+        //     document.querySelectorAll(".content__item").forEach(item => {
+        //         if(scrollTop >= item.offsetTop){
+        //             item.querySelectorAll(".split span").forEach((span, index) => {
+        //                 span.classList.add("show");
+        //                 span.style.transitionDelay = `${index * 50}ms`
+        //             });
+        //         }
+        //     })
+
+        //     requestAnimationFrame(scroll);
+
+        //     //첫번째 span ---> 0.01
+        //     //두번째 span ---> 0.02
+        //     //세번째 span ---> 0.03
+        //     //네번째 span ---> 0.04
+        //     //다섯번째 span ---> 0.05
+        //     //여섯번째 span ---> 0.06
+        //     //...
+        // }
+        // scroll();
         
 
 
