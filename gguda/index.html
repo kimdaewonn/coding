@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 꾸다 - 인덱스 </title>
+    <link href="https://webfontworld.github.io/nixgon/NixgonFonts.css" rel="stylesheet">
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0 auto;
+            font-family: 'NanumSquare';
+            font-weight: 700;
+            font-size: 40px;
+        }
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+        }
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul,li {
+            list-style: none;
+        }
+        .hover {
+            color: #000;
+            transition: all 0.3s;
+        }
+        .hover:hover {
+            color: #4B12A7;
+        }
+        .figma {
+            width: 33.333%;
+            height: 100vh;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'SCoreDream';
+            font-weight: bold;
+            color: #4B12A7;
+            border-right:1px solid #2b066721;
+            position: relative;
+        }
+        .html {
+            width: 33.333%;
+            height: 100vh;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'SCoreDream';
+            font-weight: bold;
+            color: #4B12A7;
+            border-right: 1px solid #2b066721;
+        }
+        .php {
+            width: 33.333%;
+            height: 100vh;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'SCoreDream';
+            font-weight: bold;
+            color: #4B12A7;
+        }
+        .figma .codi img {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+        }
+        .figma .star img {
+            position: absolute;
+            left: 40px;
+            top: 5px;
+        }
+        .figma .star2 img {
+            position: absolute;
+            left: 130px;
+            top: 75px;
+        }
+        .figma .star3 img {
+            position: absolute;
+            right: 130px;
+            top: 75px;
+        }
+        .figma .star4 img {
+            position: absolute;
+            right: 30px;
+            top: 5px;
+        }
+
+        .figma .line img {
+            position: absolute;
+            right: 20px;
+            top: 300px;
+            z-index: -1;
+        }
+        .figma__wrap {
+            margin: 50px 0;
+        }
+        .F_login {
+            padding: 40px 40px 1px 40px;
+        }
+        .F_login ul > h2 {
+            font-size: 30px;
+            font-family: 'SCoreDream';
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .F_login ul {
+            text-align: left;
+            font-size: 20px;
+        }
+        .F_login ul li {
+            margin-bottom: 5px;
+            border-bottom: Dashed 1px #ededed;
+            margin-left: 20px;
+            padding: 15px 0;
+        }
+        .F_login ul li a {
+            font-weight: normal;
+        }
+        .F_login ul li a:hover {
+            color: #210156;
+            background: #f8f4ff;
+            border-radius: 50px;
+            padding: 10px;
+        }
+        /* 게시판 */
+        .F_board {
+            padding: 40px 40px 1px 40px;
+            border-right: 1px solid #2b066721;
+            position: relative;
+        }
+        .F_board .star5 img {
+            position: absolute;
+            right: 30px;
+            top: 5px;
+        }
+        .F_board .star6 img {
+            position: absolute;
+            right: 170px;
+            top: 350px;
+        }
+        .F_board .star7 img {
+            position: absolute;
+            right: 230px;
+            bottom: 50px;
+        }
+        .F_board ul > h2 {
+            font-size: 30px;
+            font-family: 'SCoreDream';
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .F_board ul {
+            text-align: left;
+            font-size: 20px;
+        }
+        .F_board ul li {
+            margin-bottom: 5px;
+            border-bottom: Dashed 1px #ededed;
+            margin-left: 20px;
+            padding: 15px 0;
+        }
+        .F_board ul li a {
+            font-weight: normal;
+        }
+        .F_board ul li a:hover {
+            color: #210156;
+            background: #f8f4ff;
+            border-radius: 50px;
+            padding: 10px;
+        }
+        .board_right img {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: 40px;
+            right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="figma">
+            <figure class="codi">
+                <img src="assets/img/figma_right.png"alt="코디">
+            </figure>
+            <figure class="star">
+                <img src="assets/img/star.png"alt="별">
+            </figure>
+            <figure class="star2">
+                <img src="assets/img/star.png"alt="별">
+            </figure>
+            <figure class="star3">
+                <img src="assets/img/star.png"alt="별">
+            </figure>
+            <figure class="star4">
+                <img src="assets/img/star.png"alt="별">
+            </figure>
+            <figure class="line">
+                <img src="assets/img/Vector 7.png"alt="스크롤">
+            </figure>
+            <a href="https://www.figma.com/file/JfmnC5oLEfHDRkkT8obVcE/Untitled?node-id=0%3A1" target="_blank"><h2 class="hover">Figma</h2></a>
+            <div class="F_login">
+                <ul>
+                    <h2>피그마 _ 로그인 / 회원가입</h2>
+                    <li><a href="Figma/Figma_login/F_login.html">01. 로그인 팝업창</a></li>
+                    <li><a href="Figma/Figma_login/F_ID.html">02. 아이디 찾기</a></li>
+                    <li><a href="Figma/Figma_login/F_password.html">03. 비밀번호 찾기</a></li>
+                    <li><a href="Figma/Figma_login/F_ID_clear.html">04. 아이디 찾기 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_password_clear.html">05. 비밀번호 찾기 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_OK.html">06. 이용약관 동의</a></li>
+                    <li><a href="Figma/Figma_login/F_ing.html">07. 회원가입 정보 입력</a></li>
+                    <li><a href="Figma/Figma_login/F_clear.html">08. 회원가입 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_bye.html">09. 회원 탈퇴 확인</a></li>
+                    <li><a href="Figma/Figma_login/F_byebye.html">10. 회원 탈퇴 완료</a></li>
+                </ul>
+            </div>
+            <div class="F_board">
+                <figure class="board_right">
+                    <img src="assets/img/board_right.png" alt="코디2">
+                </figure>
+                <figure class="star5">
+                    <img src="assets/img/star.png"alt="별">
+                </figure>
+                <figure class="star6">
+                    <img src="assets/img/star.png"alt="별">
+                </figure>
+                <figure class="star7">
+                    <img src="assets/img/star.png"alt="별">
+                </figure>
+                
+                <ul>
+                    <h2>게시판</h2>
+                    <li><a href="Figma/Figma_login/F_login.html">01. 로그인 팝업창</a></li>
+                    <li><a href="Figma/Figma_login/F_ID.html">02. 아이디 찾기</a></li>
+                    <li><a href="Figma/Figma_login/F_password.html">03. 비밀번호 찾기</a></li>
+                    <li><a href="Figma/Figma_login/F_ID_clear.html">04. 아이디 찾기 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_password_clear.html">05. 비밀번호 찾기 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_OK.html">06. 이용약관 동의</a></li>
+                    <li><a href="Figma/Figma_login/F_ing.html">07. 회원가입 정보 입력</a></li>
+                    <li><a href="Figma/Figma_login/F_clear.html">08. 회원가입 완료</a></li>
+                    <li><a href="Figma/Figma_login/F_bye.html">09. 회원 탈퇴 확인</a></li>
+                    <li><a href="Figma/Figma_login/F_byebye.html">10. 회원 탈퇴 완료</a></li>
+                </ul>
+            </div>
+        </div>
+        <h2 class="html"><a href="#">html</a></h2>
+        <h2 class="php"><a href="#">php</a></h2>
+    </div>
+</body>
+</html>

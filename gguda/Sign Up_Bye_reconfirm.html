@@ -34,13 +34,17 @@
             font-family: 'NanumSquare';
             font-weight: normal;
             font-size: 50px;
-            color: #2B0667;
+            color: #000;
         }
         a {
             text-decoration: none;
             text-transform: uppercase;
         }
         /* 로그인 */
+        .Sign_Up_Bye_confrim_logo img {
+            width: 154px;
+            height: 123px;
+        }
         .login-divider{
             width: 40px;
             margin: 0 auto;
@@ -85,7 +89,7 @@
         .login__header img:nth-child(1){
             display: block;
             margin: 0 auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .login__cont legend,
         .login__header .login-txt,
@@ -96,7 +100,7 @@
         .login-cross{
             display: block;
             margin: 0 auto;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         .login-txt{
             font-size: 16px;
@@ -104,6 +108,9 @@
         .login-txt p{
             padding: 10px 0;
             margin-bottom: 10px;
+            font-weight: 400;
+            line-height: 18px;
+
         }
         .login-txt .fail{
             background: #ff416e14;
@@ -147,6 +154,7 @@
         }
         .login__cont div:nth-child(2)::after{
             content: '아이디';
+            display: none;
         }
         .login__cont div:nth-child(3)::after{
             content: '비밀번호';
@@ -180,17 +188,34 @@
             margin-right: 10px;
             padding-right: 10px;
         }
-        .input__Btn{
+        .input__Btn {
             padding: 15px;
-            width: 100%;
-            height: 52px;
             border-radius: 50px;
-            background: #4B12A7;
+            border: 1px solid #FF416E;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .input__Btn a {
+            color: #FF416E;
+            font-weight: 700;
+        }
+        .input__Btn2{
+            padding: 15px;
+            border-radius: 50px;
+            background: #FF416E;
             color: #fff;
             font-size: 16px;
-            border: none;
             display: block;
         }
+        .input__Btn2 a {
+            color: #fff;
+            font-weight: 700;
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -198,35 +223,19 @@
         <div class="login__popup">
             <div class="login__inner">
                 <div class="login__header">
-                    <img src="assets/img/login_logo.png" alt="">
-                    <h3>LOGIN</h3>
+                    <img src="assets/img/Sign_Up_Bye_confrim_logo.png" alt="회원탈퇴 로고">
+                    <h3>BYE...?</h3>
                     <div class="login-txt">
-                        <p>개인정보를 이곳에 입력해주세요!</p>
+                        <p>회원 탈퇴를 진행합니다.<br>
+                            동의시 하단의 링크를 클릭해주세요..!
+                        </p>
                         <p class="fail">아이디 비밀번호를 다시 확인해주세요!</p>
                     </div>
                     <img class="login-cross"src="assets/img/login_cross.png" alt="">
                 </div>
                 <div class="login__cont">
-                    <form name="login" action="loginSave.php" method="post">
-                        <fieldset>
-                            <legend class="ir">로그인 입력폼</legend>
-                            <div>
-                                <label for="youEmail" class="ir">이메일</label>
-                                <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style" required>
-                            </div>
-                            <div>
-                                <label for="youPass" class="ir">비밀번호</label>
-                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
-                            </div>
-                            <div class="btom-btn">
-                                <a href="#">아이디 찾기</a>
-                                <a href="#">비밀번호 찾기</a>
-                                <a href="#">회원가입</a>
-                            </div>
-                            <hr class="login-divider">
-                            <button type="submit" class="input__Btn">로그인</button>
-                        </fieldset>
-                    </form>
+                   <div class="input__Btn"><a href="#">탈퇴하기</a></div>
+                   <div class="input__Btn2"><a href="#">닫기</a></div>
                 </div>
                 <div class="login__footer">
                 </div>

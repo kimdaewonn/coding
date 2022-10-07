@@ -114,6 +114,15 @@
         }
         .login__cont{
             width: 100%;
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        .login__cont form{
+            width: 100%;
+        }
+        .login__cont div:nth-child(2){
+            margin-bottom: 20px;
         }
         .login__cont label,
         .login__cont legend{
@@ -125,7 +134,6 @@
             width: 100%;
             height: 52px;
             border: 1px solid #E4E7F0;
-            margin-bottom: 20px;
             font-size: 16px;
             text-align: center;
             box-sizing: border-box;
@@ -136,24 +144,29 @@
         .login__cont div{
             position: relative;
         }
-        .login__cont div:nth-child(2)::after,
-        .login__cont div:nth-child(3)::after{
+        .login__cont div:nth-child(2)::before{
+            content: '년도';
+
+        }
+        .login__cont div:nth-child(1)::before{
+            content: '이메일';
+        }
+        .login__cont div:nth-child(1)::before,
+        .login__cont div:nth-child(2)::before{
             position: absolute;
-            left: 26px;
+            left: 50%;
             top: 2px;
             padding: 0 10px;
             background: #fff;
             font-size: 16px;
+            transform: translate(-50%, 0);
         }
-        .login__cont div:nth-child(2)::after{
-            content: '아이디';
-        }
-        .login__cont div:nth-child(3)::after{
-            content: '비밀번호';
-        }
-        /* .login__cont div:nth-child(3) input{
-            margin-bottom: 0px;
+        
+
+        /* .login__cont div:nth-child(1)::before{
+            content: '⌵';
         } */
+
         .btn-close{
             position: absolute;
             top: 22px;
@@ -191,6 +204,7 @@
             border: none;
             display: block;
         }
+        
     </style>
 </head>
 <body>
@@ -199,7 +213,7 @@
             <div class="login__inner">
                 <div class="login__header">
                     <img src="assets/img/login_logo.png" alt="">
-                    <h3>LOGIN</h3>
+                    <h3>SEARCH</h3>
                     <div class="login-txt">
                         <p>개인정보를 이곳에 입력해주세요!</p>
                         <p class="fail">아이디 비밀번호를 다시 확인해주세요!</p>
@@ -211,17 +225,12 @@
                         <fieldset>
                             <legend class="ir">로그인 입력폼</legend>
                             <div>
-                                <label for="youEmail" class="ir">이메일</label>
-                                <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style" required>
+                                <label for="birthYear" class="ir">년도</label>
+                                <input type="date" name="birthYear" id="birthYear" placeholder="년도" class="input__style" required>
                             </div>
                             <div>
-                                <label for="youPass" class="ir">비밀번호</label>
-                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
-                            </div>
-                            <div class="btom-btn">
-                                <a href="#">아이디 찾기</a>
-                                <a href="#">비밀번호 찾기</a>
-                                <a href="#">회원가입</a>
+                                <label for="youEmail" class="ir">이메일</label>
+                                <input style="width:100%; display:block; margin-bottom: 20px;" type="email" name="youEmail" id="youEmail" placeholder="본인의 이메일" class="input__style" required>
                             </div>
                             <hr class="login-divider">
                             <button type="submit" class="input__Btn">로그인</button>
