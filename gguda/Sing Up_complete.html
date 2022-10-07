@@ -83,10 +83,14 @@ fieldset{
     font-weight: 800;
     font-size: 30px;
 }
+.SingUp_complete_logo img{
+    width: 154px;
+    height: 123px;
+}
 .login__header img:nth-child(1){
     display: block;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .login__cont legend,
 .login__header .login-txt,
@@ -97,9 +101,8 @@ fieldset{
 .login-cross{
     display: block;
     margin: 0 auto;
-    margin-bottom: 20px;
 }
-.login-txt{
+.login-txt {
     font-size: 16px;
 }
 .login-txt p{
@@ -114,7 +117,7 @@ fieldset{
     display: none;
 }
 .login__cont{
-    width: 100%;
+    /* width: 100%; */
 }
 .login__cont label,
 .login__cont legend{
@@ -301,9 +304,13 @@ fieldset{
 /* 찾기 완료 or 컴플레이트 할때 나오는 css */
 .comple-word {
     font-size: 16px;
-    color: #000;
+    color: #4b12a7;
     padding-top: 10px;
     margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 18.16px;
+    text-align: center;
+    white-space: nowrap;
 }
 .search-comple {
     font-size: 26px;
@@ -316,26 +323,30 @@ fieldset{
     <div class="login__popup">
         <div class="login__inner">
             <div class="login__header">
-                <img src="assets/img/SingUp_complete_logo.png" alt="">
-                <h3>COMPLETE</h3>
+                <figure class="SingUp_complete_logo">
+                    <img src="assets/img/SingUp_complete_logo.png" alt="회원가입 완료 로고">
+                </figure>
                 <div class="login-txt">
-                    <p>회원님의 정보 찾기가 완료되었습니다!</p>  
+                    <h3>COMPLETE</h3>
+                    <p>회원가입이 완료되었습니다!</p>  
                 </div>
-                <img class="login-cross"src="../assets/img/login_cross.png" alt="">
+                <img class="login-cross"src="assets/img/login_cross.png" alt="x이미지">
             </div>
             <div class="login__cont">
                 <form name="search" action="searchSave.php" method="post">
                     <fieldset>
                         <legend class="ir">아이디 / 비밀번호를 찾기 완료한 폼입니다.</legend>
                         <div class="search-txt">
-                            <p class="comple-word">당신의 아이디는</p>
-                            <div class="search-comple">
+                            <p class="comple-word">회원가입을 축하드려요!<br>
+                                꾸다를 통해 진정한 다꾸인이 되기를 바랄게요!
+                            </p>
+                            <!-- <div class="search-comple">
                                 " dfdsdf556 "
-                            </div>
+                            </div> -->
                         </div>
                         <hr class="login-divider">
-                        <button type="submit" class="input__Btn">로그인 하러가기</button>
-                        <button type="submit" class="input__Btn white">닫기</button>
+                        <button type="submit" class="input__Btn">로그인</button>
+                        <button type="submit" class="input__Btn white">완료</button>
                     </fieldset>
                 </form>
             </div>
