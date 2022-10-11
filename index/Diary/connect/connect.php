@@ -1,20 +1,20 @@
 <?php
     $host = "localhost";
-    $user = "dw9605";
-    $pass = "eoqkr53062!";
-    $db = "dw9605";
+    $user = "sunhey9810";
+    $pass = "sunheybdbfly9810*";
+    $db = "sunhey9810";
 
-    $connect = new mysqli($host, $user, $pass, $db);
+    $connect = new mysqli($host, $user, $pass, $db);    
     $connect -> set_charset("utf8");
 
-    if (mysqli_connect_errno($connect)) {
+    // if (mysqli_connect_errno($connect)) {
 
-        echo "데이터베이스 연결 실패: " . mysqli_connect_error();
+    //     echo "데이터베이스 연결 실패: " . mysqli_connect_error();
         
-        } else {
+    //     } else {
         
-        echo "데이터베이스 연결 성공";
+    //     echo "데이터베이스 연결 성공";
         
-        }
+    //     }
         
 ?>
