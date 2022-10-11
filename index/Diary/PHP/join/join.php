@@ -117,8 +117,8 @@
             // 이메일 유효성 검사
             let getYouEmail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
             if(!getYouEmail.test($("#youEmail").val())){
-                $("#youEmailComment").text("이메일을 형식에 맞게 작성해주세요.");
-                $("#youEmail").val('');
+                $("#youEmailComment").text("형식에맞춰작성부탁");
+                $("#youEmail").val("");
                 return false;
             }
 
