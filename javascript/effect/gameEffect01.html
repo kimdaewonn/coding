@@ -16,7 +16,7 @@
     </div>
     
     <header id="header">
-        <h1>Webs Game World</h1>
+        <h1>Daewon Game World</h1>
         <div class="time"></div>
     </header>
     <!-- //header -->
@@ -145,14 +145,14 @@
             // if(totalSec < 10) totalSec = `0${totalSec}`;
             let hour = now.getHours();
             if (hour > 12) {
-                hour = hour % 12;
-                if (hour > 10) {
-                    hour = "오후 " + hour;
+                hours = hour % 12;
+                if (hour > 12) {
+                    hour = "오후 " + hours;
                 } else if (hour < 10) {
                     hour = "오후 " + `0${hour}`;
                 }
             } else if (hour <= 12) {
-                if (hour > 10) {
+                if (hour > 12) {
                     hour = "오전 " + hour;
                 } else if (hour < 10) {
                     hour = "오전 " + `0${hour}`;

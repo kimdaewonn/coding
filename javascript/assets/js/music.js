@@ -72,7 +72,7 @@ const musicList = musicWrap.querySelector(".music__list");
 const musicListUl = musicWrap.querySelector(".music__list ul");
 
 
-let musicIndex = 3;
+let musicIndex = 1;
 
 // 음악 재생
 function loadMusic(num){
@@ -142,9 +142,11 @@ musicProgress.addEventListener("click", (e) =>{
     let progressWidth = musicProgress.clientWidth; // 진행바 전체 길이
     let clickedOffsetX = e.offsetX;                // 진행바 기준으로 측정되는 X좌표
     let songDuration = musicAudio.duration;        // 오디오 전체 길이
-    
     musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;   //백분위로 나눈 숫자에 다시 전체 길이를 곱해서 현재 재생값으로 바꿈
+    // 뭐지?
 });
+
+
 
 // 반복 버튼 클릭
 musicRepeat.addEventListener("click", ()=>{
