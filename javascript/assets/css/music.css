@@ -48,8 +48,10 @@
     line-height: 1.2;
 }
 .music__view .title p {
-    color: red;
-    text-transform: uppercase;
+    color: rgb(14, 29, 226);
+    /* text-transform: uppercase; */
+    margin-left: 15px;
+    font-weight: bold;
 }
 /* .music__footer {
     background: #666;
