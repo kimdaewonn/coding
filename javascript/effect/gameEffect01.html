@@ -142,7 +142,28 @@
         function printTime(){
             const clock = document.querySelector(".time");
             const now = new Date();
-            const nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + now.getHours() + ":" + now.getMinutes() +":"+ now.getSeconds()
+            // if(totalSec < 10) totalSec = `0${totalSec}`;
+            let hour = now.getHours();
+            if (hour > 12) {
+                hour = hour % 12;
+                if (hour > 10) {
+                    hour = "오후 " + hour;
+                } else if (hour < 10) {
+                    hour = "오후 " + `0${hour}`;
+                }
+            } else if (hour <= 12) {
+                if (hour > 10) {
+                    hour = "오전 " + hour;
+                } else if (hour < 10) {
+                    hour = "오전 " + `0${hour}`;
+                }
+            }
+            
+            let minute = now.getMinutes();
+            if(minute < 10) minute = `0${minute}`;
+            let seconds = now.getSeconds();
+            if(seconds < 10) seconds = `0${seconds}`;
+            const nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + hour + ":" + minute +":"+ seconds
             
             clock.innerText = nowTime;
             setTimeout("printTime()", 1000); 
