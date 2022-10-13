@@ -1,7 +1,7 @@
 <?php
-    include "../connect/connect.php";
-    include "../connect/session.php";
-    include "../connect/sessionCheck.php";
+    include "../../connect/connect.php";
+    include "../../connect/session.php";
+    // include "../../connect/sessionCheck.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <link rel="stylesheet" href="css/borad.css">
+    <title>게시판</title>
+    <link rel="stylesheet" href="../assets/css/board.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <?php include "../../include/link.php" ?>
+
 </head>
 <body>
     <div style="display:none" class="scroll">
         <p>아래로 스크롤 해주세요.</p>
-        <img src="../assets/img/site_intro_scroll.png" alt="">
+        <img src="../../assets/img/site_intro_scroll.png" alt="">
     </div>
     <div class="wrap">
         <div class="site">
-            <div class="hamburger_menu">
+    <?php include "../../include/header.php" ?>
+
+            <!-- <div class="hamburger_menu">
                 <img class="header_menu_close" src="../assets/img/login_cross.png" alt="">
                 <p>공지사항</p>
                 <p>이벤트</p>
@@ -46,14 +52,14 @@
                     </div>
                     <img class="hamburger_menu_open" src="../assets/img/hamburger_btn.png" alt="">
                 </div>
-            </div>
+            </div> -->
             <div class="board">
                 <a class="write_btn" href="board_write.html">글쓰기</a>
                 <div class="board_info">
-                    <img class="notice_logo" src="../assets/img/site_board_notice_logo.png" alt="">
+                    <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt="">
                     <h2>NOTICE</h2>
                     <p>공지사항은 이곳에서 확인해주세요!</p>
-                    <img src="../assets/img/site_board_notice_cross.png" alt="">
+                    <img src="../../assets/img/site_board_notice_cross.png" alt="">
                 </div>
                 <div class="section_selector">
                     <div class="section_container">
@@ -61,7 +67,7 @@
                         <a href="board.html">이벤트</a>
                     </div>
                     <a class="section_search_button" href="#">
-                        <img src="../assets/img/search_btn.png" alt="">
+                        <img src="../../assets/img/search_btn.png" alt="">
                     </a>
                 </div>
                 <form action="boardSearch.php" name="boardSearch" method="get" id="board_search">

@@ -16,16 +16,16 @@
                 <div class="login-txt">
                     <p>개인정보를 이곳에 입력해주세요!</p>
                     <p class="fail">모든 정보를 입력해주세요!</p>
-                </div>
+                </div>  
                 <img class="login-cross"src="../../assets/img/login_cross.png" alt="">
             </div>
             <div class="login__cont">
-                <form name="join" action="joinSave.php" method="post" onsubmit = "return joinChecks()" >
+                <form name="join" action="joinSave.php" method="post" onsubmit ="return joinChecks()" >
                     <fieldset>
                         <legend class="ir">회원가입을 위한 정보 입력영역</legend>
                         <section class="joinAgree">
                             <div class="name">
-                                <label for="youName" class="ir">아이디</label>
+                                <label for="youName" class="ir">이름</label>
                                 <input type="text" name="youName" id="youName" placeholder="이름" class="input__style" required>
                                 <p class="msg" id="youNameComment"><!---* 이름을 작성해주세요.---></p>
                             </div>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="QA" style="width:65%">
                                     <select name="searchQA" id="searchQA" class="input__style" required>
-                                        <option value="QA">나의 보물 1호</option>ㅋ
+                                        <option value="QA">나의 보물 1호</option>
                                     </select>
                                     <p class="msg" id="searchQAComment"><!--- * 질문을 설정해주세요.---></p>
                                 </div>
@@ -75,6 +75,8 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        
+
         let emailCheck = false;
         function emailChecking(){
             let youEmail = $("#youEmail").val();
@@ -115,10 +117,10 @@
             }
 
             // 이메일 유효성 검사
-            let getYouEmail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+            let getYouEmail = RegExp(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i);
             if(!getYouEmail.test($("#youEmail").val())){
-                $("#youEmailComment").text("형식에맞춰작성부탁");
-                $("#youEmail").val("");
+                $("#youEmailComment").text("이메일을 형식에 맞게 작성해주세요.");
+                $("#youEmail").val('');
                 return false;
             }
 
