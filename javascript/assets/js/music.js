@@ -276,6 +276,14 @@ function clicked(el){
     playListMusic();                                    //음악 리스트 업데이트
 }
 
+
+// 볼륨
+const audio = document.getElementById('main-audio');
+const audioVolume = document.getElementById('volume-control');
+audioVolume.addEventListener("change", function(e) {
+    audio.volume = this.value/10;
+})
+
 window.addEventListener("load", () => {
     loadMusic(musicIndex);      //음악 재생
     playListMusic();            //리스트 초기화
