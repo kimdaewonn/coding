@@ -530,7 +530,7 @@
                 { num: 5, name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
             ];
     
-            const cssList = document.querySelector(".search__list .line");
+        const cssList = document.querySelector(".search__list .line");
         // 데이터 출력하기
         const updateList = () => {
             let listCSS = "";
@@ -586,8 +586,8 @@
         document.querySelector(".btn6").addEventListener("click", (e) => {
             e.preventDefault();
             for(let i=cssProperty.length-1; i>=0; i--){
-                const randomIndex = Math.floor(Math.random() * (i+1));
-                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];
+                const randomIndex = Math.floor(Math.random() * (i+1));      //난수 생성
+                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];    // 중복 제거
                 cssProperty.innerHTML += cssProperty[i]
             }
             updateList();
