@@ -3,9 +3,9 @@
    include "../../connect/session.php";
    include "../../connect/sessionCheck.php";
 
-    // echo "<pre>";
-    // var_dump($_SESSION);
-    // echo "</pre>";
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -60,21 +60,9 @@
     $boardContents = $_POST['boardContents'];
     $myMemberID = $_SESSION['myMemberID'];
 
-    $boardTitle = $connect -> real_escape_string($boardTitle);
-    $boardContents = $connect -> real_escape_string($boardContents);
-
-    $sql = "SELECT myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
-    $result = $connect -> query($sql);
-
-    $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
-
-    if($memberInfo['myMemberID'] === $myMemberID){
-        $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
-        $connect -> query($sql);
-
     //정보를 마이멤버 아이디 밖에 안가져옴 왜냐고요
 
-    // echo $myBoardID,$boardTitle,$boardContents;
+    echo $myBoardID,$boardTitle,$boardContents;
 
     // $boardTitle = $connect -> real_escape_string($boardTitle);
     // $boardContents = $connect -> real_escape_string($boardContents);
