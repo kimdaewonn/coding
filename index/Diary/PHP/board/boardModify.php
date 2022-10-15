@@ -79,6 +79,7 @@
     
     if($result){
         $info = $result->fetch_array(MYSQLI_ASSOC);
+
         echo "<div contenteditable='true' class='input__style view-title edit write'>".$info{'boardTitle'}."</div>";
     }
 ?>                                
@@ -117,6 +118,7 @@
     
     if($result){
         $info = $result->fetch_array(MYSQLI_ASSOC); 
+
         echo "<div contenteditable='true' class='input__style view-cont edit'>".$info{'boardContents'}."</div>";
     }
 ?>  

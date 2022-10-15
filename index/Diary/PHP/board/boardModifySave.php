@@ -62,30 +62,35 @@
 
     //정보를 마이멤버 아이디 밖에 안가져옴 왜냐고요
 
-    echo $myBoardID,$boardTitle,$boardContents;
+    // echo $myBoardID,$boardTitle,$boardContents;
 
-    // $boardTitle = $connect -> real_escape_string($boardTitle);
-    // $boardContents = $connect -> real_escape_string($boardContents);
+    $boardTitle = $connect -> real_escape_string($boardTitle);
+    $boardContents = $connect -> real_escape_string($boardContents);
     
-    // // $sql = "SELECT myBoardID, boardTitle, boardSection , regTime, boardView, boardContents FROM myBoard WHERE myBoardID = {$myBoardID}";
-    // $sql = "SELECT myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
-    // $result = $connect -> query($sql);
-    // // echo $sql;
-    // $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
+    // $sql = "SELECT myBoardID, boardTitle, boardSection , regTime, boardView, boardContents FROM myBoard WHERE myBoardID = {$myBoardID}";
+    $sql = "SELECT myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
+    
+    $result = $connect -> query($sql);
 
-    // if($memberInfo['myMemberID'] === $myMemberID){
+    // echo $sql;
+    $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
+
+    if($memberInfo['myMemberID'] === $myMemberID){
         
-    //     $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
-    //     $connect -> query($sql);
-    //     echo "<h2>수정완료</h2>";
-    // } else {
-    //     echo "<script>alert('Fail')</script>";
-    // }
+        $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
+        
+        $connect -> query($sql);
+        
+        echo "<h2>수정완료</h2>";
+
+    } else {
+        echo "<script>alert('Fail')</script>";
+    }
 ?>
                     <!-- <h2>수정완료</h2> -->
-                    <p class="cross">수정하신 내용이 반영되었습니다, 하단의 버튼을 눌러 확인해주세요!</p>
+                    <!-- <p class="cross">수정하신 내용이 반영되었습니다, 하단의 버튼을 눌러 확인해주세요!</p>
                     <img src="../../assets/img/site_board_notice_cross.png" alt= "">
-                    <button style="width:216px;" type="submit" class="input__Btn" ><a href="board.php">확인</a></button>
+                    <button style="width:216px;" type="submit" class="input__Btn" ><a href="board.php">확인</a></button> -->
                 </div>
             </div>
         </div>
