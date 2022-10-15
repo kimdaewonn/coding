@@ -1,7 +1,11 @@
-<?php
+<?php 
     include "../../connect/connect.php";
     include "../../connect/session.php";
-    // include "../../connect/sessionCheck.php";
+    include "../../connect/sessionCheck.php";
+
+    // echo "<pre>";
+    // var_dump($_SESSION);
+    // echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +14,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판</title>
-    <link rel="stylesheet" href="../assets/css/board.css">
-
-    <?php include "../../include/link.php" ?>
-
+    <title>공지사항</title>
+    <link rel="stylesheet" href="../../assets/css/board.css">
 </head>
 <body>
     <div style="display:none" class="scroll">
@@ -23,10 +24,8 @@
     </div>
     <div class="wrap">
         <div class="site">
-    <?php include "../../include/header.php" ?>
-
-            <!-- <div class="hamburger_menu">
-                <img class="header_menu_close" src="../assets/img/login_cross.png" alt="">
+            <div class="hamburger_menu">
+                <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
                 <p>공지사항</p>
                 <p>이벤트</p>
                 <p>이달의 순위</p>
@@ -37,7 +36,7 @@
             </div>
             <div class="header">
                 <div class="header_inner">
-                    <img src="../assets/img/site_header_logo.png" alt="logo">
+                    <img src="../../assets/img/site_header_logo.png" alt="logo">
                     <p>공지사항</p>
                     <p>이벤트</p>
                     <p>이달의 순위</p>
@@ -46,14 +45,14 @@
                     <p>정보</p>
                     <p>고객센터</p>
                     <div class="profile_cont">
-                        <img src="../assets/img/site_header_profile.png" alt="logo">
-                        <img src="../assets/img/site_header_profile_heart.png" alt="logo">
+                        <img src="../../assets/img/site_header_profile.png" alt="logo">
+                        <img src="../../assets/img/site_header_profile_heart.png" alt="logo">
                     </div>
-                    <img class="hamburger_menu_open" src="../assets/img/hamburger_btn.png" alt="">
+                    <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
                 </div>
-            </div> -->
+            </div>
             <div class="board">
-                <a class="write_btn" href="board_write.html">글쓰기</a>
+                <a class="write_btn" href="boardWrite.php">글쓰기</a>
                 <div class="board_info">
                     <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt="">
                     <h2>NOTICE</h2>
@@ -78,86 +77,47 @@
                 </form>
                 <div class="board_list">
                     <div class="board_list_inner">
-                        <div class="board_list_contents">
+                    <!-- <div class="board_list_contents">
                             <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
                             <div class="board_list_contents_info">
                                 <p class="contents_section">NOTICE</p>
                                 <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
+                                <p class="contents_view">조회 수 : 3</p>
                             </div>
-                        </div>
-                        <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
-                            </div>
-                        </div>
-                        <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
-                            </div>
-                        </div>
-                        <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
-                            </div>
-                        </div>
-                        <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
-                            </div>
-                        </div>
-                        <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">3</p>
-                            </div>
-                        </div>
+                        </div> -->
+<?php
+$sql = "SELECT b.myBoardID, m.myMemberID, b.boardTitle, b.boardSection, b.boardContents, b.boardView, b.boardView, b.regTime FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) ORDER BY myBoardID";
+$result = $connect -> query($sql);
+
+if($result){
+    $count = $result -> num_rows;
+    // echo $count;
+    if($count > 0){
+        for($i=1; $i <= $count; $i++){
+            $info = $result -> fetch_array(MYSQLI_ASSOC);
+            echo "<div class='board_list_contents'>";
+            echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a></h2>";
+            echo "<div class='board_list_contents_info'>";
+            echo "<p class='contents_section'>".$info['boardSection']."</p>";
+            echo "<p class='contents_date'>".date('Y-m-d H:i',$info['regTime'])."</p>";
+            echo "<p class='contents_view'> 조회 수 : ".$info['boardView']."</p>";
+            echo "</div>";
+            echo "</div>";
+        }
+    }else {
+        echo " 게시판이 없습니다 ;< ";
+    }
+}else {
+    echo " 에러 ;< ";
+}
+?>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    //검색창 표시
-    const searchBtn = document.querySelector(".section_search_button")
-    let i = 0;
-
-    searchBtn.addEventListener("click", ()=>{
-        if(i==0){
-            document.querySelector(".board_search").style.display="block";
-            i++;
-        } else{
-            document.querySelector(".board_search").style.display="none";
-            i--;
-        }
-    })
-
-
-    //모바일시 햄버거 메뉴 구현
-    const menuOpen = document.querySelector(".hamburger_menu_open");
-    menuOpen.addEventListener("click", ()=>{
-        document.querySelector(".hamburger_menu").style.display="flex"
-        document.querySelector("body").style.overflow="hidden"
-    })
-    const menuClose = document.querySelector(".header_menu_close");
-    menuClose.addEventListener("click", ()=>{
-        document.querySelector(".hamburger_menu").style.display="none"
-        document.querySelector("body").style.overflow="auto"
-    })
-</script>
+<script src="../../assets/javascript/board.js"></script>
+<script src="../../assets/javascript/search.js"></script>
 </html>

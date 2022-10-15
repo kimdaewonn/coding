@@ -98,12 +98,14 @@ fieldset{
     padding: 10px 0;
     margin-bottom: 10px;
 }
-.login-txt .fail{
+.fail{
     background: #ff416e14;
     color: #FF416E;
     border-radius: 50px;
     padding: 10px 0;
-    display: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    /* display: none; */
 }
 .login__cont{
     width: 100%;
@@ -154,8 +156,19 @@ fieldset{
     background: #fff;
     font-size: 16px;
 }
+.login__cont div.name::after{
+    content: '이름';
+}
+.login__cont div.nicName::after{
+    content: '닉네임';
+}
 .login__cont div.Email::after{
     content: '아이디';
+}
+.login__cont div.Email.overlap::after{
+    /* 회원가입 전용 1011 */
+    content: '아이디';
+    top: -8px;
 }
 .login__cont div.Pass::after{
     content: '비밀번호';
@@ -175,6 +188,36 @@ fieldset{
 .login__cont div.Gender::after {
     content: '성별';
 }
+/* 중복검사 */
+.Email.overlap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.Email.overlap > #youEmail {
+    width: 75%;
+}
+.Email.overlap > .check {
+    width: 20%;
+    font-size: 12px;
+    padding: 3px;
+    background-color: #4B12A7;
+    color: #fff;
+    line-height: 43px;
+    border-radius: 50px;
+}
+.msg {
+    width: 100%;
+    font-size: 16px;
+    margin-top: -15px;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #4b12a7;
+    font-size: 14px;
+}
+
 /* .login__cont div:nth-child(3) input{
     margin-bottom: 0px;
 } */
@@ -198,6 +241,7 @@ fieldset{
     align-items: center;
     margin-bottom: 20px;
 }
+
 .btom-btn a:nth-child(1),
 .btom-btn a:nth-child(2){
     border-right: 1px solid #E5E5E5;
@@ -257,6 +301,9 @@ fieldset{
     background-color: #fff;
     border: 1px solid #FF416E;
     color: #FF416E;
+}
+.input__Btn a {
+    color: #fff;
 }
 /* agree */
 .agree__cont .agree-desc{
@@ -335,4 +382,15 @@ fieldset{
     font-weight: 900;
     padding: 20px 0 30px 0;
 }
+/* 회원가입 완료 css */
+.loginComple-word {
+    font-size: 16px;
+    color: #4b12a7;
+    padding-top: 28px;
+    margin-bottom: 34px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
 
+}
