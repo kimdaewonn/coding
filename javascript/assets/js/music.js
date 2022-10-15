@@ -212,7 +212,14 @@ musicNextBtn.addEventListener("click", () => {
 
 // 뮤직 리스트 버튼
 musicListBtn.addEventListener("click", ()=>{
-    musicList.style.display="block";
+    if(musicList.style.display=="block"){
+        musicList.style.display="none"
+    document.querySelector(".bolum_king").style.top="200px";
+
+    } else {
+        musicList.style.display="block"
+    }
+
 });
 // 닫기 버튼
 musicListClose.addEventListener("click", ()=>{
@@ -283,6 +290,8 @@ const audioVolume = document.getElementById('volume-control');
 audioVolume.addEventListener("change", function(e) {
     audio.volume = this.value/10;
 })
+
+
 
 window.addEventListener("load", () => {
     loadMusic(musicIndex);      //음악 재생
