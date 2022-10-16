@@ -60,7 +60,9 @@
                 <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/gameEffect01.html>원본 소스 보기</a>
             </div>
             <h3 class="t_tit2">01. HTML 코드</h3>
-            <p class="t_desc2"></p>
+            <p class="t_desc2">
+                전체적인 게임이펙트 틀로 헤더, 시간, 마우스, 아이콘, 푸터 + 뮤직박스와 소스보기로 구성되어 있습니다.
+            </p>
             <div class="result">
                 <details>
                     <summary>결과보기</summary>
@@ -189,7 +191,9 @@
             </div>
 
                 <h3 class="t_tit2">02. CSS 코드</h3>
-                <p class="t_desc2"></p>
+                <p class="t_desc2">
+                    게임이펙트 틀과 뮤직박스에 대한 CSS입니다.
+                </p>
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
@@ -830,7 +834,9 @@
                 </div>
                 
             <h3 class="t_tit2">03. JS 코드</h3>
-            <p class="t_desc2"></p>
+            <p class="t_desc2">
+                
+            </p>
             <div class="result">
                 <details>
                     <summary>결과보기</summary>
@@ -843,6 +849,90 @@
     &lt;script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"&gt;&lt;/script&gt;
     &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt;
     &lt;script src="../assets/js/music.js"&gt;&lt;/script&gt;
+
+    // 시간 및 윈도우 표시 + 드래그
+    $(".music__wrap").draggable();
+        $(".icon1").draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor.red.png")
+            },
+        });
+        $(".icon2").draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor.blue.png")
+            },
+        });
+        $(".icon3").draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor.green.png")
+            },
+        });
+        $(".icon4").draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor.pink.png")
+            },
+        });
+        $(".icon5").draggable({
+            drag: function() {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor.yellow.png")
+            },
+        });
+        window.addEventListener("mousemove", e => {
+            gsap.to(".mouse__cursor", {duration: 0, left: e.pageX + 10, top: e.pageY - 10});
+        });
+        function printTime(){
+            const clock = document.querySelector(".time");
+            const now = new Date();
+            // if(totalSec &lt; 10) totalSec = `0${totalSec}`;
+            let hour = now.getHours();
+            if (hour > 12) {
+                hours = hour % 12;
+                if (hour > 12) {
+                    hour = "오후 " + hours;
+                } else if (hour &lt; 10) {
+                    hour = "오후 " + `0${hour}`;
+                }
+            } else if (hour &lt;= 12) {
+                if (hour > 12) {
+                    hour = "오전 " + hour;
+                } else if (hour &lt; 10) {
+                    hour = "오전 " + `0${hour}`;
+                }
+            }
+            
+            let minute = now.getMinutes();
+            if(minute &lt; 10) minute = `0${minute}`;
+            let seconds = now.getSeconds();
+            if(seconds &lt; 10) seconds = `0${seconds}`;
+            const nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + hour + "시 " + minute +"분 "+ seconds + "초";
+            
+            clock.innerText = nowTime;
+            setTimeout("printTime()", 1000); 
+        }
+        function printAgent(){
+
+            const agent = document.querySelector(".agent");
+            const os = navigator.userAgent.toLocaleLowerCase();
+            
+            if(os.indexOf("window") >= 0){
+                agent.innerText = "현재 윈도우를 사용하고 있으며, 화면 크기는 "+ screen.width +" * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("window");
+            } else if(os.indexOf("macintosh") >= 0){
+                agent.innerText = "현재 맥을 사용하고 있으며, 화면 크기는 "+ screen.width +" * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("mac");
+            } else if(os.indexOf("iphone") >= 0){
+                agent.innerText = "현재 아이폰을 사용하고 있으며, 화면 크기는 "+ screen.width +" * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("iphone");
+            } else if(os.indexOf("android") >= 0){
+                agent.innerText = "현재 안드로이드폰 사용하고 있으며, 화면 크기는 "+ screen.width +" * " + screen.height + "입니다."
+                document.querySelector("body").classList.add("android");
+            }
+        }
+        window.onload = function(){
+            printTime();
+            printAgent();
+        }
+
 
     // 뮤직 JS
     
