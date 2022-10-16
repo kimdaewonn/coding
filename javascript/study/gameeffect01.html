@@ -38,18 +38,15 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">게임 이펙트</h2>
+            <h2 class="t_tit">게임 이펙트 01</h2>
             <div class="t_desc2">
                 <p>
                     게임 이펙트 첫 번째 시간입니다.<br>
                     이번 시간에는 뮤직박스를 만들어보겠습니다.
+
                 </p>
             </div>
             <hr>
-            <h3 class="t_tit2">게임 이펙트 01</h3>
-            <p class="t_desc2">
-                
-            </p>
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
                 <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/gameEffect01.html"
                     frameborder="0"></iframe>
@@ -59,6 +56,7 @@
                 <a href=https://kimdaewonn.github.io/coding/javascript/effect/gameEffect01.html>원본 사이트 보기</a>
                 <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/gameEffect01.html>원본 소스 보기</a>
             </div>
+            <hr>
             <h3 class="t_tit2">01. HTML 코드</h3>
             <p class="t_desc2">
                 전체적인 게임이펙트 틀로 헤더, 시간, 마우스, 아이콘, 푸터 + 뮤직박스와 소스보기로 구성되어 있습니다.
@@ -843,7 +841,13 @@
                 
                 // 뮤직박스<br>
                 1. allMusic 배열에 객체로 mp3파일의 정보를 담고, 필요한 선택자들을 잡아줍니다.<br>
-                
+                2. allMusic과 관련된 데이터를 불러오는 함수와 각 버튼의 함수를 만들어줍니다.<br>
+                3. musicAudio에 addEventListener를 걸어 뮤직진행바의 시간에 대해 정의해주고 musicProgress의 x좌표를 정의해줍니다.<br>
+                4. 반복 버튼과 오디오가 끝나는 경우에 대해서 swhich문을 활용해 각 경우에 맞게 재생시켜줍니다.<br>
+                5. for문을 이용해 뮤직리스트를 구현해주고 loadeddata로 오디오와 시간을 가져와 표현해줍니다.<br>
+                6. playListMusic 함수를 만들어 리스트 업데이트 및 초기화에 대한 내용을 담아주고 필요한 곳에 뿌려줍니다.<br>
+                <br>+ 자세한 내용은 주석을 참고 해주세요!!
+
             </p>
             <div class="result">
                 <details>
