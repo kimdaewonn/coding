@@ -303,7 +303,7 @@
         const updateList = () => {
             let listCSS = "";
             cssProperty.forEach((data, index) => {
-                listCSS += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
+                listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`;
             });
             cssList.innerHTML = listCSS;
         }

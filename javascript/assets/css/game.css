@@ -383,7 +383,6 @@ body {
 }
 .iframe_cont {
     position: relative;
-    opacity: 0;
 }
 
 .iframe_cont iframe {
