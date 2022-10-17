@@ -36,7 +36,7 @@
         </div>
 
         <div class="search__desc">
-                속성을 검색하시면 화면이 표시됩니다!!!
+            속성을 검색하시면 화면이 표시됩니다!!!
         </div>
         <div class="search__info">
             <div>전체 속성 갯수 : <span class="num">0</span></div>
@@ -689,51 +689,50 @@
                 { name: "writing-mode", desc: "텍스트 줄을 가로 또는 세로로 배치할지 여부와 블록이 진행되는 방향을 설정합니다." },
                 { name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
                     ];
-        // 선택자
+         //선택자
         const searchList = document.querySelector(".search__list");
         const searchNum = document.querySelector(".search__info .num");
         const searchBox = document.querySelector(".search__box input");
-        const searchDesc = document.querySelector(".search__desc");
+        const searchDesc = document.querySelector(".search__desc")
 
-        // 출력하기
-        cssProperty.map((element, index) => {
+
+
+        //출력하기
+        cssProperty.map((el, index) => {
             searchNum.innerText = index + 1;
-            searchList.innerHTML += `<span>${element.name}</span>`;
-        });
+            searchList.innerHTML += `<span>${el.name}</span>`;
+        })
 
-        // 입력하기
-        searchBox.addEventListener("keyup", ()=>{
+        //입력하기
+        searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value;
-            // console.log(searchWord);
+            // console.log(searchWord)
             findProperty(searchWord);
         });
 
-        // 클릭하기
-        document.querySelectorAll(".search__list span").forEach(span =>{
-            sapn.addEventListener("click",()=>{
-                const clickWord = span.innerText;
-                findProperty(clickWord);
+        const searchList2 = document.querySelectorAll(".search__list span");
+
+        searchList2.forEach((e, i) => {
+            // console.log(e)
+            e.addEventListener("click", () => {
+                const searchWord = e.innerText;
+                // console.log(e.value)
+                findProperty(searchWord);
             });
-        });
+        })
 
-        // 속성 찾기
-        function findProperty(searchData){
-           const targetData = cssProperty.find((data) => data.name === searchData);
 
-            if(targetData == null){
-                searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!"
+        //속성 찾기
+        function findProperty(search) {
+            const targetData = cssProperty.find((data) => data.name === search)
+
+            if (targetData == null) {
+                searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
                 return;
             }
-           searchDesc.textContent = targetData.desc;           
-        };
 
-        // 미션(클릭시 설명 나오게)
-        // const searchListspan = document.querySelectorAll(".search__list span");
-        // searchListspan.forEach((e, i) => {
-        //     e.addEventListener("click", () => {
-        //         searchDesc.textContent = cssProperty[i].desc;
-        //     });
-        // });
+            searchDesc.textContent = targetData.desc;
+        };
 
     </script>
 </body>

@@ -1,7 +1,7 @@
-<?php
-    include "../../connect/connect.php";
-    include "../../connect/session.php";
-    include "../../connect/sessionCheck.php";
+<?php 
+   include "../../connect/connect.php";
+   include "../../connect/session.php";
+   include "../../connect/sessionCheck.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/board.css">
 </head>
 <body>
@@ -20,33 +21,7 @@
     </div>
     <div class="wrap">
         <div class="site">
-            <div class="hamburger_menu">
-                <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
-                <p>공지사항</p>
-                <p>이벤트</p>
-                <p>이달의 순위</p>
-                <p>일기쓰기</p>
-                <p>꾸미기</p>
-                <p>정보</p>
-                <p>고객센터</p>
-            </div>
-            <div class="header">
-                <div class="header_inner">
-                    <img src="../../assets/img/site_header_logo.png" alt="logo">
-                    <p>공지사항</p>
-                    <p>이벤트</p>
-                    <p>이달의 순위</p>
-                    <p>일기쓰기</p>
-                    <p>꾸미기</p>
-                    <p>정보</p>
-                    <p>고객센터</p>
-                    <div class="profile_cont">
-                        <img src="../../assets/img/site_header_profile.png" alt="logo">
-                        <img src="../../assets/img/site_header_profile_heart.png" alt="logo">
-                    </div>
-                    <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
-                </div>
-            </div>
+            <?php include "../include/header.php" ?>
             <div class="remove">
                 <div class="remove_info">
                     <img class="notice_logo" src="../../assets/img/site_board_edit_delete.png" alt="">
@@ -67,5 +42,6 @@
         </div>
     </div>
 </body>
+<script src="../../assets/javascript/common.js"></script>
 <script src="../../assets/javascript/board.js"></script>
 </html>

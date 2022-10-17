@@ -20,7 +20,7 @@
                     <img class="login-cross"src="../../assets/img/login_cross.png" alt="">
                 </div>
                 <div class="login__cont">
-                    <form name="login" action="loginSave.php" method="post">
+                    <form name="login" action="../login/loginSave.php" method="post">
                         <fieldset>
                             <legend class="ir">로그인 입력폼</legend>
                             <div class="Email">
@@ -47,7 +47,5 @@
         </div>
     </div>
 </body>
-<script>
-  
-</script>
+<script src="../../assets/javascript/board.js"></script>
 </html>

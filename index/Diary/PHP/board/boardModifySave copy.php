@@ -35,6 +35,7 @@
     $boardContents = $_POST['boardContents'];
     $youPass = $_POST['youPass'];
     $myMemberID = $_SESSION['myMemberID'];
+    // $youPass = sha1("web".$youPass);
 
     $boardTitle = $connect -> real_escape_string($boardTitle);
     $boardContents = $connect -> real_escape_string($boardContents);
@@ -43,12 +44,15 @@
     $result = $connect -> query($sql);
 
     $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
+    
+    echo $myBoardID;
 
     if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){
         $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
         $connect -> query($sql);
 
-        var_dump ($sql);
+        echo var_dump($sql);
+        // echo "<script>location.href = 'board.php';</script>";
     } else {
         echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한 번 확인해주세요.')</script>";
         echo "<script>history.back();</script>";
@@ -63,6 +67,5 @@
         </div>
     </div>
 </body>
-<script src="../../assets/javascript/common.js"></script>
 <script src="../../assets/javascript/board.js"></script>
 </html>

@@ -55,8 +55,8 @@
                 </div>
                 <div class="section_selector">
                     <div class="section_container">
-                        <a class="select" href="board.php">공지사항</a>
-                        <a href="board.php">이벤트</a>
+                        <a class="select" href="board.html">공지사항</a>
+                        <a href="board.html">이벤트</a>
                     </div>
                     <a class="section_search_button" href="#">
                         <img src="../../assets/img/search_btn.png" alt="">
@@ -90,12 +90,12 @@
             for($i=1; $i <= $count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
                 echo "<div class='board_list_contents'>";
-                echo "<img src='../../assets/img/site_header_profile.png' alt='프로필 이미지'>";
-                echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardContents']."</a></h2>";
+                // echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a></h2>";
+                echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a></h2>";
                 echo "<div class='board_list_contents_info'>";
-                echo "<p class='contents_section'>".$info['boardSection']."</p>";
+                echo "<p class='contents_section'>".$info['boardSection']." |  </p>";
                 echo "<p class='contents_date'>".date('Y-m-d H:i',$info['regTime'])."</p>";
-                echo "<p class='contents_view'>".$info['boardView']." VIEW</p>";
+                echo "<p class='contents_view'> 조회 수 : ".$info['boardView']."</p>";
                 echo "<p class='contents_view'>".$info['youName']."</p>";
                 echo "</div>";
                 echo "</div>";
@@ -156,5 +156,4 @@
 </body>
 <script src="../../assets/javascript/board.js"></script>
 <script src="../../assets/javascript/search.js"></script>
-<script src="../../assets/javascript/common.js"></script>
 </html>

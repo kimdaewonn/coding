@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../assets/css/dracular.css">
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+    <style>
+        .search__answers, .seearch__missAnswers {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -28,24 +34,44 @@
     <!-- //header -->
     <main id="main">
         <div class="search__wrap">
-            <span>피셔 에이츠 알고리즘 이용하여 정렬하기</span>
-            <h1><a href="searchEffect.html">CSS 속성 정렬하기</a></h1>
-        <div class="search__click">
-            <ul>
-                <li><a href="#" class="btn1">랜덤 정렬하기</a></li>
-            </ul>
-            <ul>
-                <li><a href="#" class="btn2">background</a></li>
-                <li><a href="#" class="btn3">animation</a></li>
-                <li><a href="#" class="btn4">flex</a></li>
-            </ul>
-        </div>
+            <div class="search__audio">
+                <span class="play">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z" fill="#223547" stroke="#223547" stroke-width="1.5"/>
+                        <path d="M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667" stroke="#223547" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667" stroke="#223547" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="stop">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z" fill="#223547" stroke="#223547" stroke-width="1.5"/>
+                        <path d="M18 14.1215L22.2427 9.87891" stroke="#223547" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18 9.87894L22.2427 14.1216" stroke="#223547" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <audio id="audio" src="../assets/audio/music_audio04.mp3" loop="loop"></audio>
+            </div>
+            <span>CSS 속성 검색 이벤트</span>
+            <h1><a href="#"></a>CSS 랜덤 검색하기</h1>
+            <div class="desc">
+                2분 동안 CSS 속성을 많이 검색하면 점수가 올라갑니다.<br>
+                기억이 나지 않으면 힌트보기를 한번 이용할 수 있습니다.
+            </div>
+            <div class="time">
+                <span>2:00</span>
+            </div>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성을 검색해주세요.">
+                <div class="start">버튼을 누르면 게임이 시작됩니다.</div>
+            </div>
+            
             <div class="search__info">
                 <div>찾은 속성 갯수 : <span class="num">0</span></div>
             </div>
-            <div class="search__list">
-                <ul class="line"></ul>
-            </div>
+            <div class="search__answers"></div>
+            <div class="search__missAnswers"></div>
+            <div class="search__list"></div>
           </div>
     </main>
           <!-- //main -->
@@ -147,106 +173,106 @@
 
     <script>
     const cssProperty = [
-                { num: 1, category: "table", name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
-                { num: 2, category: "table", name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
-                { num: 3, category: "table", name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
-                { num: 4, category: "table", name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
-                { num: 5, category: "table", name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
-                { num: 6, category: "table", name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
-                { num: 7, category: "table", name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
-                { num: 8, category: "table", name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
-                { num: 9, category: "table", name: "animation-duration", desc: "애니메이션 움직임 시간을 설정합니다." },
-                { num: 10,category: "table",  name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다." },
-                { num: 11,category: "table",  name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다." },
-                { num: 12,category: "table",  name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
-                { num: 13,category: "table",  name: "animation-play-state", desc: "애니메이션 진행상태를 설정 합니다." },
-                { num: 14,category: "table",  name: "animation-timeline", desc: "x" },
-                { num: 15,category: "table",  name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정 합니다." },
-                { num: 16,category: "table",  name: "appearance", desc: "운영체제 및 브라우저에 기본적으로 설정되어 있는 테마를 기반으로 요소를 표현합니다." },
-                { num: 17,category: "table",  name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수 있게 합니다." },
-                { num: 18,category: "table",  name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
-                { num: 19,category: "table",  name: "backface-visibility", desc: "입체적인 모습의 뒷면의 가시성을 결정하는 속성이다." },
-                { num: 20,category: "table",  name: "background", desc: "백그라운드 속성을 일괄적으로 설정 합니다." },
-                { num: 21,category: "table",  name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정 합니다." },
-                { num: 22,category: "table",  name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정 합니다." },
-                { num: 23,category: "table",  name: "background-clip", desc: "백그라운드 이미지의 위치 기준점을 설정 합니다." },
-                { num: 25,category: "table",  name: "background-color", desc: "백그라운드 색을 설정 합니다." },
-                { num: 26,category: "table",  name: "background-image", desc: "백그라운드 이미지 속성을 설정 합니다." },
-                { num: 5,category: "background", name: "background-origin", desc: "백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
-                { num: 5,category: "background", name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정 합니다." },
-                { num: 5,category: "background", name: "background-position-x", desc: "백그라운드 이미지의 x축 위치 영역을 설정 합니다." },
-                { num: 5,category: "background", name: "background-position-y", desc: "백그라운드 이미지의 y축 위치 영역을 설정 합니다." },
-                { num: 5,category: "background", name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정 합니다." },
-                { num: 5,category: "background", name: "background-size", desc: "백그라운드 이미지 사이즈를 설정 합니다." },
-                { num: 5,category: "flex", name: "block-size", desc: "기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다." },
-                { num: 5,category: "flex", name: "border", desc: "테두리 속성을 일괄적으로 설정 합니다." },
-                { num: 5,category: "flex", name: "border-block", desc: "X" },
-                { num: 5,category: "flex", name: "border-block-color", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-end", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-end-color", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-end-style", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-end-width", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-start", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-start-color", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-start-style", desc: "x" },
-                { num: 0,category: "flex", name: "border-block-start-width", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-style", desc: "x" },
-                { num: 5,category: "flex", name: "border-block-width", desc: "x" },
-                { num: 5,category: "flex", name: "border-bottom", desc: "아래쪽 속성을 일괄적으로 설정 합니다." },
-                { num: 5,category: "flex", name: "border-bottom-color", desc: "테두리 아래쪽 색 속성을 설정합니다." },
-                { num: 5,category: "flex", name: "border-bottom-left-radius", desc: "아래 왼쪽 모서리 굴곡을 설정합니다." },
-                { num: 5,category: "flex", name: "border-bottom-right-radius", desc: "아래 오른쪽 모서리 굴곡을 설정합니다." },
-                { num: 5,category: "flex", name: "border-bottom-style", desc: "아래쪽 테두리의 스타일 속성을 설정합니다." },
-                { num: 5,category: "flex", name: "border-bottom-width", desc: "아래쪽 테두리의 두께 속성을 설정합니다." },
-                { num: 5,category: "flex", name: "border-collapse", desc: "테이블의 테두리를 겹칠지, 떨어트릴지를 설정합니다." },
-                { num: 5,category: "flex", name: "border-color", desc: "모든 면의 테두리 색상을 설정 합니다." },
-                { num: 5,category: "flex", name: "border-end-end-radius", desc: "요소의 테두리 반경을 설정 합니다." },
-                { num: 5,category: "flex", name: "border-end-start-radius", desc: "요소의 테두리 반경을 설정 합니다." },
-                { num: 5,category: "flex", name: "border-image", desc: "요소의 주위에 이미지를 설정 합니다." },
-                { num: 5,category: "flex", name: "border-image-outset", desc: "테두리 상자와 테두리 이미지의 거리를 설정 합니다." },
-                { num: 5,category: "flex", name: "border-image-repeat", desc: "모서리 영역을 테두리 이미지 크기에 맞춰 설정 합니다." },
-                { num: 5,category: "flex", name: "border-image-slice", desc: "설정한 이미지를 여러개의 영역으로 나눕니다." },
-                { num: 5,category: "flex", name: "border-image-source", desc: "테두리 이미지로 사용할 원본 이미지를 설정 합니다." },
-                { num: 5,category: "flex", name: "border-image-width", desc: "테두리 이미지의 너비를 설정 합니다." },
-                { num: 5,category: "flex", name: "border-inline", desc: "스타일 시트의 한 위치에 개별 논리적 인라인 테두리 속성 값을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-color", desc: "모든 인라인 테두리 색상을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-end", desc: "인라인 엔드 border 속성 값을 설정합니다." },
-                { num: 5,category: "animation", name: "border-inline-end-color", desc: "개별 논리적 인라인 끝 테두리 색상을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-end-style", desc: "인라인 끝 테두리 스타일을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-end-width", desc: "논리적 인라인 끝 테두리 너비를 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-start", desc: "개별 논리적 인라인 시작 테두리 속성 값을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-start-color", desc: "논리적 인라인 시작 테두리 색상을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-start-style", desc: "논리적 인라인 시작 테두리 스타일을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-start-width", desc: "논리적 인라인 시작 테두리 너비를 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-style", desc: "논리적 인라인 테두리 스타일을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-inline-width", desc: "논리적 인라인 테두리 너비를 설정 합니다." },
-                { num: 5,category: "animation", name: "border-left", desc: "테두리 왼쪽 너비, 스타일, 색상을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-left-color", desc: "요소의 왼쪽 테두리의 색상을 설정합니다." },
-                { num: 5,category: "animation", name: "border-left-style", desc: "요소의 왼쪽 테두리의 스타일 속성을 설정합니다." },
-                { num: 5,category: "animation", name: "border-left-width", desc: "요소의 왼쪽 테두리의 두께를 설정합니다." },
-                { num: 5,category: "animation", name: "border-radius", desc: "요소의 테두리 굴곡을 설정합니다." },
-                { num: 4,category: "animation", name: "border-right", desc: "요소의 오른쪽 테두리 속성을 일괄적으로 설정합니다." },
-                { num: 5,category: "animation", name: "border-right-color", desc: "요소의 오른쪽 테두리의 색상을 설정합니다." },
-                { num: 5,category: "animation", name: "border-right-style", desc: "요소의 오른쪽 테두리의 스타일 속성을 설정합니다." },
-                { num: 5,category: "animation", name: "border-right-width", desc: "요소의 오른쪽 테두리의 두께를 설정합니다." },
-                { num: 5,category: "animation", name: "border-spacing", desc: "테이블의 테두리 사이의 간격을 설정합니다." },
-                { num: 5,category: "animation", name: "border-start-end-radius", desc: "논리적 테두리 반경을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-start-start-radius", desc: "논리적 테두리 반경을 설정 합니다." },
-                { num: 5,category: "animation", name: "border-style", desc: "요소의 테두리 스타일 속성을 설정합니다." },
-                { num: 5,category: "animation", name: "border-top", desc: "요소의 위쪽 테두리 속성을 일괄적으로 설정합니다." },
-                { num: 5,category: "animation", name: "border-top-color", desc: "요소의 위쪽 테두리의 색상을 설정합니다." },
-                { num: 5,category: "animation", name: "border-top-left-radius", desc: "요소의 위쪽 왼쪽 모서리의 굴곡을 설정합니다" },
-                { num: 5,category: "animation", name: "border-top-right-radius", desc: "요소의 위쪽 오른쪽 모서리의 굴곡을 설정합니다." },
-                { num: 5,category: "animation", name: "border-top-style", desc: "요소의 위쪽 테두리의 스타일 속성을 설정합니다." },
-                { num: 5,category: "animation", name: "border-top-width", desc: "요소의 위쪽 테두리의 두께를 설정합니다." },
-                { num: 5,category: "animation", name: "border-width", desc: "요소의 테두리의 두께를 설정합니다." },
-                { num: 5,category: "animation", name: "bottom", desc: "요소의 아래쪽에서의 위치를 설정합니다." },
-                { num: 5,category: "animation", name: "box-decoration-break", desc: "분할될 때 요소의 조각을 렌더링 하는 방법을 설정 합니다." },
-                { num: 5,category: "animation", name: "box-shadow", desc: "박스 그림자 효과를 설정 합니다." },
-                { num: 5,category: "animation", name: "box-sizing", desc: "브라우저가 요소의 크기를 어떻게 계산할지를 설정합니다." },
-                { num: 5,category: "animation", name: "break-after", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
-                { num: 5,category: "animation", name: "break-before", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
-                { num: 5,category: "animation", name: "break-inside", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
+                { num: 1, name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+                { num: 2, name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+                { num: 3, name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+                { num: 4, name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
+                { num: 5, name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
+                { num: 6, name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
+                { num: 7, name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
+                { num: 8, name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
+                { num: 9, name: "animation-duration", desc: "애니메이션 움직임 시간을 설정합니다." },
+                { num: 10, name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다." },
+                { num: 11, name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다." },
+                { num: 12, name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
+                { num: 13, name: "animation-play-state", desc: "애니메이션 진행상태를 설정 합니다." },
+                { num: 14, name: "animation-timeline", desc: "x" },
+                { num: 15, name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정 합니다." },
+                { num: 16, name: "appearance", desc: "운영체제 및 브라우저에 기본적으로 설정되어 있는 테마를 기반으로 요소를 표현합니다." },
+                { num: 17, name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수 있게 합니다." },
+                { num: 18, name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+                { num: 19, name: "backface-visibility", desc: "입체적인 모습의 뒷면의 가시성을 결정하는 속성이다." },
+                { num: 20, name: "background", desc: "백그라운드 속성을 일괄적으로 설정 합니다." },
+                { num: 21, name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정 합니다." },
+                { num: 22, name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정 합니다." },
+                { num: 23, name: "background-clip", desc: "백그라운드 이미지의 위치 기준점을 설정 합니다." },
+                { num: 25, name: "background-color", desc: "백그라운드 색을 설정 합니다." },
+                { num: 26, name: "background-image", desc: "백그라운드 이미지 속성을 설정 합니다." },
+                { num: 5, name: "background-origin", desc: "백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+                { num: 5, name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정 합니다." },
+                { num: 5, name: "background-position-x", desc: "백그라운드 이미지의 x축 위치 영역을 설정 합니다." },
+                { num: 5, name: "background-position-y", desc: "백그라운드 이미지의 y축 위치 영역을 설정 합니다." },
+                { num: 5, name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정 합니다." },
+                { num: 5, name: "background-size", desc: "백그라운드 이미지 사이즈를 설정 합니다." },
+                { num: 5, name: "block-size", desc: "기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다." },
+                { num: 5, name: "border", desc: "테두리 속성을 일괄적으로 설정 합니다." },
+                { num: 5, name: "border-block", desc: "X" },
+                { num: 5, name: "border-block-color", desc: "x" },
+                { num: 5, name: "border-block-end", desc: "x" },
+                { num: 5, name: "border-block-end-color", desc: "x" },
+                { num: 5, name: "border-block-end-style", desc: "x" },
+                { num: 5, name: "border-block-end-width", desc: "x" },
+                { num: 5, name: "border-block-start", desc: "x" },
+                { num: 5, name: "border-block-start-color", desc: "x" },
+                { num: 5, name: "border-block-start-style", desc: "x" },
+                { num: 0, name: "border-block-start-width", desc: "x" },
+                { num: 5, name: "border-block-style", desc: "x" },
+                { num: 5, name: "border-block-width", desc: "x" },
+                { num: 5, name: "border-bottom", desc: "아래쪽 속성을 일괄적으로 설정 합니다." },
+                { num: 5, name: "border-bottom-color", desc: "테두리 아래쪽 색 속성을 설정합니다." },
+                { num: 5, name: "border-bottom-left-radius", desc: "아래 왼쪽 모서리 굴곡을 설정합니다." },
+                { num: 5, name: "border-bottom-right-radius", desc: "아래 오른쪽 모서리 굴곡을 설정합니다." },
+                { num: 5, name: "border-bottom-style", desc: "아래쪽 테두리의 스타일 속성을 설정합니다." },
+                { num: 5, name: "border-bottom-width", desc: "아래쪽 테두리의 두께 속성을 설정합니다." },
+                { num: 5, name: "border-collapse", desc: "테이블의 테두리를 겹칠지, 떨어트릴지를 설정합니다." },
+                { num: 5, name: "border-color", desc: "모든 면의 테두리 색상을 설정 합니다." },
+                { num: 5, name: "border-end-end-radius", desc: "요소의 테두리 반경을 설정 합니다." },
+                { num: 5, name: "border-end-start-radius", desc: "요소의 테두리 반경을 설정 합니다." },
+                { num: 5, name: "border-image", desc: "요소의 주위에 이미지를 설정 합니다." },
+                { num: 5, name: "border-image-outset", desc: "테두리 상자와 테두리 이미지의 거리를 설정 합니다." },
+                { num: 5, name: "border-image-repeat", desc: "모서리 영역을 테두리 이미지 크기에 맞춰 설정 합니다." },
+                { num: 5, name: "border-image-slice", desc: "설정한 이미지를 여러개의 영역으로 나눕니다." },
+                { num: 5, name: "border-image-source", desc: "테두리 이미지로 사용할 원본 이미지를 설정 합니다." },
+                { num: 5, name: "border-image-width", desc: "테두리 이미지의 너비를 설정 합니다." },
+                { num: 5, name: "border-inline", desc: "스타일 시트의 한 위치에 개별 논리적 인라인 테두리 속성 값을 설정 합니다." },
+                { num: 5, name: "border-inline-color", desc: "모든 인라인 테두리 색상을 설정 합니다." },
+                { num: 5, name: "border-inline-end", desc: "인라인 엔드 border 속성 값을 설정합니다." },
+                { num: 5, name: "border-inline-end-color", desc: "개별 논리적 인라인 끝 테두리 색상을 설정 합니다." },
+                { num: 5, name: "border-inline-end-style", desc: "인라인 끝 테두리 스타일을 설정 합니다." },
+                { num: 5, name: "border-inline-end-width", desc: "논리적 인라인 끝 테두리 너비를 설정 합니다." },
+                { num: 5, name: "border-inline-start", desc: "개별 논리적 인라인 시작 테두리 속성 값을 설정 합니다." },
+                { num: 5, name: "border-inline-start-color", desc: "논리적 인라인 시작 테두리 색상을 설정 합니다." },
+                { num: 5, name: "border-inline-start-style", desc: "논리적 인라인 시작 테두리 스타일을 설정 합니다." },
+                { num: 5, name: "border-inline-start-width", desc: "논리적 인라인 시작 테두리 너비를 설정 합니다." },
+                { num: 5, name: "border-inline-style", desc: "논리적 인라인 테두리 스타일을 설정 합니다." },
+                { num: 5, name: "border-inline-width", desc: "논리적 인라인 테두리 너비를 설정 합니다." },
+                { num: 5, name: "border-left", desc: "테두리 왼쪽 너비, 스타일, 색상을 설정 합니다." },
+                { num: 5, name: "border-left-color", desc: "요소의 왼쪽 테두리의 색상을 설정합니다." },
+                { num: 5, name: "border-left-style", desc: "요소의 왼쪽 테두리의 스타일 속성을 설정합니다." },
+                { num: 5, name: "border-left-width", desc: "요소의 왼쪽 테두리의 두께를 설정합니다." },
+                { num: 5, name: "border-radius", desc: "요소의 테두리 굴곡을 설정합니다." },
+                { num: 4, name: "border-right", desc: "요소의 오른쪽 테두리 속성을 일괄적으로 설정합니다." },
+                { num: 5, name: "border-right-color", desc: "요소의 오른쪽 테두리의 색상을 설정합니다." },
+                { num: 5, name: "border-right-style", desc: "요소의 오른쪽 테두리의 스타일 속성을 설정합니다." },
+                { num: 5, name: "border-right-width", desc: "요소의 오른쪽 테두리의 두께를 설정합니다." },
+                { num: 5, name: "border-spacing", desc: "테이블의 테두리 사이의 간격을 설정합니다." },
+                { num: 5, name: "border-start-end-radius", desc: "논리적 테두리 반경을 설정 합니다." },
+                { num: 5, name: "border-start-start-radius", desc: "논리적 테두리 반경을 설정 합니다." },
+                { num: 5, name: "border-style", desc: "요소의 테두리 스타일 속성을 설정합니다." },
+                { num: 5, name: "border-top", desc: "요소의 위쪽 테두리 속성을 일괄적으로 설정합니다." },
+                { num: 5, name: "border-top-color", desc: "요소의 위쪽 테두리의 색상을 설정합니다." },
+                { num: 5, name: "border-top-left-radius", desc: "요소의 위쪽 왼쪽 모서리의 굴곡을 설정합니다" },
+                { num: 5, name: "border-top-right-radius", desc: "요소의 위쪽 오른쪽 모서리의 굴곡을 설정합니다." },
+                { num: 5, name: "border-top-style", desc: "요소의 위쪽 테두리의 스타일 속성을 설정합니다." },
+                { num: 5, name: "border-top-width", desc: "요소의 위쪽 테두리의 두께를 설정합니다." },
+                { num: 5, name: "border-width", desc: "요소의 테두리의 두께를 설정합니다." },
+                { num: 5, name: "bottom", desc: "요소의 아래쪽에서의 위치를 설정합니다." },
+                { num: 5, name: "box-decoration-break", desc: "분할될 때 요소의 조각을 렌더링 하는 방법을 설정 합니다." },
+                { num: 5, name: "box-shadow", desc: "박스 그림자 효과를 설정 합니다." },
+                { num: 5, name: "box-sizing", desc: "브라우저가 요소의 크기를 어떻게 계산할지를 설정합니다." },
+                { num: 5, name: "break-after", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
+                { num: 5, name: "break-before", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
+                { num: 5, name: "break-inside", desc: "박스 나누기가 작동하는 방식을 설정 합니다. 상자가 없으면 속성이 무시됩니다." },
                 { num: 5, name: "caption-side", desc: "테이블 내용을 지정된 쪽에 배치 합니다." },
                 { num: 5, name: "caret-color", desc: "삽입 캐럿의 색상을 설정 합니다. 이것은 텍스트 입력 커서라고도 합니다." },
                 { num: 5, name: "clear", desc: "float 버그를 제거해줍니다." },
@@ -530,51 +556,130 @@
                 { num: 5, name: "writing-mode", desc: "텍스트 줄을 가로 또는 세로로 배치할지 여부와 블록이 진행되는 방향을 설정합니다." },
                 { num: 5, name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
             ];
-    
-    const cssList = document.querySelector(".search__list .line");
+        
+        const searchTime = document.querySelector(".time span");
+        const searchList = document.querySelector(".search__list");
+        const searchAnswers = document.querySelector(".search__answers");
+        const searchMissAnswers = document.querySelector(".search__missAnswers");
+        const searchStart = document.querySelector(".search__box .start");
+        const searchInput = document.querySelector("#search");
+        const searchAudio = document.querySelector("#audio");
 
-    let cssProp = [];
+        let timeRemaning = 120,         //남은시간
+            score = 0,                  //점수
+            answers = {};               //새로운 정답
 
-    // 데이터 출력하기
-    const updateList = () =>{
-
-        // cssProperty.forEach((data,index) =>{
-        //     listCSS +=`<li>${data.num}. ${data.name} : ${data.desc}</li>`;
-        // });
-
-        // for of문
-        // for(const data of cssProperty){
-        //     cssProp.push(`<li>${data.num}. ${data.name} : ${data.desc}</li>`);
-        // }
-        // cssList.innerHTML += cssProp;
-
-        // map()
-        cssProperty.map((data, index)=>{
-            cssProp.push(`<li>${data.num}. ${data.name} : ${data.desc} <em>${data.category}</em></li>`);
-            cssList.innerHTML += cssProp[index]
-        });
-    }
-    
-    updateList();
-    
-    //피셔 에이츠 알고리즘
-    function shuffle(data){
-        for( let i= data.length-1; i>=0; i--){
-            const randomIndex = Math.floor(Math.random() * (i + 1));
-            // console.log(randomIndex)
-            [data[i], data[randomIndex]] = [data[randomIndex], data[i]]; //중복숫자 안나옴
-            cssList.innerHTML += data[i];
+        function upDateList(){
+            cssProperty.forEach(data => {
+                searchList.innerHTML += `<span>${data.name}</span>`;
+            });
         }
-    }
+        upDateList();
+        //게임 시작하기
 
-    document.querySelector(".btn1").addEventListener("click", (e)=>{
-        e.preventDefault();
-        cssList.innerHTML = "";
-        shuffle(cssProp)
-    });
+        function startQuiz(){
+
+            //시작버튼 없애기
+            searchStart.style.display = "none";
+            searchList.style.display = "none";
+
+            //시간 설정
+            setInterval(reduceTime,1000); //1초에 한번씩 실행
+
+            //뮤직 추가
+            searchAudio.play();
+
+
+            //점수 계산
+
+            // 오답 보여주기
+            function missAnswer(){
+                searchMissAnswers.style.display = "block";
+                let input = event.currentTarget.value.trim().toLocaleLowerCase();
+
+                if(!answer[input]){
+                    searchMissAnswers.innerHTML += `<span>${input}</span>`
+                }
+            }
+
+
+            //정답 체크
+            checkAnswers()
+        }
 
 
 
+        //노래 추가
+        function playMusic(){
+            musicAudio.play();
+        }
+        // 음악 설정
+
+
+        //인풋 체크하기
+        function checkInput(){
+            let input = event.currentTarget.value.trim().toLowerCase();
+            // console.log(input);
+            if(answers.hasOwnProperty(input)){
+                answers[input] = true;
+                //정답 표시
+                searchAnswers.style.display = "block";
+                searchAnswers.innerHTML += `<span>${input}</span>`;
+                //정답 초기화
+                searchInput.value = "";
+            }
+        }
+
+
+        //정답 체크하기 : 정답을 객체 파일로 만들기
+        function checkAnswers(){
+            cssProperty.forEach(item => {
+                let answer = item.name.trim().toLocaleLowerCase();
+                answers[answer] = false;
+            });
+            console.log(answers);
+        }
+
+        // 오답 보여주기
+        function missAnswer(){
+            searchMissAnswers.style.display = "block";
+
+        }
+
+        //시간 설정하기
+        function reduceTime(){
+            timeRemaning--;
+            if( timeRemaning == 0 ) endQuiz();
+            searchTime.innerText = displayTime();
+        }
+
+        //시간 표시하기
+        function displayTime(){
+            if(timeRemaning <= 0){
+                return "0:00";
+            }else{
+                let minutes = Math.floor(timeRemaning/60);
+                let seconds = timeRemaning % 60;
+                //초 단위가 한자리 수 일때 0을 추가
+                if(seconds < 10) seconds = "0" + seconds;
+                return minutes + ":" + seconds;
+            }
+        }
+
+        //게임 끝났을 때
+        function endQuiz(){
+            // alert("게임이 끝났습니다 :3");
+            //시작버튼 만들기
+            searchStart.style.display = "block";
+
+            // 오답 보여주기
+            missAnswer();
+
+            // 음악 끄기
+            
+        }
+        searchStart.addEventListener("click",startQuiz);
+        searchInput.addEventListener("input", checkInput);
     </script>
 </body>
 </html>
