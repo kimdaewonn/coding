@@ -219,8 +219,8 @@ musicListBtn.addEventListener("click", ()=>{
     } else {
         musicList.style.display="block"
     }
-
 });
+
 // 닫기 버튼
 musicListClose.addEventListener("click", ()=>{
     musicList.style.display="none";
@@ -297,3 +297,23 @@ window.addEventListener("load", () => {
     loadMusic(musicIndex);      //음악 재생
     playListMusic();            //리스트 초기화
 })
+
+
+// 뮤직 버튼
+const icon1Btn = document.querySelector(".icon1");
+const musicInner = document.querySelector(".music__inner");
+
+icon1Btn.addEventListener("click", ()=>{
+    if(musicInner.style.display=="block"){
+        musicInner.style.display="none"
+
+
+    } else {
+        musicInner.style.display="block"
+    }
+});
+
+// 서치게임 버튼
+const icon2Btn = document.querySelector(".icon2");
+
+
