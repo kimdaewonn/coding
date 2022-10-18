@@ -23,7 +23,8 @@
     <div class="profile_cont" alt="로그인한 프로파일 이미지">
         <?php if( isset($_SESSION['myMemberID'])){ ?>
             <span><a href="../login/logout.php" class="profile_cont_close"><img src="../../assets/img/login_cross.png" alt="로그아웃"></a></span>
-            <img src="../../assets/img/site_header_profile.png" alt="logo">
+            <!-- <img src="../../assets/img/site_header_profile.png" alt="logo"> -->
+            <?php echo "<img src='../../assets/img/blog/".$_SESSION['youImageFile']."' alt='프로필 이미지'>"; ?>
             <span class="btn_scroll_top">
                 <a href="#">^</a>
             </span>

@@ -49,7 +49,7 @@
     }
 
     // 데이터 가져오기 --> 유효성 검사 --> 데이터 조회 --> 로그인
-    $sql = "SELECT myMemberID, youEmail, youName, youPass FROM myMember WHERE youEmail = '$youEmail' AND youPass = '$youPass'";
+    $sql = "SELECT myMemberID, youEmail, youImageFile, youName, youPass FROM myMember WHERE youEmail = '$youEmail' AND youPass = '$youPass'";
     $result = $connect -> query($sql);
 
     if($result){
@@ -64,6 +64,7 @@
             $_SESSION['myMemberID'] = $info['myMemberID'];
             $_SESSION['youEmail'] = $info['youEmail'];
             $_SESSION['youName'] = $info['youName'];
+            $_SESSION['youImageFile'] = $info['youImageFile'];
 
             // echo "<pre>";
             // var_dump($info);

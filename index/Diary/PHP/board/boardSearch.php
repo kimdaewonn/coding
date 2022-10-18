@@ -192,7 +192,7 @@
     </div>
 </body>
 <script src="../../assets/javascript/board.js"></script>
-<script src="../../assets/javascript/search.js"></script>
+<!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>
 
 </html>

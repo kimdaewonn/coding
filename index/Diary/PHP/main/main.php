@@ -2,7 +2,7 @@
     include "../../connect/connect.php";
     include "../../connect/session.php";
 
-    // echo "<pre>";
+    // echo "<pre style='position:absolute; top:200px; left: 50px;'>";
     // var_dump($_SESSION);
     // echo "</pre>";
 ?> 

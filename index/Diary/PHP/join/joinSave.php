@@ -33,33 +33,51 @@
     $searchQA = $connect -> real_escape_string(trim($searchQA));
     $youQA = $connect -> real_escape_string(trim($youQA));
 
-    // 테스트
-    $blogImgFile = $_FILES['blogFile'];
-    $blogImgSize = $_FILES['blogFile']['size'];
-    $blogImgType = $_FILES['blogFile']['type'];
-    $blogImgName = $_FILES['blogFile']['name'];
-    $blogImgTmp = $_FILES['blogFile']['tmp_name'];
+    // 파일 정보
+    $youImageFile = $_FILES['youImage'];
+    $youImageSize = $_FILES['youImage']['size'];
+    $youImageType = $_FILES['youImage']['type'];
+    $youImageName = $_FILES['youImage']['name'];
+    $youImageTmp = $_FILES['youImage']['tmp_name'];
     
-    echo "<pre>";
-    var_dump($blogImgFile);
-    echo "</pre>";
+    if($youImageType){
+        $fileTypeExtension = explode("/", $youImageType);
+        $fileType = $fileTypeExtension[0];      //image
+        $fileExtension = $fileTypeExtension[1]; //png
 
-    // $youPass = sha1("web".$youPass);
-    // 회원가입
-    $sql = "INSERT INTO myMember(youEmail, youName, youPass, youBirth, youGender, searchQA, youQA, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youBirth', '$youGender', '$searchQA', '$youQA', '$regTime' )";
+        //이미지 타입 확인
+        if($fileType == "image"){
+            if($fileExtension == "jpg" || $fileExtension == "jpeg" || $fileExtension == "png" || $fileExtension == "gif"){
+                $youImageDir = "../../assets/img/blog/";
+                $youImageName = "Img_".time().rand(1,99999).".".$fileExtension;
+                // echo "이미지 파일이 맞네요!";
+                $sql = "INSERT INTO myMember(youEmail, youName, youPass, youBirth, youGender, youImageFile, youImageSize, searchQA, youQA, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youBirth', '$youGender', '$youImageName', '$youImageSize', '$searchQA', '$youQA', '$regTime')";
+            } else {
+                echo "<script>alert('지원하는 이미지 파일이 아닙니다.'); history.back(1)</script>";
+            }
+        }
+    } else {
+        //echo "이미지 파일이 첨부하지 않았습니다.";
+        $sql = "INSERT INTO myMember(youEmail, youName, youPass, youBirth, youGender, youImageFile, youImageSize, searchQA, youQA, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youBirth', '$youGender', 'Img_default.jpg', '$youImageSize', '$searchQA', '$youQA', '$regTime')";
+    }
+    //이미지 사이즈 확인
+    if($youImageSize > 1000000){
+        echo "<script>alert('이미지 용량이 1메가를 초과했습니다.'); history.back(1)</script>";
+        exit;
+    }
     $result = $connect -> query($sql);
-    
+    $result = move_uploaded_file($youImageTmp, $youImageDir.$youImageName);
+
     // echo "$result";
     if($result){
         echo "<p class='loginComple-word'>회원가입을 축하드려요!<br> 꾸다를 통해 진정한 다꾸인이 되기를 바랄게요!</p>";
     } else {
         echo "<p class='loginComple-word'> 에러 - ;3 </p>";
     }
-
 ?>
                 <div class="login-txt">
                 </div>
-                <img class="login-cross"src="../../assets/img/login_cross.png" alt="">
+                <img class="login-cross"src="../../assets/img/a.png" alt="">
             </div>
             <div class="login__cont">
                 <form name="search" action="login.php" method="post">

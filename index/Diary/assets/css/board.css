@@ -167,6 +167,7 @@ body{
 }
 .board_list_contents img{
     width: 5%;
+    border-radius: 100px;
 }
 .board_list_contents h2{
     width: 50%;
@@ -470,13 +471,21 @@ body{
     justify-content: flex-start;
     padding: 20px 0;
     border-bottom: 1px solid #d4dde6;
+    align-items: center;
 }
-.view-time {
-    padding-right: 45px;
-    margin-bottom: 10px;
-    float: left;
+.view-info img{
+    width: 4%;
+    border-radius: 100px;
+    border: 1px solid #00000042;
+    margin-right: 10px;
+}
 
+.view-time {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #00000042;
 }
+
 .view-cont {
     font-size: 16px;
     padding: 20px 20px;
