@@ -34,7 +34,7 @@
                     <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
                     <!-- <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt=""> -->
                     <h2>NOTICE</h2>
-                    <p>게시물 내용을 확인해주세요!</p>
+                    <!-- <p>게시물 내용을 확인해주세요!</p> -->
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
                     <!-- <div class="section_selector">
                         <a class="select" href="#">공지사항</a>

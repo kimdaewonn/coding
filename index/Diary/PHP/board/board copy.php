@@ -27,9 +27,14 @@
         <div class="site">
             <?php include "../include/header.php" ?>
             <div class="board">
-                <a class="write_btn" href="boardWrite.php">글쓰기</a>
+                <!-- <a class="write_btn" href="boardWrite.php">글쓰기</a> -->
                 <div class="board_info">
-                    <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt="">
+                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
+                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
+                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
+                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
+                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                    <!-- <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt=""> -->
                     <h2>NOTICE</h2>
                     <?php
     if(isset($_GET['page'])){
@@ -54,15 +59,29 @@
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
                 </div>
                 <div class="section_selector">
+                    
                     <div class="section_container">
-                        <a class="select" href="board.html">공지사항</a>
-                        <a href="board.html">이벤트</a>
+                        <a class="select" href="board.php">공지사항</a>
+                        <a href="board.php">이벤트</a>
                     </div>
-                    <a class="section_search_button" href="#">
+                    <form action="boardSearch.php" name="boardSearch" method="get" id="board_search">
+                        <fieldset>
+                            <legend class="ir">게시판 검색 영역</legend>
+                            <select name="searchOption" id="searchOption">
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="name">닉네임</option>
+                            </select>
+                            <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요!"
+                            aria-label="search" class="board_search" required>
+                        </fieldset>
+                    </form>
+                    <!-- <a class="section_search_button" href="#">
                         <img src="../../assets/img/search_btn.png" alt="">
-                    </a>
+                    </a> -->
+                    <a class="write_btn" href="boardWrite.php">글쓰기</a>
                 </div>
-                <form action="boardSearch.php" name="boardSearch" method="get" id="board_search" style="display:none">
+                <!-- <form action="boardSearch.php" name="boardSearch" method="get" id="board_search" style="display:none">
                     <fieldset>
                         <legend class="ir">게시판 검색 영역</legend>
                         <select name="searchOption" id="searchOption">
@@ -73,14 +92,22 @@
                         <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요!"
                             aria-label="search" class="board_search" required>
                     </fieldset>
-                </form>
+                </form> -->
                 <div class="board_list">
                     <div class="board_list_inner">
+                        <div class='board_list_header'>
+                            <span>PROFILE</span>
+                            <span>TITLE</span>
+                            <span>BOARD</span>
+                            <span>DATE</span>
+                            <span>VIEW</span>
+                            <span>NAME</span>
+                        </div>
 <?php
     $viewNum = 10;
     $viewLimit = ($viewNum * $page) - $viewNum;
 
-    $sql = $sql."LIMIT {$viewLimit}, {$viewNum}";
+    $sql = $sql."ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
     $result = $connect -> query($sql);
 
     if($result){
@@ -90,12 +117,12 @@
             for($i=1; $i <= $count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
                 echo "<div class='board_list_contents'>";
-                // echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a></h2>";
-                echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a></h2>";
+                echo "<img src='../../assets/img/site_header_profile.png' alt='프로필 이미지'>";
+                echo "<h2><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardTitle']."</a><a href='boardView.php?myBoardID={$info['myBoardID']}'>".$info['boardContents']."</a></h2>";
                 echo "<div class='board_list_contents_info'>";
-                echo "<p class='contents_section'>".$info['boardSection']." |  </p>";
+                echo "<p class='contents_section'>".$info['boardSection']."</p>";
                 echo "<p class='contents_date'>".date('Y-m-d H:i',$info['regTime'])."</p>";
-                echo "<p class='contents_view'> 조회 수 : ".$info['boardView']."</p>";
+                echo "<p class='contents_view'>".$info['boardView']." VIEW</p>";
                 echo "<p class='contents_view'>".$info['youName']."</p>";
                 echo "</div>";
                 echo "</div>";
@@ -152,8 +179,10 @@
                     <!-- test -->
             </div>
         </div>
+        <?php include "../include/footer.php" ?>
     </div>
 </body>
 <script src="../../assets/javascript/board.js"></script>
 <script src="../../assets/javascript/search.js"></script>
+<script src="../../assets/javascript/common.js"></script>
 </html>

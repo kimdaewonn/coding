@@ -80,22 +80,23 @@
                         <a class="select" href="board.php">공지사항</a>
                         <a href="board.php">이벤트</a>
                     </div>
-                    <a class="section_search_button" href="#">
-                        <img src="../../assets/img/search_btn.png" alt="">
-                    </a>
-                </div>
-                <form action="boardSearch.php" name="boardSearch" method="get" id="board_search" style="display:none">
-                    <fieldset>
-                        <legend class="ir">게시판 검색 영역</legend>
-                        <select name="searchOption" id="searchOption">
-                            <option value="title">제목</option>
-                            <option value="content">내용</option>
-                            <option value="name">닉네임</option>
-                        </select>
-                        <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요!"
+                    <form action="boardSearch.php" name="boardSearch" method="get" id="board_search">
+                        <fieldset>
+                            <legend class="ir">게시판 검색 영역</legend>
+                            <select name="searchOption" id="searchOption">
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="name">닉네임</option>
+                            </select>
+                            <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요!"
                             aria-label="search" class="board_search" required>
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                    <!-- <a class="section_search_button" href="#">
+                        <img src="../../assets/img/search_btn.png" alt="">
+                    </a> -->
+                    <a class="write_btn" href="boardWrite.php">글쓰기</a>
+                </div>
                 <div class="board_list">
                     <div class="board_list_inner">
                     <!-- <div class="board_list_contents">

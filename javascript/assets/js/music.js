@@ -306,8 +306,6 @@ const musicInner = document.querySelector(".music__inner");
 icon1Btn.addEventListener("click", ()=>{
     if(musicInner.style.display=="block"){
         musicInner.style.display="none"
-
-
     } else {
         musicInner.style.display="block"
     }
@@ -315,5 +313,14 @@ icon1Btn.addEventListener("click", ()=>{
 
 // 서치게임 버튼
 const icon2Btn = document.querySelector(".icon2");
+
+
+// 모달창 가리기제거
+const modalCont = document.querySelector(".modal__cont");
+const modalBtn = document.querySelector(".modal__btn");
+
+modalBtn.addEventListener("click",()=>{
+    modalCont.style.display="block";
+});
 
 

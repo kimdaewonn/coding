@@ -316,10 +316,11 @@ body {
 .modal__cont.show .modal__close {   /* 닫기 버튼 */
     animation: opacityOut 0.5s 1s ease forwards;
 }
-
+.modal__cont {
+    display: none;
+}
 .modal__cont.show.hide {    
     animation: foldIn 0.3s 0.5s ease backwards;
-    display: none;
 }
 .modal__cont.show.hide .modal__box {
     animation: zoomIn 0.5s ease forwards;

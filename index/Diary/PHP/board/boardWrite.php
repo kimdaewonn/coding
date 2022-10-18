@@ -28,7 +28,12 @@
             <?php include "../include/header.php" ?>
             <div class="board">
                 <div class="board_info">
-                    <img class="notice_logo" src="../../assets/img/site_board_write.png" alt="">
+                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
+                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
+                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
+                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
+                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                    <!-- <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt=""> -->
                     <h2>내 글 작성</h2>
                     <p>작성할 내용을 확인하여 주세요!</p>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">

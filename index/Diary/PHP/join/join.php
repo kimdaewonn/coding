@@ -23,10 +23,14 @@
                 <img class="login-cross"src="../../assets/img/login_cross.png" alt="">
             </div>
             <div class="login__cont">
-                <form name="join" action="joinSave.php" method="post" onsubmit ="return joinChecks()" >
+                <form name="join" action="joinSave.php" method="post" onsubmit ="return joinChecks()"  enctype="multipart/form-data">
                     <fieldset>
                         <legend class="ir">회원가입을 위한 정보 입력영역</legend>
                         <section class="joinAgree">
+                            <div>
+                                <label for="blogFile">파일</label>
+                                <input type="file" name="blogFile" id="blogFile" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요!">
+                            </div>
                             <div class="Email overlap">
                                 <label for="youEmail" class="ir">이메일</label>
                                 <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style" required>

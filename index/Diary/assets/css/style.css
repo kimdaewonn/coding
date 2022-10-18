@@ -428,6 +428,36 @@ fieldset{
 
 
 /* 메인 */
+.hamburger_menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.628);
+    z-index: 1001;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.hamburger_menu img{
+    margin-bottom: 10px;
+}
+.hamburger_menu p{
+    font-size: 22px;
+    padding: 10px 0;
+}
+.hamburger_menu p:hover{
+    transform: scale(1.2);
+    transition: transform 0.25s;
+}
+.hamburger_menu p:not(:hover){
+    transition: transform 0.25s;
+}
+.hamburger_menu_open{
+    display: none;
+}
 .section_ctrl{
     max-width: 1160px;
     margin: 0 auto;
@@ -502,7 +532,8 @@ fieldset{
     position: absolute;
     display: flex;
     align-items: center;
-    bottom: -80px;
+    bottom: -85vh;
+    right: 30px;
     background: #fff;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
@@ -539,7 +570,7 @@ fieldset{
 
 .profile_cont img {
     height: 40px;
-    /* margin-right: 10px; */
+    margin-right: 10px;
 }
 .profile_cont img:nth-child(1){
     /* width: 20px;
@@ -550,7 +581,7 @@ fieldset{
     padding: 5px; */
 }
 .profile_cont p{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .profile_cont img {
@@ -1068,6 +1099,29 @@ fieldset{
 .notice_list_cont ul li:nth-child(2){
     width: 70%;
 }
+
+
+
+/* footer */
+.footer {
+    background: #2D2836;
+    font-weight: 700;
+    font-size: 16px;
+    color: #E5E4E7;
+    width: 100%;
+    height: 250px;
+}
+.footer_inner{
+    min-width: 1160px;
+    padding: 0 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.footer_inner img{
+    margin-bottom: 20px;
+}
+
 
 
 
