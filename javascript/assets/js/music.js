@@ -315,12 +315,5 @@ icon1Btn.addEventListener("click", ()=>{
 const icon2Btn = document.querySelector(".icon2");
 
 
-// 모달창 가리기제거
-const modalCont = document.querySelector(".modal__cont");
-const modalBtn = document.querySelector(".modal__btn");
-
-modalBtn.addEventListener("click",()=>{
-    modalCont.style.display="block";
-});
 
 

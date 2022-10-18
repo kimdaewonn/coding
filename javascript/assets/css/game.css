@@ -196,6 +196,8 @@ body {
     box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     transform: scale(0);
     background-color: #000;
+    display: none;
+
 }
 .modal__box .title {
     padding-inline: 1rem;
@@ -280,7 +282,7 @@ body {
     border-bottom-right-radius: 0.5rem;
 }
 .modal__box .cont > div {
-    display: none;
+    /* display: none; */
 }
 .modal__box .cont > div.active {
     display: block;
@@ -312,12 +314,10 @@ body {
 }
 .modal__cont.show .modal__box {     /* 스크립트 박스 */
     animation: zoomOut 0.5s 1s ease forwards;
+    display: block;
 }
 .modal__cont.show .modal__close {   /* 닫기 버튼 */
     animation: opacityOut 0.5s 1s ease forwards;
-}
-.modal__cont {
-    display: none;
 }
 .modal__cont.show.hide {    
     animation: foldIn 0.3s 0.5s ease backwards;
@@ -328,7 +328,6 @@ body {
 .modal__cont.show.hide .modal__close {
     animation: opacityIn 0.5s ease forwards;
 }
-
 
 @keyframes foldOut {
     0%   {transform: scaleX(0) scaleY(0.001);}
@@ -391,6 +390,7 @@ body {
     position: absolute;
     top: -60px;
 }
+
 
 
 
