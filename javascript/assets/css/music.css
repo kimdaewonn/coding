@@ -21,6 +21,10 @@
 }
 .music__header h2 {
     font-size: 14px;
+    color: #c4c4c4;
+}
+.music__header > div {
+    color: #c4c4c4;
 }
 .music__contents {
     background: #c4c4c4;
@@ -94,7 +98,9 @@
     background: url(../img/music_control.svg) no-repeat;
     background-size: 200px;
     background-position: -125px 0;
-
+}
+.music__control .control .repeat:hover {
+    transform: scale(1.15);
 }
 .music__control .control .repeat_one {
     width: 24px;
@@ -103,12 +109,18 @@
     background-size: 200px;
     background-position: -150px 0;
 }
+.music__control .control .repeat_one:hover {
+    transform: scale(1.15);
+}
 .music__control .control .shuffle {
     width: 24px;
     height: 24px;
     background: url(../img/music_control.svg) no-repeat;
     background-size: 200px;
     background-position: -175px 0;
+}
+.music__control .control .shuffle:hover {
+    transform: scale(1.15);
 }
 .music__control .control .prev {
     width: 24px;
@@ -117,27 +129,38 @@
     background-size: 200px;
     background-position: -50px 0;
 }
+.music__control .control .prev:hover {
+    transform: scale(1.15);
+}
 .music__control .control .next {
     width: 24px;
     height: 24px;
     background: url(../img/music_control.svg) no-repeat;
     background-size: 200px;
     background-position: -75px 0;
-
+}
+.music__control .control .next:hover {
+    transform: scale(1.15);
 }
 .music__control .control .play {
     width: 24px;
     height: 24px;
     background: url(../img/music_control.svg);
     background-size: 200px;
-
 }
+.music__control .control .play:hover {
+    transform: scale(1.15);
+}
+
 .music__control .control .stop {
     width: 24px;
     height: 24px;
     background: url(../img/music_control.svg) no-repeat;
     background-size: 200px;
     background-position: -25px 0;
+}
+.music__control .control .stop:hover {
+    transform: scale(1.15);
 }
 .music__control .control .list {
     width: 24px;
@@ -146,6 +169,10 @@
     background-size: 200px;
     background-position: -100px 0;
 }
+.music__control .control .list:hover {
+    transform: scale(1.15);
+}
+
 
 .music__footer {
     background: #c4c4c4;

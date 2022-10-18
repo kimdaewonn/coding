@@ -224,6 +224,7 @@ musicListBtn.addEventListener("click", ()=>{
 // 닫기 버튼
 musicListClose.addEventListener("click", ()=>{
     musicList.style.display="none";
+    document.querySelector(".bolum_king").style.top="200px";
 });
 
 // 뮤직 리스트 구현하기
