@@ -86,14 +86,18 @@
         echo "<div class='view-info'>";
         echo "<img src='../../assets/img/blog/".$info['youImageFile']."' alt='프로필 이미지'>";
         echo "<p class='view-time'> ".$info['boardSection']." | ".date('Y-m-d H:i',$info['regTime'])." </p>";
-        echo "<p class='view-num'> 조회수 | ".$info['boardView']." </p>";
+        echo "<p class='view-num'> 조회수 ".$info['boardView']." </p>";
         echo "</div>";
-        echo " <div class='view-cont'>".$info['boardContents']."</div>";
+        echo "<div class='view-cont'>".$info['boardContents']."</div>";
+        echo "<div class='prev-next-cont'><p class='prev'>< 나는 오늘 뭘 하지?<em>다음글</em></p><p class='next'><em>이전글</em>하아,,,, 힘들다 ></p></div>";
+        echo "<div class='prev-next-cont'>COMMENTS</div>";
+        // echo "<div class='prev-next-cont'>COMMENTS</div>";
    }
 ?>
                 </div>
             </div>
         </div>
+        <?php include "../include/footer.php" ?>
     </div>
 </body>
 <script src="../../assets/javascript/board.js"></script>
