@@ -44,7 +44,7 @@
                 <div class="section_selector">
                     <div class="section_container">
                         <a class="select" href="board.php">공지사항</a>
-                        <a href="board.php">이벤트</a>
+                        <a href="../event/event.php">이벤트</a>
                     </div>
                     <form action="boardSearch.php" name="boardSearch" method="get" id="board_search">
                         <fieldset>
@@ -79,9 +79,6 @@
 
     if($result){
        $info = $result -> fetch_array(MYSQLI_ASSOC);
-    //    echo "<pre>";
-    //    var_dump($info);
-    //    echo "</pre>";
         echo "<h3 class='view-title'>".$info['boardTitle']."</h3>";
         echo "<div class='view-info'>";
         echo "<img src='../../assets/img/blog/".$info['youImageFile']."' alt='프로필 이미지'>";
@@ -91,7 +88,6 @@
         echo "<div class='view-cont'>".$info['boardContents']."</div>";
         echo "<div class='prev-next-cont'><p class='prev'>< 나는 오늘 뭘 하지?<em>다음글</em></p><p class='next'><em>이전글</em>하아,,,, 힘들다 ></p></div>";
         echo "<div class='prev-next-cont'>COMMENTS</div>";
-        // echo "<div class='prev-next-cont'>COMMENTS</div>";
    }
 ?>
                 </div>

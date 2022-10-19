@@ -43,6 +43,9 @@ a {
 .show{
     display: block !important;
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+ }
 /* 로그인 */
 .login-divider{
     width: 40px;
@@ -63,7 +66,7 @@ fieldset{
     background: #14032f61;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    z-index: 10000;
+    z-index: 20000;
 }
 .login__inner{
     position: absolute;

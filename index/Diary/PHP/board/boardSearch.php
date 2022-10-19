@@ -83,7 +83,7 @@
                 <div class="section_selector">
                     <div class="section_container">
                         <a class="select" href="board.php">공지사항</a>
-                        <a href="board.php">이벤트</a>
+                        <a href="../event/event.php">이벤트</a>
                     </div>
                     <form action="boardSearch.php" name="boardSearch" method="get" id="board_search">
                         <fieldset>
@@ -104,20 +104,15 @@
                 </div>
                 <div class="board_list">
                     <div class="board_list_inner">
-                    <!-- <div class="board_list_contents">
-                            <h2><a href="board_view.html">대전 다이어리 꾸미기 페스티벌 일정 및 장소</a></h2>
-                            <div class="board_list_contents_info">
-                                <p class="contents_section">NOTICE</p>
-                                <p class="contents_date">2022.09.28</p>
-                                <p class="contents_view">조회 수 : 3</p>
-                            </div>
-                        </div> -->
-
-                        
-
-                    </div>
-                    <!-- test -->
-                </div>
+                        <div class='board_list_header'>
+                            <span>No.</span>
+                            <span>PROFILE</span>
+                            <span>TITLE</span>
+                            <span>BOARD</span>
+                            <span>DATE</span>
+                            <span>VIEW</span>
+                            <span>NAME</span>
+                        </div>
 <?php
     $viewNum = 10;
     $viewLimit = ($viewNum * $page) - $viewNum;
@@ -149,6 +144,8 @@
         }
     }
 ?>
+                    </div>
+                </div>
                 <div class="board__pages">
                     <ul>
 <?php
@@ -180,7 +177,7 @@
         $active = "";
         if($i == $page) $active = "active";
 
-        echo "<li class='{$active}'><a href='boardSearch.php?page={$i}&searchKeyword={$searchKeyword}&searchOption={$searchOption}'>{$i}페이지</a></li>";
+        echo "<li class='{$active}'><a href='boardSearch.php?page={$i}&searchKeyword={$searchKeyword}&searchOption={$searchOption}'>{$i}</a></li>";
     }
 
     //다음 페이지, 마지막 페이지

@@ -29,11 +29,7 @@
             <?php include "../include/header.php" ?>
             <div class="board">
                 <div class="board_info">
-                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
-                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
-                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
-                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
-                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                    <img class="notice_logo" src="../../assets/img/site_board_edit.png" alt="">
                     <h2>내 글 수정</h2>
                     <p>수정할 내용을 확인하여 주세요!</p>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
@@ -42,18 +38,11 @@
                         <a href="#">이벤트</a>
                     </div> -->
                 </div>
-                <div class="section_selector">
-                    <div class="section_container">
-                        <a class="select" href="board.php">공지사항</a>
-                        <a href="../event/event.php">이벤트</a>
-                    </div>
-                </div>
                 <hr>
                 <div class="board__view">
                 <form action="boardModifySave.php" name="boardModify" method="post">
                         <fieldset>
-                            <legend class="blind">게시판 수정 영역</legend>
-
+                            <legend class="blind">게시판 작성 영역</legend>
 <?php
     $myBoardID = $_GET['myBoardID'];
     $sql = "SELECT myBoardID, boardTitle, boardContents FROM myBoard WHERE myBoardID = {$myBoardID}";
@@ -72,20 +61,7 @@
         echo "<input type='password' class='psss-btn' name='youPass' id='youPass' placeholder='내 비밀번호 입력해주세요!' autocomplete='off' required>";
     }
 ?>
-
-<div class="prev-next-cont">
-                    <p class="prev">
-                        "&lt; 나는 오늘 뭘 하지?"
-                        <em>다음글</em>
-                    </p>
-                    <p class="next">
-                        <em>이전글</em>
-                        "하아,,,, 힘들다 >"
-                    </p>
-                </div>
-                <div class="prev-next-cont">COMMENTS</div>
-
-                                <button type="submit" class="modify_btn_modify" value="수정하기">수정하기</button>
+                                <button type="submit" value="수정하기">수정하기</button>
                             </div>
                         </fieldset>
                     </form>
@@ -96,7 +72,7 @@
                         </form> -->
                         <div class="wail">
                             <!-- <a class="modify_btn" href="boardModify.php?myBoardID=&lt;?=$_GET['myBoardID']?>">수정(다른방식)</a> -->
-                            <a class="select remove_btn" href="boardDelete.php?myBoardID=<?=$_GET['myBoardID']?>" onclick="confirm('정말 삭제하시겠습니까? ;3')">삭제(다른방식)</a>
+                            <a class="select remove_btn" href="boardDelete.php?myBoardID=<?=$_GET['myBoardID']?>" onclick="alert('정말 삭제하시겠습니까? ;3')">삭제(다른방식)</a>
                         </div>
                 </div>
             </div>
