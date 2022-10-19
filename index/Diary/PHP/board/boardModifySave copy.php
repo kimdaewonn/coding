@@ -68,4 +68,16 @@
     </div>
 </body>
 <script src="../../assets/javascript/board.js"></script>
+<script>
+    let delConfirm = confirm('당신의 글이 삭제됩니다.');
+    document.querySelector(".remove_btn").addEventListener("click",()=>{
+        if (delConfirm) {
+    alert('삭제되었습니다.');
+  } else {
+    alert('삭제가 취소되었습니다.');
+  }
+
+    });
+  
+</script>
 </html>

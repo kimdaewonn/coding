@@ -7,8 +7,6 @@
     // var_dump($_SESSION);
     // echo "</pre>";
 ?>
-
- 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,10 +35,7 @@
                     <h2>내 글 수정</h2>
                     <p>수정할 내용을 확인하여 주세요!</p>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
-                    <!-- <div class="section_selector">
-                        <a class="select" href="#">공지사항</a>
-                        <a href="#">이벤트</a>
-                    </div> -->
+    
                 </div>
                 <div class="section_selector">
                     <div class="section_container">
@@ -107,4 +102,29 @@
 </body>
 <script src="../../assets/javascript/common.js"></script>
 <script src="../../assets/javascript/board.js"></script>
+
+
+
+
+<!-- <script>
+    document.querySelector(".remove_btn").addEventListener("click",()=>{
+        if(confirm==false){
+            location.href="../main/main.php";
+        }
+    })
+ 
+</script> -->
+
+<!-- <script>
+    let delConfirm = confirm('당신의 글이 삭제됩니다.');
+    document.querySelector(".remove_btn").addEventListener("click",()=>{
+        if (delConfirm) {
+    alert('삭제되었습니다.');
+  } else {
+    alert('삭제가 취소되었습니다.');
+  }
+
+    });
+  
+</script> -->
 </html>
