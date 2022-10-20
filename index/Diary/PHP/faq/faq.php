@@ -118,6 +118,12 @@
                             </div>
                         </details>
                         <details>
+                            <summary class="faq_title">꾸다가 무슨 뜻인가요?</summary>
+                            <div class="faq_contents">
+                                꾸다는 꾸미다의 줄임말로 상상한 모든 꿈을 꾼다는 뜻을 담고있습니다.
+                            </div>
+                        </details>
+                        <details>
                             <summary class="faq_title">꾸다 사이트 설립 연도는?</summary>
                             <div class="faq_contents">
                                 꾸다 사이트는 2022년 학원에서 조별작업을 통해 만들어지게 되었으며 현재 10월에도 운영, 보수중입니다. 
