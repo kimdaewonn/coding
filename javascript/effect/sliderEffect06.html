@@ -333,6 +333,19 @@
         });
 
         sliderInner.addEventListener("transitionend", checkIndex);
+
+
+
+    document.querySelectorAll('.slider__dot a').forEach((a, index) => {
+        a.addEventListener('click', e => {
+            document.querySelectorAll('.slider__dot a').forEach(b => {
+                b.classList.remove('active');
+        });
+        a.classList.add('active');
+        sliderInner.style.left = `${-((index + 1) * sliderWidth)}px`;
+        currentIndex = index;
+        });
+    });
     </script>
 </body>
 </html>

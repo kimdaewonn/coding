@@ -198,7 +198,7 @@
                 </div>
             <h3 class="t_tit2">03. JS 코드</h3>
             <p class="t_desc2">
-                
+                이전 슬라이드유형과 크게 달라진점은 없으며
             </p>
             <div class="t_code">
 <pre><code class="language-js">
@@ -280,7 +280,19 @@
         },300);
     });
 
+    // 닷 버튼 클릭
     sliderInner.addEventListener("transitionend", checkIndex);
+
+    document.querySelectorAll('.slider__dot a').forEach((a, index) => {
+        a.addEventListener('click', e => {
+            document.querySelectorAll('.slider__dot a').forEach(b => {
+                b.classList.remove('active');
+        });
+        a.classList.add('active');
+        sliderInner.style.left = `${-((index + 1) * sliderWidth)}px`;
+        currentIndex = index;
+        });
+    });
 </code></pre>
             </div>
 
