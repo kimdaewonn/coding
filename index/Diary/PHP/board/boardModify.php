@@ -7,6 +7,7 @@
     // var_dump($_SESSION);
     // echo "</pre>";
 ?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,76 +17,6 @@
     <title>공지사항-수정하기</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/board.css">
-
-<!-- 바꾸거나 추가한 스타일
-input#boardTitle {
-    width: 1200px;
-    height: 50;
-    border: 1px solid #f0f4f7;
-}
-textarea#boardContents {
-    width: 1200;
-    margin-top: 10;
-    background: #f0f4f7;
-    border: 1px solid #f0f4f7;
-}
-.select {
-    color: #FF416E !important;
-    border-radius: 50px;
-    padding: 20px 26px !important;
-}
-.select:hover {
-    color: #fff !important;
-}
-.section_container .select {
-    color: #fff !important;
-}
-.modify_btn_modify {
-    /* position: fixed; */
-    bottom: 40px;
-    left: 50%;
-    transform: translate(-50%,0);
-    padding: 20px 0;
-    width: 170px;
-    text-align: center;
-    background: #ffffffc9;
-    border: 1px solid;
-    color: #FF416E;
-    border-radius: 50px;
-    font-size: 16px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 2;
-}
-.modify_btn_modify:hover {
-    background: #FF416E;
-    color: #fff;
-    transition: background 0.25s;
-    border: 1px solid #FF416E; 
-}
-.modify_btn_modify:not(:hover) {
-    transition: background 0.25s;
-}
-.remove_btn {
-    background: #fff;
-    color: #FF416E !important;
-    border: 1px solid #FF416E !important;
-    top: -63px;
-    position: absolute;
-    left: 634px;
-    /* margin-top: 1px; */
-}
-.remove_btn:hover {
-    background: #FF416E;
-    color: #fff;
-    transition: background 0.25s;
-    border: 1px solid #FF416E;
-}
-.remove_btn:not(:hover) {
-    transition: background 0.25s;
-}
--->
-
 </head>
 <body>
     <div style="display:none" class="scroll">
@@ -105,20 +36,21 @@ textarea#boardContents {
                     <h2>내 글 수정</h2>
                     <p>수정할 내용을 확인하여 주세요!</p>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
-    
                 </div>
                 <div class="section_selector">
                     <div class="section_container">
                         <a class="select" href="board.php">공지사항</a>
                         <a href="../event/event.php">이벤트</a>
                     </div>
+                    <div class="modify_cont">
+                        <a class="select remove_btn" href="boardDelete.php?myBoardID=<?=$_GET['myBoardID']?>" onclick="alert('정말 삭제하시겠습니까? ;3')">삭제(다른방식)</a>
+                    </div>
                 </div>
                 <hr>
                 <div class="board__view">
                 <form action="boardModifySave.php" name="boardModify" method="post">
                         <fieldset>
-                            <legend class="blind">게시판 수정 영역</legend>
-
+                            <legend class="blind">게시판 작성 영역</legend>
 <?php
     $myBoardID = $_GET['myBoardID'];
     $sql = "SELECT myBoardID, boardTitle, boardContents FROM myBoard WHERE myBoardID = {$myBoardID}";
@@ -127,8 +59,31 @@ textarea#boardContents {
     if($result){
         $info = $result -> fetch_array(MYSQLI_ASSOC);
         echo "<div style='display:none'><label for='myBoardID'>번호</label><input type='text' name='myBoardID' id='myBoardID' value='".$info['myBoardID']."'></div><div><label for='boardTitle' class='blind'>제목</label><input type='text' name='boardTitle' id='boardTitle' value='".$info['boardTitle']."'></div>";
-        echo "<div><label for='boardContents' class='blind'>내용</label><textarea name='boardContents' id='boardContents' rows='20'>".$info['boardContents']."</textarea></div>";
+        // echo "<div><label for='boardContents' class='blind'>내용</label><textarea name='boardContents' id='boardContents' rows='20'>".$info['boardContents']."</textarea></div>";
     }
+?>
+<?php
+    $boardCount = $result -> fetch_array(MYSQLI_ASSOC);
+    $boardCount = $boardCount['count(myBoardID)'];
+
+    $connect -> query($sql);
+
+    // echo $myBoardID;
+    $sql = "SELECT b.boardTitle, b.boardSection, m.youImageFile, b.regTime, b.boardView, b.boardContents FROM myBoard b JOIN myMember m ON(m.myMemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
+    $result = $connect -> query($sql);
+
+
+    if($result){
+    $info = $result -> fetch_array(MYSQLI_ASSOC);
+        echo "<div class='view-info'>";
+        echo "<img src='../../assets/img/blog/".$info['youImageFile']."' alt='프로필 이미지'>";
+        echo "<p class='view-time'> ".$info['boardSection']." | ".date('Y-m-d H:i',$info['regTime'])." </p>";
+        echo "<p class='view-num'> 조회수 ".$info['boardView']." </p>";
+        echo "</div>";
+    }
+?>
+<?php
+    echo "<div><label for='boardContents' class='blind'>내용</label><textarea name='boardContents' id='boardContents' rows='20'>".$info['boardContents']."</textarea></div>";
 ?>
                             <div>
 <?php
@@ -137,20 +92,7 @@ textarea#boardContents {
         echo "<input type='password' class='psss-btn' name='youPass' id='youPass' placeholder='내 비밀번호 입력해주세요!' autocomplete='off' required>";
     }
 ?>
-
-<div class="prev-next-cont">
-                    <p class="prev">
-                        "&lt; 나는 오늘 뭘 하지?"
-                        <em>다음글</em>
-                    </p>
-                    <p class="next">
-                        <em>이전글</em>
-                        "하아,,,, 힘들다 >"
-                    </p>
-                </div>
-                <div class="prev-next-cont">COMMENTS</div>
-
-                                <button type="submit" class="modify_btn_modify" value="수정하기">수정하기</button>
+                                <button type="submit" value="수정하기">수정하기</button>
                             </div>
                         </fieldset>
                     </form>
@@ -161,7 +103,7 @@ textarea#boardContents {
                         </form> -->
                         <div class="wail">
                             <!-- <a class="modify_btn" href="boardModify.php?myBoardID=&lt;?=$_GET['myBoardID']?>">수정(다른방식)</a> -->
-                            <a class="select remove_btn" href="boardDelete.php?myBoardID=<?=$_GET['myBoardID']?>" onclick="confirm('정말 삭제하시겠습니까? ;3')">삭제(다른방식)</a>
+                            <!-- <a class="select remove_btn" href="boardDelete.php?myBoardID=<?=$_GET['myBoardID']?>" onclick="alert('정말 삭제하시겠습니까? ;3')">삭제(다른방식)</a> -->
                         </div>
                 </div>
             </div>
@@ -172,29 +114,4 @@ textarea#boardContents {
 </body>
 <script src="../../assets/javascript/common.js"></script>
 <script src="../../assets/javascript/board.js"></script>
-
-
-
-
-<!-- <script>
-    document.querySelector(".remove_btn").addEventListener("click",()=>{
-        if(confirm==false){
-            location.href="../main/main.php";
-        }
-    })
- 
-</script> -->
-
-<!-- <script>
-    let delConfirm = confirm('당신의 글이 삭제됩니다.');
-    document.querySelector(".remove_btn").addEventListener("click",()=>{
-        if (delConfirm) {
-    alert('삭제되었습니다.');
-  } else {
-    alert('삭제가 취소되었습니다.');
-  }
-
-    });
-  
-</script> -->
 </html>

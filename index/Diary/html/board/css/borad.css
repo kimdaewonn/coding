@@ -143,14 +143,6 @@ fieldset{
 
 
 /* 게시판 */
-input#boardTitle {
-    width: 1200px;
-    height: 50;
-}
-textarea#boardContents {
-    width: 1200;
-    margin-top: 10;
-}
 .board{
     display: flex;
     flex-direction: column;
@@ -680,9 +672,6 @@ textarea#boardContents {
 
 
     /* 게시판 */
-
-
-    }
     .view-title{
         width: auto;
         padding: 0 10px;
@@ -726,5 +715,5 @@ textarea#boardContents {
         padding: 10px 100px;
         word-break: keep-all;
     }
-
+}
 @media(max-width: 468px){}

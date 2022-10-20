@@ -12,7 +12,7 @@
     $boardTitle = $connect -> real_escape_string($boardTitle);
     $boardSection = $connect -> real_escape_string($boardSection);
     $boardContents = $connect -> real_escape_string($boardContents);
-    $boardView = 1;
+    $boardView = 0;
     $regTime = time();
 
     $myMemberID = $_SESSION['myMemberID'];

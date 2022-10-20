@@ -21,10 +21,10 @@
 </head>
 <body>
     <!-- //header -->
-    <div class="scroll">
+    <!-- <div class="scroll">
         <p>스크롤을 내려보세요.</p>
         <img src="../../assets/img/site_intro_scroll.png" alt="">
-    </div>
+    </div> -->
     <div class="wrap mainCtrl">
         <?php include "../login/login.php" ?>
 
@@ -315,47 +315,9 @@
 
     //스크롤 값에 따라 변경할 클래스 및 효과
     const header = document.querySelector(".header")
-    const particle = document.querySelectorAll(".particle")
-    const plzScroll = document.querySelector(".scroll")
-    const scrollUp = document.querySelector(".btn_scroll_top")
     const profileClose = document.querySelector(".profile_cont_close")
     const profile = document.querySelector(".profile_cont")
-
-    // let switcher = 0;
-    function scroll() {
-        let scrollTop = window.pageYoffest || document.documentElement.scrollTop || window.screenY;
-        
-        particle.forEach((e, i) => {
-            if (scrollTop >= 100) {
-                header.classList.add("header_ctrl");
-                plzScroll.style.opacity = "0";
-                e.style.opacity = "0.2";
-                // let switcher = 1;
-                
-            } else {
-                header.classList.remove("header_ctrl");
-                plzScroll.style.opacity = "1";
-                e.style.opacity = "1"
-                // let switcher = 0;
-            }
-        })
-        requestAnimationFrame(scroll);
-    }
-    scroll(); //함수 호출
-
-    // console.log(switcher);
-
-    // function bouncingEffect(){
-    //     profile.classList.remove("anim");
-    //     void profile.offsetWidth;
-    //     profile.classList.add("anim");
-    // }
-    // if(switcher==0){
-    //     bouncingEffect();
-    // } else{
-    //     bouncingEffect();
-    // }
-
+    const scrollUp = document.querySelector(".btn_scroll_top");
 
     // 스크롤 TOP 선택시 부드럽게 이동
     scrollUp.addEventListener("click", (e) => {

@@ -27,14 +27,12 @@
         <div class="site">
             <?php include "../include/header.php" ?>
             <div class="board">
-                <!-- <a class="write_btn" href="boardWrite.php">글쓰기</a> -->
                 <div class="board_info">
                     <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
                     <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
                     <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
                     <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
                     <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
-                    <!-- <img class="notice_logo" src="../../assets/img/site_board_notice_logo.png" alt=""> -->
                     <h2>NOTICE</h2>
                     <?php
     if(isset($_GET['page'])){
@@ -75,9 +73,13 @@
                             aria-label="search" class="board_search" required>
                         </fieldset>
                     </form>
-                    <?php if( $_SESSION['myMemberID']==1||2||3 ){ ?>
-                        <a class="write_btn" href="boardWrite.php">글쓰기</a>
-                    <?php }?>
+                    <a class='write_btn' href='boardWrite.php'>글쓰기</a>
+                        <!-- if($_SESSION['myMemberID']=='1'||'2'||'3'){ -->
+                            <!-- $page = (int) $_GET['page']; -->
+                            <!-- echo "<a class='write_btn' href='boardWrite.php'>글쓰기</a>"; -->
+                        <!-- } else { -->
+                            <!-- echo "<a class='write_btn' style='display:none' href='boardWrite.php'>글쓰기</a>"; -->
+                        <!-- } -->
                 </div>
                 <div class="board_list">
                     <div class="board_list_inner">
