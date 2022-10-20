@@ -16,6 +16,76 @@
     <title>공지사항-수정하기</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/board.css">
+
+<!-- 바꾸거나 추가한 스타일
+input#boardTitle {
+    width: 1200px;
+    height: 50;
+    border: 1px solid #f0f4f7;
+}
+textarea#boardContents {
+    width: 1200;
+    margin-top: 10;
+    background: #f0f4f7;
+    border: 1px solid #f0f4f7;
+}
+.select {
+    color: #FF416E !important;
+    border-radius: 50px;
+    padding: 20px 26px !important;
+}
+.select:hover {
+    color: #fff !important;
+}
+.section_container .select {
+    color: #fff !important;
+}
+.modify_btn_modify {
+    /* position: fixed; */
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 20px 0;
+    width: 170px;
+    text-align: center;
+    background: #ffffffc9;
+    border: 1px solid;
+    color: #FF416E;
+    border-radius: 50px;
+    font-size: 16px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2;
+}
+.modify_btn_modify:hover {
+    background: #FF416E;
+    color: #fff;
+    transition: background 0.25s;
+    border: 1px solid #FF416E; 
+}
+.modify_btn_modify:not(:hover) {
+    transition: background 0.25s;
+}
+.remove_btn {
+    background: #fff;
+    color: #FF416E !important;
+    border: 1px solid #FF416E !important;
+    top: -63px;
+    position: absolute;
+    left: 634px;
+    /* margin-top: 1px; */
+}
+.remove_btn:hover {
+    background: #FF416E;
+    color: #fff;
+    transition: background 0.25s;
+    border: 1px solid #FF416E;
+}
+.remove_btn:not(:hover) {
+    transition: background 0.25s;
+}
+-->
+
 </head>
 <body>
     <div style="display:none" class="scroll">
