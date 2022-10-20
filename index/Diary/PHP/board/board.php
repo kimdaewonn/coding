@@ -99,6 +99,9 @@
     $sql = $sql."ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
     $result = $connect -> query($sql);
 
+    $sql = "ALTER TABLE myBoard AUTO_INCREMENT = 1";
+    $connect -> query($sql);
+
     if($result){
         $count = $result -> num_rows;
     

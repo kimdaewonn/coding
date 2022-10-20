@@ -15,6 +15,7 @@
     $boardView = 0;
     $regTime = time();
 
+    
     $myMemberID = $_SESSION['myMemberID'];
     // echo $myMemberID;
 

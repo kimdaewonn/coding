@@ -33,7 +33,7 @@ body {
     font-weight: normal;
     font-size: 18px;
     color: #292F34;
-    background-image: url(../img/BG.jpg) ;
+    /* background-image: url(../img/BG.jpg) ; */
     background-size: cover;
 }
 a {
@@ -469,6 +469,10 @@ fieldset{
 .section_ctrl{
     max-width: 1160px;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .section_ctrl2{
     width: 1160px;
@@ -983,6 +987,7 @@ fieldset{
 .main p,
 .main h2 {
     text-align: center;
+    /* display: inline-block; */
 }
 
 .main h2 {
@@ -1073,10 +1078,11 @@ fieldset{
     display: flex;
     height: 280px;
     justify-content: center;
+    width: 100%;
 }
 
 .notice_quick_cont{
-    background: #4b12a7;
+    background: #632bbf;
     border-radius: 25px;
     width: 30%;
     color: #fff;
@@ -1093,7 +1099,7 @@ fieldset{
 
 .notice_list_cont{
     width: 70%;
-    background: #EDEDF5;
+    background: #e3e4f1;
     border-radius: 25px;
     padding: 20px;
     box-sizing: border-box;
@@ -1115,7 +1121,98 @@ fieldset{
 .notice_list_cont ul li:nth-child(2){
     width: 70%;
 }
+.rank_cont{
+    width: 100%;
+}
+.rank_cont_inner{
+    display: flex;
+    /* height: 280px; */
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    box-sizing: border-box;
+}
+.rank_item_01 p,
+.rank_item_02 p,
+.rank_item_03 p{
+    margin-bottom: 0;
+}
+.rank_item{
+    width: 33%;
+}
+.rank_item p{
+    font-size: 22px;
+    font-weight: bold;
+}
+.rank_item:nth-child(2){
+    margin: 0 10px;
+}
+.rank_item_01,
+.rank_item_02,
+.rank_item_03{
+    border-radius: 15px;
+    color: #fff;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.rank_item_03{
+    height: 60px;
+    background: #E3E4F1;
+    color: #000;
+}
+.rank_item_01{
+    background: #632BBF;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+.rank_item_02{
+    height: 120px;
+    background: #E3E4F1;
+    color: #000;
+}
+.rank_item>div{
+    padding: 20px;
+}
+.rank_item>div:hover{
+    transform: scale(1.07);
+    transition: transform 0.25s,box-shadow 0.25s;
+    box-shadow: 0px 30px 30px -10px #7e61ac8a;
+}
+.rank_item>div:not(:hover){
+    transition: transform 0.25s,box-shadow 0.25s;
+}
 
+/* 아티스트 */
+.artist h2 {
+    margin-top: 120px;
+    font-size: 26px;
+    font-weight: 800;
+
+}
+.artist_cont {
+    display: flex;
+    margin-bottom: 120px;
+}
+.artist_cross {
+    margin-bottom: 20px;
+}
+
+.artist_list_item {
+    position: relative;
+    margin-right: 20px;
+}
+.artist_list_item:last-child {
+    margin-right: 0;
+}
+.artist_heart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
 /* footer */
@@ -1241,3 +1338,4 @@ fieldset{
     /* .footer_inner{
         min-width: none;
     } */
+}

@@ -31,14 +31,16 @@
                     <img class="notice_logo" src="../../assets/img/site_board_edit_complete.png" alt="">
 <?php
     $myEventID = $_POST['myEventID'];
+    $myMemberID = $_SESSION['myMemberID'];
+    
     $eventTitle = $_POST['eventTitle'];
     $eventContents = $_POST['eventContents'];
     $youPass = $_POST['youPass'];
-    $myMemberID = $_SESSION['myMemberID'];
 
-    // $eventTitle = $connect -> real_escape_string($eventTitle);
-    // $eventContents = $connect -> real_escape_string($eventContents);
-    // 위에 꺼 하면 오류가남;; 오ㅐ지..
+    $youPass = sha1("web".$youPass);
+
+    $eventTitle = $connect -> real_escape_string($eventTitle);
+    $eventContents = $connect -> real_escape_string($eventContents);
 
     $sql = "SELECT youPass, myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
     $result = $connect -> query($sql);
@@ -46,7 +48,7 @@
     $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
 
     if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){
-        $sql = "UPDATE myEvent SET eventTitle = '{$eventTitle}', eventContents = '{$eventContents}' WHERE myEventID = '{$myEventID}'";
+        $sql = "UPDATE myEvent SET eventTitle = '{$eventTitle}', EventContents = '{$eventContents}' WHERE myEventID = '{$myEventID}'";
         $connect -> query($sql);
 
         // var_dump ($sql);
