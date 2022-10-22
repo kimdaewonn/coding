@@ -374,7 +374,7 @@
             dotActive[index].classList.add("active");
             gotoSlider(index);
         })
-    })
+    });
 
     sliderBtnNext.addEventListener("click", ()=>{
         let nextIndex = currentIndex +1;
@@ -397,20 +397,19 @@
         document.querySelector(".slider__dot .stop").classList.add("show")
         document.querySelector(".slider__dot .play").classList.remove("show")
         autoPlay();         
-    })
+    });
 
     document.querySelector(".slider__dot .stop").addEventListener("click", ()=>{
 
         document.querySelector(".slider__dot .stop").classList.remove("show")
         document.querySelector(".slider__dot .play").classList.add("show")
         stopPlay();
-    })
+    });
 
 
-    sliderInner.addEventListener("mouseenter", stopPlay)
-    sliderInner.addEventListener("mouseleave", autoPlay)
-    sliderInner.addEventListener("transitionend", checkIndex)
-
+    // sliderInner.addEventListener("mouseenter", stopPlay);
+    // sliderInner.addEventListener("mouseleave", autoPlay);
+    sliderInner.addEventListener("transitionend", checkIndex);
 </code></pre>
             </div>
 
