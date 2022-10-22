@@ -320,7 +320,7 @@
             cloneFirst = sliderFirst.cloneNode(true),   // 첫번째 이미지 복사
             cloneLast = sliderLast.cloneNode(true),     // 마지막 이미지 복사
             dotIndex = "",
-            interval = 1000,
+            interval = 3000,
             sliderTimer = "";
 
             let dotActive = document.querySelectorAll(".slider__dot .dot");
@@ -458,8 +458,8 @@
         })
 
 
-        // sliderInner.addEventListener("mouseenter", stopPlay)
-        // sliderInner.addEventListener("mouseleave", autoPlay)
+        sliderInner.addEventListener("mouseenter", stopPlay)
+        sliderInner.addEventListener("mouseleave", autoPlay)
         sliderInner.addEventListener("transitionend", checkIndex)
 
         
