@@ -271,21 +271,21 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     const num = "coding";
-            const color = ['blue','green','yellow'];
+    const color = ['blue','green','yellow'];
 
-            function solution(xx) {
-                let answer = xx.split("");
-                let i = 1;
-                while(i&lt;7){
-                    i++
-                    if(i>color.length){
-                        answer[i] = "#";
-                    }
-
-                }
-                return answer.join("");
+    function solution(xx) {
+        let answer = xx.split("");
+        let i = 1;
+        while(i&lt;7){
+            i++
+            if(i>color.length){
+                answer[i] = "#";
             }
-            console.log(solution(num))
+
+        }
+        return answer.join("");
+    }
+    console.log(solution(num))
 }
 </code></pre>
         </div>
