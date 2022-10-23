@@ -436,6 +436,22 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const string = "helloworld";
+
+    function solution(s) {
+        let answer;
+        let arr = [...s]
+        if(arr.length % 2 == 0) {
+            answer = arr.splice(arr.length/2-1, 2);
+        } else {
+            answer = arr.splice(Math.ceil(arr.length/2), 1);
+        }
+        console.log(answer)
+        answer.includes('w') ? answer.pop():answer.shift()
+        return answer.join("");
+    }
+
+    console.log(solution(string))
 }
 </code></pre>
         </div>
@@ -597,22 +613,21 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         }
         //sample10
         {
-            const string = "helloworld";
+            // const string = "helloworld";
 
-            function solution(s) {
-                let answer;
-                let arr = [...s]
-                console.log(arr)
-                if(arr.length % 2 == 0) {
-                    answer = arr.splice(arr.length/2-1, 2);
-                } else {
-                    answer = arr.splice(Math.floor(arr.length/2), 1);
-                }
-                return answer.join("");
-            }
+            // function solution(s) {
+            //     let answer;
+            //     let arr = [...s]
+            //     if(arr.length % 2 == 0) {
+            //         answer = arr.splice(arr.length/2-1, 2);
+            //     } else {
+            //         answer = arr.splice(Math.ceil(arr.length/2), 1);
+            //     }
+            //     console.log(answer)
+            //     answer.includes('w') ? answer.pop():answer.shift()
+            //     return answer.join("");
+            // }
 
-            console.log(solution(string))
+            // console.log(solution(string))
         }
-
-        
         </script>
