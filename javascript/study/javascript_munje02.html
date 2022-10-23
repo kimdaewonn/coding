@@ -297,7 +297,20 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const four = 4;
 
+    function solution(n){
+        let answer = "";
+        for(i=0; i&lt;n;i++){
+            if(i % 2 == 0){
+                answer +="이";
+            } else {
+                answer +="하";
+            }
+        }
+        return answer.slice(1,3);
+    }
+    console.log(solution(four));
 }
 </code></pre>
         </div>
@@ -309,7 +322,17 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const string = "Hello";
 
+    function solution(s){
+        let answer = "";
+
+        for(let i = s.length-1;i>0;i--){
+            answer = answer + s[i];
+        }
+        return answer.indexOf("H");
+    }
+    console.log(solution(string))
 }
 </code></pre>
         </div>
@@ -321,7 +344,22 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const string = ['a','b','c','d'];
+    const num = [2,3,5,6];
 
+    function solution(arr, divi){
+        var answer = [];
+
+        for(i=0;i&lt;arr.length;i++){
+            if(num[i] % divi==0){
+                answer.unshift(string[i])
+            } else{
+                answer.pop(string[i])
+            }
+        }
+        return answer;
+    }
+    console.log(solution(string,2))
 }
 </code></pre>
         </div>
@@ -333,6 +371,14 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>07. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const arr = [1,21,3,3,0,40,0];
+        
+    function solution(arr){
+        arr.sort();
+        return arr.filter((e,i) => e !== arr[i+1]);
+    }
+
+    console.log(solution(arr))
 }
 </code></pre>
         </div>
@@ -344,7 +390,19 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const css = ['all','background','border','color'];
 
+    function solution(arr){
+        var answer=[];
+
+        for(i=0;i&lt;=arr.length;i++){
+            if(i&lt;arr.length){
+                answer.push(arr[i])
+            }
+        }
+        return answer.splice(1,2);
+    }
+    console.log(solution(css))
 }
 </code></pre>
         </div>
@@ -356,7 +414,18 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>09. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    function func(s){
+        let answer = "";
+        for(let x of s){
+            if( x != 'h') answer += '#';
+            else answer += x;
+        }
+        answer.split('')
+        return answer.includes('h');
+    }
+    let str = "helloworld";
 
+    console.log(func(str));
 }
 </code></pre>
         </div>
@@ -436,20 +505,114 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         }
         //sample4
         {
-            
+            // const four = 4;
+
+            // function solution(n){
+            //     let answer = "";
+            //     for(i=0; i<n;i++){
+            //         if(i % 2 == 0){
+            //             answer +="이";
+            //         } else {
+            //             answer +="하";
+            //         }
+            //     }
+            //     return answer.slice(1,3);
+            // }
+            // console.log(solution(four));
         }
         //sample5
-        {}
+        {
+            // const string = "Hello";
+
+            // function solution(s){
+            //     let answer = "";
+
+            //     for(let i = s.length-1;i>0;i--){
+            //         answer = answer + s[i];
+            //     }
+            //     return answer.indexOf("H");
+            // }
+            // console.log(solution(string))
+        }
         //sample6
-        {}     
+        {
+            // const string = ['a','b','c','d'];
+            // const num = [2,3,5,6];
+
+            // function solution(arr, divi){
+            //     var answer = [];
+
+            //     for(i=0;i<arr.length;i++){
+            //         if(num[i] % divi==0){
+            //             answer.unshift(string[i])
+            //         } else{
+            //             answer.pop(string[i])
+            //         }
+            //     }
+            //     return answer;
+            // }
+            // console.log(solution(string,2))
+        }     
         //sample7
-        {}
+        {
+            // const arr = [1,21,3,3,0,40,0];
+        
+            // function solution(arr){
+            //     arr.sort();
+            //     return arr.filter((e,i) => e !== arr[i+1]);
+            // }
+        
+            // console.log(solution(arr))
+        }
         //sample8
-        {}
+        {
+            // const css = ['all','background','border','color'];
+
+            // function solution(arr){
+            //     var answer=[];
+
+            //     for(i=0;i<=arr.length;i++){
+            //         if(i<arr.length){
+            //             answer.push(arr[i])
+            //         }
+            //     }
+            //     return answer.splice(1,2);
+            // }
+            // console.log(solution(css))
+        }
         //sample9
-        {}
+        {
+            // function func(s){
+            //     let answer = "";
+            //     for(let x of s){
+            //         if( x != 'h') answer += '#';
+            //         else answer += x;
+            //     }
+            //     answer.split('')
+            //     return answer.includes('h');
+            // }
+            // let str = "helloworld";
+
+            // console.log(func(str));
+        }
         //sample10
-        {}
+        {
+            const string = "helloworld";
+
+            function solution(s) {
+                let answer;
+                let arr = [...s]
+                console.log(arr)
+                if(arr.length % 2 == 0) {
+                    answer = arr.splice(arr.length/2-1, 2);
+                } else {
+                    answer = arr.splice(Math.floor(arr.length/2), 1);
+                }
+                return answer.join("");
+            }
+
+            console.log(solution(string))
+        }
 
         
         </script>
